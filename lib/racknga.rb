@@ -23,4 +23,4 @@ module Racknga
 end
 
 require 'racknga/utils'
-require 'racknga/middleware/exception_handler'
+require 'racknga/middleware/exception_notifier'
