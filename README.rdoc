@@ -1,0 +1,44 @@
+= README
+
+== Name
+
+racknga
+
+== Description
+
+Rack middlewares that uses rroonga features.
+
+* rroonga: http://groonga.rubyforge.org/
+* Rack: http://rack.rubyforge.org/
+
+== Authors
+
+Kouhei Sutou:: <tt><kou@clear-code.com></tt>
+
+== License
+
+LGPL 2.1. See license/LGPL for details.
+
+== Dependencies
+
+* Ruby >= 1.9.1
+* rroonga
+* Rack
+
+== Install
+
+  % sudo gem install racknga
+
+== Documents
+
+Japanese only. Sorry.
+
+http://groonga.rubyforge.org/racknga/
+
+== Mailing list
+
+http://rubyforge.org/mailman/listinfo/groonga-users-en
+
+== Thanks
+
+* ...
