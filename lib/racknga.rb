@@ -23,4 +23,5 @@ module Racknga
 end
 
 require 'racknga/utils'
+require 'racknga/middleware/deflater'
 require 'racknga/middleware/exception_notifier'
