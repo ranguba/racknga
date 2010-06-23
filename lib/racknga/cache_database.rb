@@ -30,7 +30,7 @@ module Racknga
     def purge_old_responses(threshold_time_stamp=nil)
       threshold_time_stamp ||= Time.now
       responses.each do |response|
-        response.remove if response.created_at < threshold_time_stamp
+        response.delete if response.created_at < threshold_time_stamp
       end
     end
 
