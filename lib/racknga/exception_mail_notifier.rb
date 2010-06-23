@@ -24,7 +24,7 @@ module Racknga
   # Ruby 1.9 only. 1.8 isn't supported.
   class ExceptionMailNotifier
     def initialize(options)
-      @options = options || {}
+      @options = Utils.normalize_options(options || {})
     end
 
     def notify(exception, environment)

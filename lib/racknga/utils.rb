@@ -26,5 +26,14 @@ module Racknga
       ENV["PASSENGER_ENVIRONMENT"] or
         /Phusion_Passenger/ =~ ENV["SERVER_SOFTWARE"].to_s
     end
+
+    def normalize_options(options)
+      normalized_options = {}
+      options.each do |key, value|
+        value = normalized_options(value) if value.is_a?(Hash)
+        normalized_options[key.to_sym] = value
+      end
+      normalized_options
+    end
   end
 end

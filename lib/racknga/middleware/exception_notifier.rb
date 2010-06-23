@@ -15,24 +15,23 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-require 'racknga/exception_notifier'
+require 'racknga/exception_mail_notifier'
 
 module Racknga
   module Middleware
-    class ExceptionHandler
+    class ExceptionNotifier
       def initialize(application, options={})
         @application = application
-        @options = options || {}
-        @notifier = @options["notifier"]
-        @formatter = @options["formatter"]
+        @options = Utils.normalize_options(options || {})
+        @notifiers = @options[:notifiers] || []
       end
 
       def call(environment)
         @application.call(environment)
       rescue Exception => exception
-        if @notifier
+        @notifiers.each do |notifier|
           begin
-            @notifier.notify(exception, environment)
+            notifier.notify(exception, environment)
           rescue Exception
             begin
               $stderr.puts("#{$!.class}: #{$!.message}")
@@ -44,12 +43,7 @@ module Racknga
             end
           end
         end
-        if @formatter
-          environment["EXCEPTION"] = exception
-          @formatter.call(environment)
-        else
-          raise
-        end
+        raise
       end
     end
   end
