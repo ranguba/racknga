@@ -28,11 +28,11 @@ module Racknga
     end
 
     def notify(exception, environment)
-      host = @options["host"]
+      host = @options[:host]
       return if host.nil?
       return if to.empty?
       mail = format(exception, environment)
-      Net::SMTP.start(host, @options["port"]) do |smtp|
+      Net::SMTP.start(host, @options[:port]) do |smtp|
         smtp.send_message(mail, from, *to)
       end
     end
@@ -96,11 +96,11 @@ EOE
     end
 
     def subject(exception, environment)
-      [@options["subject_label"], exception.to_s].compact.join(' ')
+      [@options[:subject_label], exception.to_s].compact.join(' ')
     end
 
     def to
-      @to ||= ensure_array(@options["to"]) || []
+      @to ||= ensure_array(@options[:to]) || []
     end
 
     def ensure_array(maybe_array)
@@ -109,7 +109,7 @@ EOE
     end
 
     def from
-      @from ||= @options["from"] || guess_from
+      @from ||= @options[:from] || guess_from
     end
 
     def guess_from
@@ -119,7 +119,7 @@ EOE
     end
 
     def charset
-      @options['charset'] || 'utf-8'
+      @options[:charset] || 'utf-8'
     end
 
     def transfer_encoding
