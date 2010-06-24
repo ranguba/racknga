@@ -28,8 +28,7 @@ module Racknga
     end
 
     def notify(exception, environment)
-      host = @options[:host]
-      return if host.nil?
+      host = @options[:host] || "localhost"
       return if to.empty?
       mail = format(exception, environment)
       Net::SMTP.start(host, @options[:port]) do |smtp|
