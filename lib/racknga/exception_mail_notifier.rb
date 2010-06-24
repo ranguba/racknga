@@ -20,6 +20,8 @@ require 'net/smtp'
 require 'etc'
 require 'socket'
 
+require 'racknga/utils'
+
 module Racknga
   # Ruby 1.9 only. 1.8 isn't supported.
   class ExceptionMailNotifier
