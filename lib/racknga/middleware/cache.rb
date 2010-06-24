@@ -31,6 +31,7 @@ module Racknga
 
       def call(environment)
         request = Rack::Request.new(environment)
+        return @application.call(environment) unless use_cache?(request)
         key = "#{key_prefix(request)}:#{normalize_path(request.fullpath)}"
         cache = @database.responses
         record = cache[key]
@@ -50,6 +51,10 @@ module Racknga
       end
 
       private
+      def use_cache?(requeust)
+        requeust.get? or requeust.head?
+      end
+
       def key_prefix(request)
         if request.respond_to?(:mobile?) and request.mobile?
           last_component = request.mobile.class.name.split(/::/).last
@@ -63,7 +68,8 @@ module Racknga
         path.gsub(/&callback=jsonp\d+&_=\d+\z/, '')
       end
 
-      def skip_cache?(status, headers, body)
+      def skip_caching_response?(status, headers, body)
+        return true if status != 200
         return true if status != 200
 
         headers = Rack::Utils::HeaderHash.new(headers)
@@ -81,7 +87,9 @@ module Racknga
 
       def handle_request(cache, key, request)
         status, headers, body = @application.call(request.env)
-        return [status, headers, body] if skip_cache?(status, headers, body)
+        if skip_caching_response?(status, headers, body)
+          return [status, headers, body]
+        end
 
         now = Time.now
         headers = Rack::Utils::HeaderHash.new(headers)
