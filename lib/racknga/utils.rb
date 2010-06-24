@@ -30,7 +30,7 @@ module Racknga
     def normalize_options(options)
       normalized_options = {}
       options.each do |key, value|
-        value = normalized_options(value) if value.is_a?(Hash)
+        value = normalize_options(value) if value.is_a?(Hash)
         normalized_options[key.to_sym] = value
       end
       normalized_options
