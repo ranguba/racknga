@@ -19,6 +19,7 @@ require 'time'
 require 'net/smtp'
 require 'etc'
 require 'socket'
+require 'nkf'
 
 require 'racknga/utils'
 
