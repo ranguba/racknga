@@ -101,8 +101,11 @@ Hoe.spec('racknga') do
   project.url = 'http://groonga.rubyforge.org/'
   project.testlib = :testunit2
   project.test_globs = ["test/run-test.rb"]
+  project.extra_deps += [["rroonga"],
+                         ["rack"]]
   project.spec_extras = {
     :extra_rdoc_files => Dir.glob("**/*.rdoc"),
+    :licenses => ["LGPL 2.1"]
   }
   project.readme_file = "README.ja.rdoc"
 
@@ -115,8 +118,6 @@ Hoe.spec('racknga') do
 
   project.remote_rdoc_dir = "racknga"
 end
-
-project.spec.dependencies.delete_if {|dependency| dependency.name == "hoe"}
 
 ObjectSpace.each_object(Rake::RDocTask) do |rdoc_task|
   options = rdoc_task.options
@@ -187,9 +188,5 @@ end
 task :tag do
   sh("git tag -a #{version} -m 'release #{version}!!!'")
 end
-
-# fix Hoe's incorrect guess.
-project.spec.executables.clear
-# project.lib_files = project.spec.files.grep(%r|^src/lib/|)
 
 task(:release).prerequisites.reject! {|name| name == "clean"}
