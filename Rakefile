@@ -26,7 +26,7 @@ gem 'rdoc'
 require 'hoe'
 
 ENV["NODOT"] = "yes"
-require 'pp'
+
 base_dir = Pathname(__FILE__).dirname
 truncate_base_dir = Proc.new do |path|
   path.relative_path_from(base_dir)
@@ -122,11 +122,8 @@ end
 ObjectSpace.each_object(Rake::RDocTask) do |rdoc_task|
   options = rdoc_task.options
   t_option_index = options.index("--title") || options.index("-t")
-  rdoc_task.options[t_option_index, 2] = nil
+  rdoc_task.options[t_option_index, 2] = [] if t_option_index
   rdoc_task.title = "racknga - #{version}"
-
-  rdoc_task.rdoc_files = Dir.glob("lib/**/*.rb")
-  rdoc_task.rdoc_files += Dir.glob("**/*.rdoc")
 end
 
 task :publish_docs => [:prepare_docs_for_publishing]
