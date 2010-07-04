@@ -1,0 +1,5 @@
+= NEWS
+
+== 0.9.0: 2010-07-04
+
+* Initial release!
