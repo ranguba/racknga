@@ -55,7 +55,7 @@ module Racknga
                             :key_type => "ShortText") do |table|
           table.uint32("status")
           table.short_text("headers")
-          table.text("body")
+          table.text("body", :compress => :lzo)
           table.time("created_at")
         end
       end
