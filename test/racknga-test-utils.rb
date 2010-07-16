@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-#
 # Copyright (C) 2010  Kouhei Sutou <kou@clear-code.com>
 #
 # This library is free software; you can redistribute it and/or
@@ -15,10 +13,21 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-require 'rack'
+require 'rubygems'
 
-require 'racknga/version'
-require 'racknga/utils'
-require 'racknga/middleware/deflater'
-require 'racknga/middleware/exception_notifier'
-require 'racknga/middleware/jsonp'
+require 'rack/test'
+require 'webrat'
+require 'json'
+
+require 'racknga'
+require 'racknga/middleware/cache'
+
+Webrat.configure do |config|
+  config.mode = :rack
+end
+
+module RackngaTestUtils
+  include Rack::Test::Methods
+  include Webrat::Methods
+  include Webrat::Matchers
+end

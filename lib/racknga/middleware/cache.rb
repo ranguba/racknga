@@ -22,6 +22,8 @@ require 'racknga/cache_database'
 module Racknga
   module Middleware
     class Cache
+      KEY_KEY = "racknga.cache.key"
+
       def initialize(application, options={})
         @application = application
         @options = Utils.normalize_options(options || {})
