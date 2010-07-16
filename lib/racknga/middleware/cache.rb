@@ -80,7 +80,6 @@ module Racknga
 
       def skip_caching_response?(status, headers, body)
         return true if status != 200
-        return true if status != 200
 
         headers = Rack::Utils::HeaderHash.new(headers)
         content_type = headers["Content-Type"]
