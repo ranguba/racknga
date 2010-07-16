@@ -17,7 +17,7 @@ Kouhei Sutou:: <tt><kou@clear-code.com></tt>
 
 == ライセンス
 
-LGPL 2.1です。詳しくはlicense/LGPLを見てください。
+LGPL 2.1またはそれ以降のバージョンです。詳しくはlicense/LGPLを見てください。
 
 == 依存ソフトウェア
 
