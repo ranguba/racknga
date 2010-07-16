@@ -125,7 +125,7 @@ module Racknga
         [status, YAML.load(headers), [body]]
       end
 
-      def compute_chunksum(status, encoded_headers, encoded_body)
+      def compute_checksum(status, encoded_headers, encoded_body)
         md5 = Digest::MD5.new
         md5 << status.to_s
         md5 << ":"
@@ -138,7 +138,7 @@ module Racknga
       def valid_cache?(status, encoded_headers, encoded_body, checksum)
         return false if status.nil? or encoded_headers.nil? or encoded_body.nil?
         return false if checksum.nil?
-        compute_chunksum(status, encoded_headers, encoded_body) == checksum
+        compute_checksum(status, encoded_headers, encoded_body) == checksum
       end
     end
   end
