@@ -15,6 +15,8 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
+require 'groonga'
+
 module Racknga
   class CacheDatabase
     def initialize(database_path)
@@ -56,6 +58,7 @@ module Racknga
           table.uint32("status")
           table.short_text("headers")
           table.text("body", :compress => :lzo)
+          table.short_text("checksum")
           table.time("created_at")
         end
       end

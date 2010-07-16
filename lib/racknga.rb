@@ -15,11 +15,9 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-require 'groonga'
 require 'rack'
 
 require 'racknga/version'
 require 'racknga/utils'
-require 'racknga/middleware/cache'
 require 'racknga/middleware/deflater'
 require 'racknga/middleware/exception_notifier'

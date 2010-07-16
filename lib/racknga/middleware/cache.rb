@@ -15,6 +15,7 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
+require 'digest/md5'
 require 'yaml'
 require 'racknga/cache_database'
 
@@ -99,10 +100,13 @@ module Racknga
           stringified_body << data
         end
         headers = headers.to_hash
+        encoded_headers = headers.to_yaml
+        encoded_body = stringified_body.force_encoding("ASCII-8BIT")
         cache[key] = {
           :status => status,
-          :headers => headers.to_yaml,
-          :body => stringified_body.force_encoding("ASCII-8BIT"),
+          :headers => encoded_headers,
+          :body => encoded_body,
+          :checksum => compute_checksum(status, encoded_headers, encoded_body),
           :created_at => now,
         }
         body = [stringified_body]
@@ -110,12 +114,31 @@ module Racknga
       end
 
       def handle_request_with_cache(cache, key, record, request)
-        body = record["body"]
-        return handle_request(cache, key, request) if body.nil?
-
         status = record["status"]
-        headers = YAML.load(record["headers"])
-        [status, headers, [body]]
+        headers = record["headers"]
+        body = record["body"]
+        checksum = record["checksum"]
+        if valid_cache?(status, headers, body, checksum)
+          return handle_request(cache, key, request)
+        end
+
+        [status, YAML.load(headers), [body]]
+      end
+
+      def compute_chunksum(status, encoded_headers, encoded_body)
+        md5 = Digest::MD5.new
+        md5 << status.to_s
+        md5 << ":"
+        md5 << encoded_headers
+        md5 << ":"
+        md5 << encoded_body
+        md5.hexdigest.force_encoding("ASCII-8BIT")
+      end
+
+      def valid_cache?(status, encoded_headers, encoded_body, checksum)
+        return false if status.nil? or encoded_headers.nil? or encoded_body.nil?
+        return false if checksum.nil?
+        compute_chunksum(status, encoded_headers, encoded_body) == checksum
       end
     end
   end
