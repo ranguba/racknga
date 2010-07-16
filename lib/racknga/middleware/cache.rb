@@ -22,6 +22,25 @@ require 'racknga/cache_database'
 
 module Racknga
   module Middleware
+    class PerUserAgentCache
+      def initialize(application)
+        @application = application
+      end
+
+      def call(environment)
+        mobile = environment["rack.jpmobile"]
+        if mobile
+          last_component = mobile.class.name.split(/::/).last
+          user_agent_key = "mobile:#{last_component.downcase}"
+        else
+          user_agent_key = "pc"
+        end
+        key = environment[Cache::KEY_KEY]
+        environment[Cache::KEY_KEY] = [key, user_agent_key].join(":")
+        @application.call(environment)
+      end
+    end
+
     class Cache
       KEY_KEY = "racknga.cache.key"
 
