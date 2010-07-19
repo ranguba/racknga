@@ -6,7 +6,8 @@ racknga（らくんが）
 
 == 説明
 
-rroongaの機能を利用したRackのミドルウェアを提供します。
+rroongaの機能を利用したRackのミドルウェアとrroongaの機能は利
+用してませんが役に立つミドルウェアを提供します。
 
 * rroonga: http://groonga.rubyforge.org/
 * Rack: http://rack.rubyforge.org/
@@ -25,19 +26,29 @@ LGPL 2.1またはそれ以降のバージョンです。詳しくはlicense/LGPL
 * rroonga
 * Rack
 
+=== あるとよいソフトウェア
+
+* jpmobile
+
 == インストール
 
   % sudo gem install racknga
-
-== ドキュメント
-
-http://groonga.rubyforge.org/racknga/
 
 == メーリングリスト
 
 質問、要望、バグ報告などはgroongaのMLにお願いします。
 
 http://lists.sourceforge.jp/mailman/listinfo/groonga-dev
+
+== ドキュメント
+
+RackngaにはRackアプリケーションに有用なミドルウェアをたくさん
+提供しています。ここでは、オプションなど詳細な情報は
+http://groonga.rubyforge.org/racknga/ を参照してください。
+
+=== Racknga::Middleware::Cache
+
+...
 
 == 感謝
 
