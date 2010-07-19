@@ -42,7 +42,7 @@ module MiddlewareRangeTests
   end
 
   def test_both
-    get("/", {}, {"Range" => "bytes=200-499"})
+    get("/", {}, {"HTTP_RANGE" => "bytes=200-499"})
 
     assert_response(206,
                     "300",
@@ -51,7 +51,7 @@ module MiddlewareRangeTests
   end
 
   def test_first_byte_only
-    get("/", {}, {"Range" => "bytes=200-"})
+    get("/", {}, {"HTTP_RANGE" => "bytes=200-"})
 
     data_length = @body.bytesize
     expected_bytes = data_length - 200
@@ -62,7 +62,7 @@ module MiddlewareRangeTests
   end
 
   def test_last_byte_only
-    get("/", {}, {"Range" => "bytes=-200"})
+    get("/", {}, {"HTTP_RANGE" => "bytes=-200"})
 
     data_length = @body.bytesize
     first_byte = data_length - 200
@@ -73,7 +73,7 @@ module MiddlewareRangeTests
   end
 
   def test_no_position
-    get("/", {}, {"Range" => "bytes=-"})
+    get("/", {}, {"HTTP_RANGE" => "bytes=-"})
 
     assert_response(416, "0", nil, "")
   end
@@ -82,8 +82,8 @@ module MiddlewareRangeTests
     get("/",
         {},
         {
-          "Range" => "bytes=200-499",
-          "If-Range" => @ogv.mtime.httpdate,
+          "HTTP_RANGE" => "bytes=200-499",
+          "HTTP_IF_RANGE" => @ogv.mtime.httpdate,
         })
 
     data_length = @body.bytesize
@@ -94,8 +94,8 @@ module MiddlewareRangeTests
     get("/",
         {},
         {
-          "Range" => "bytes=200-499",
-          "If-Range" => Time.now.httpdate,
+          "HTTP_RANGE" => "bytes=200-499",
+          "HTTP_IF_RANGE" => Time.now.httpdate,
         })
 
     assert_response(200, "#{@body.bytesize}", nil, @body)
@@ -105,8 +105,8 @@ module MiddlewareRangeTests
     get("/",
         {},
         {
-          "Range" => "bytes=200-499",
-          "If-Range" => @etag,
+          "HTTP_RANGE" => "bytes=200-499",
+          "HTTP_IF_RANGE" => @etag,
         })
 
     assert_response(206,
@@ -119,8 +119,8 @@ module MiddlewareRangeTests
     get("/",
         {},
         {
-          "Range" => "bytes=200-499",
-          "If-Range" => "not-match-etag",
+          "HTTP_RANGE" => "bytes=200-499",
+          "HTTP_IF_RANGE" => "not-match-etag",
         })
 
     assert_response(200, "#{@body.bytesize}", nil, @body)

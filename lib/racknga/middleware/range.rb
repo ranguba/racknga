@@ -16,6 +16,8 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
+require 'time'
+
 module Racknga
   module Middleware
     class Range
@@ -27,40 +29,39 @@ module Racknga
         status, headers, body = @application.call(environment)
         return [status, headers, body] if status != 200
 
-        request_headers = Rack::Utils::HeaderHash.new(environment)
-        range = request_headers["Range"]
+        headers = Rack::Utils::HeaderHash.new(headers)
+        headers["Accept-Ranges"] = "bytes"
+        request = Rack::Request.new(environment)
+        range = request.env["HTTP_RANGE"]
         if range and /\Abytes=(\d*)-(\d*)\z/ =~ range
           first_byte, last_byte = $1, $2
-          status, headers, body = apply_range(status, headers, body,
-                                              request_headers,
+          status, headers, body = apply_range(status, headers, body, request,
                                               first_byte, last_byte)
         end
-        [status, headers, body]
+        [status, headers.to_hash, body]
       end
 
       private
-      def apply_range(status, headers, body, request_headers,
-                      first_byte, last_byte)
-        headers = Rack::Utils::HeaderHash.new(headers)
-        unless use_range?(request_headers, headers)
-          return [status, headers.to_hash, body]
+      def apply_range(status, headers, body, request, first_byte, last_byte)
+        unless use_range?(request, headers)
+          return [status, headers, body]
         end
         length = guess_length(headers, body)
         return [status, headers.to_hash, body] if length.nil?
 
-        if first_byte.blank? and last_byte.blank?
+        if first_byte.empty? and last_byte.empty?
           headers["Content-Length"] = "0"
           return [Rack::Utils.status_code(:requested_range_not_satisfiable),
-                  headers.to_hash,
+                  headers,
                   []]
         end
 
-        if last_byte.blank?
+        if last_byte.empty?
           last_byte = length - 1
         else
           last_byte = last_byte.to_i
         end
-        if first_byte.blank?
+        if first_byte.empty?
           first_byte = length - last_byte
           last_byte = length - 1
         else
@@ -69,7 +70,6 @@ module Racknga
 
         byte_range_spec = "#{first_byte}-#{last_byte}/#{length}"
         range_length = last_byte - first_byte + 1
-        headers["Accept-Ranges"] = "bytes"
         headers["Content-Range"] = "bytes #{byte_range_spec}"
         headers["Content-Length"] = range_length.to_s
         stream = RangeStream.new(body, first_byte, range_length)
@@ -79,17 +79,17 @@ module Racknga
           end
         end
         [Rack::Utils.status_code(:partial_content),
-         headers.to_hash,
+         headers,
          stream]
       end
 
-      def use_range?(request_headers, headers)
-        if_range = request_headers["If-Range"]
-        return true if if_range.blank?
+      def use_range?(request, headers)
+        if_range = request.env["HTTP_IF_RANGE"]
+        return true if if_range.nil?
 
         if /\A(?:Mo|Tu|We|Th|Fr|Sa|Su)/ =~ if_range
           last_modified = headers["Last-Modified"]
-          return false if last_modified.blank?
+          return false if last_modified.nil?
           begin
             if_range = Time.httpdate(if_range)
             last_modified = Time.httpdate(last_modified)
@@ -104,7 +104,7 @@ module Racknga
 
       def guess_length(headers, body)
         length = headers["Content-Length"]
-        return length.to_i unless length.blank?
+        return length.to_i unless length.nil?
         return body.stat.size if body.respond_to?(:stat)
         nil
       end
