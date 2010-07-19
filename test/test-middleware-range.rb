@@ -14,7 +14,7 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-class MiddlewareRangeTest < Test::Unit::TestCase
+module MiddlewareRangeTests
   include RackngaTestUtils
 
   def app
@@ -27,7 +27,7 @@ class MiddlewareRangeTest < Test::Unit::TestCase
          "Last-Modified" => @ogv.mtime.httpdate,
          "ETag" => @etag,
        },
-       [@body]]
+       application_body]
     end
     Racknga::Middleware::Range.new(application)
   end
@@ -140,5 +140,21 @@ class MiddlewareRangeTest < Test::Unit::TestCase
                    :content_range => response.headers["Content-Range"],
                    :body => response.body,
                  })
+  end
+end
+
+class MiddlewareRangeDataTest < Test::Unit::TestCase
+  include MiddlewareRangeTests
+
+  def application_body
+    [@body]
+  end
+end
+
+class MiddlewareRangeFileTest < Test::Unit::TestCase
+  include MiddlewareRangeTests
+
+  def application_body
+    @ogv.open("rb")
   end
 end
