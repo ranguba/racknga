@@ -31,4 +31,12 @@ module RackngaTestUtils
   include Rack::Test::Methods
   include Webrat::Methods
   include Webrat::Matchers
+
+  def fixtures_dir
+    Pathname(__FILE__).dirname + "fixtures"
+  end
+
+  def response
+    webrat_session.response
+  end
 end

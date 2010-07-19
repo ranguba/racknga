@@ -1,0 +1,159 @@
+# -*- coding: utf-8 -*-
+#
+# Copyright (C) 2010  Kouhei Sutou <kou@clear-code.com>
+#
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2 of the License, or (at your option) any later version.
+#
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public
+# License along with this library; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+module Racknga
+  module Middleware
+    class Range
+      def initialize(application)
+        @application = application
+      end
+
+      def call(environment)
+        status, headers, body = @application.call(environment)
+        return [status, headers, body] if status != 200
+
+        request_headers = Rack::Utils::HeaderHash.new(environment)
+        range = request_headers["Range"]
+        if range and /\Abytes=(\d*)-(\d*)\z/ =~ range
+          first_byte, last_byte = $1, $2
+          status, headers, body = apply_range(status, headers, body,
+                                              request_headers,
+                                              first_byte, last_byte)
+        end
+        [status, headers, body]
+      end
+
+      private
+      def apply_range(status, headers, body, request_headers,
+                      first_byte, last_byte)
+        headers = Rack::Utils::HeaderHash.new(headers)
+        unless use_range?(request_headers, headers)
+          return [status, headers.to_hash, body]
+        end
+        length = guess_length(headers, body)
+        return [status, headers.to_hash, body] if length.nil?
+
+        if first_byte.blank? and last_byte.blank?
+          headers["Content-Length"] = "0"
+          return [Rack::Utils.status_code(:requested_range_not_satisfiable),
+                  headers.to_hash,
+                  []]
+        end
+
+        if last_byte.blank?
+          last_byte = length - 1
+        else
+          last_byte = last_byte.to_i
+        end
+        if first_byte.blank?
+          first_byte = length - last_byte
+          last_byte = length - 1
+        else
+          first_byte = first_byte.to_i
+        end
+
+        byte_range_spec = "#{first_byte}-#{last_byte}/#{length}"
+        range_length = last_byte - first_byte + 1
+        headers["Accept-Ranges"] = "bytes"
+        headers["Content-Range"] = "bytes #{byte_range_spec}"
+        headers["Content-Length"] = range_length.to_s
+        stream = RangeStream.new(body, first_byte, range_length)
+        if body.respond_to?(:to_path)
+          def stream.to_path
+            @body.to_path
+          end
+        end
+        [Rack::Utils.status_code(:partial_content),
+         headers.to_hash,
+         stream]
+      end
+
+      def use_range?(request_headers, headers)
+        if_range = request_headers["If-Range"]
+        return true if if_range.blank?
+
+        if /\A(?:Mo|Tu|We|Th|Fr|Sa|Su)/ =~ if_range
+          last_modified = headers["Last-Modified"]
+          return false if last_modified.blank?
+          begin
+            if_range = Time.httpdate(if_range)
+            last_modified = Time.httpdate(last_modified)
+          rescue ArgumentError
+            return true
+          end
+          if_range == last_modified
+        else
+          if_range == headers["ETag"]
+        end
+      end
+
+      def guess_length(headers, body)
+        length = headers["Content-Length"]
+        return length.to_i unless length.blank?
+        return body.stat.size if body.respond_to?(:stat)
+        nil
+      end
+
+      class RangeStream
+        def initialize(body, first_byte, length)
+          @body = body
+          @first_byte = first_byte
+          @length = length
+        end
+
+        def each
+          if @body.respond_to?(:seek)
+            @body.seek(@first_byte)
+            start = 0
+          else
+            start = @first_byte
+          end
+          rest = @length
+
+          @body.each do |chunk|
+            if chunk.respond_to?(:encoding)
+              if chunk.encoding != Encoding::ASCII_8BIT
+                chunk = chunk.dup.force_encoding(Encoding::ASCII_8BIT)
+              end
+            end
+
+            chunk_size = chunk.size
+            if start > 0
+              if chunk_size < start
+                start -= chunk_size
+                next
+              else
+                chunk = chunk[start..-1]
+                chunk_size -= start
+                start = 0
+              end
+            end
+            if rest > chunk_size
+              yield(chunk)
+              rest -= chunk_size
+            else
+              yield(chunk[0, rest])
+              rest -= rest
+            end
+            break if rest <= 0
+          end
+        end
+      end
+    end
+  end
+end
