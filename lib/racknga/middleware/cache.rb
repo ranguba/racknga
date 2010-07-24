@@ -55,13 +55,14 @@ module Racknga
       def call(environment)
         request = Rack::Request.new(environment)
         return @application.call(environment) unless use_cache?(request)
+        age = @database.configuration.age
         key = environment[KEY_KEY] || request.fullpath
         cache = @database.responses
         record = cache[key]
-        if record
-          handle_request_with_cache(cache, key, record, request)
+        if record and record.age == age
+          handle_request_with_cache(cache, key, age, record, request)
         else
-          handle_request(cache, key, request)
+          handle_request(cache, key, age, request)
         end
       end
 
@@ -94,7 +95,7 @@ module Racknga
         true
       end
 
-      def handle_request(cache, key, request)
+      def handle_request(cache, key, age, request)
         status, headers, body = @application.call(request.env)
         if skip_caching_response?(status, headers, body)
           return [status, headers, body]
@@ -115,19 +116,20 @@ module Racknga
           :headers => encoded_headers,
           :body => encoded_body,
           :checksum => compute_checksum(status, encoded_headers, encoded_body),
+          :age => age,
           :created_at => now,
         }
         body = [stringified_body]
         [status, headers, body]
       end
 
-      def handle_request_with_cache(cache, key, record, request)
-        status = record["status"]
-        headers = record["headers"]
-        body = record["body"]
-        checksum = record["checksum"]
+      def handle_request_with_cache(cache, key, age, record, request)
+        status = record.status
+        headers = record.headers
+        body = record.body
+        checksum = record.checksum
         if valid_cache?(status, headers, body, checksum)
-          return handle_request(cache, key, request)
+          return handle_request(cache, key, age, request)
         end
 
         [status, YAML.load(headers), [body]]
@@ -143,7 +145,7 @@ module Racknga
         md5.hexdigest.force_encoding("ASCII-8BIT")
       end
 
-      def valid_cache?(status, encoded_headers, encoded_body, checksum)
+      def valid_cache?(status, encoded_headers, encoded_body, checksum, age)
         return false if status.nil? or encoded_headers.nil? or encoded_body.nil?
         return false if checksum.nil?
         compute_checksum(status, encoded_headers, encoded_body) == checksum

@@ -32,10 +32,24 @@ module Racknga
       @context["Responses"]
     end
 
-    def purge_old_responses(threshold_time_stamp=nil)
-      threshold_time_stamp ||= Time.now
-      responses.each do |response|
-        response.delete if response.created_at < threshold_time_stamp
+    def configurations
+      @context["Configurations"]
+    end
+
+    def configuration
+      configurations["default"]
+    end
+
+    def purge_old_responses
+      age_modulo = 2 ** 32
+      age = configuration.age
+      previous_age = (age - 1).modulo(age_modulo)
+      connfiguration.age = (age + 1).modulo(age_modulo)
+
+      responses.select do |record|
+        record.age == previous_age
+      end.each do |response|
+        response.key.delete
       end
     end
 
@@ -46,6 +60,7 @@ module Racknga
         create_database
       end
       ensure_tables
+      ensure_default_configuration
     end
 
     def close_database
@@ -62,7 +77,18 @@ module Racknga
           table.short_text("headers")
           table.text("body", :compress => :lzo)
           table.short_text("checksum")
+          table.uint32("age")
           table.time("created_at")
+        end
+      end
+    end
+
+    def create_configurations_table
+      Groonga::Schema.define(:context => @context) do |schema|
+        schema.create_table("Configurations",
+                            :type => :hash,
+                            :key_type => "ShortText") do |table|
+          table.uint32("age")
         end
       end
     end
@@ -74,8 +100,12 @@ module Racknga
     end
 
     def ensure_tables
-      return if responses
+      create_configurations_table
       create_responses_table
+    end
+
+    def ensure_default_configuration
+      configurations.add("default")
     end
   end
 end
