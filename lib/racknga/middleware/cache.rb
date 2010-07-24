@@ -145,7 +145,7 @@ module Racknga
         md5.hexdigest.force_encoding("ASCII-8BIT")
       end
 
-      def valid_cache?(status, encoded_headers, encoded_body, checksum, age)
+      def valid_cache?(status, encoded_headers, encoded_body, checksum)
         return false if status.nil? or encoded_headers.nil? or encoded_body.nil?
         return false if checksum.nil?
         compute_checksum(status, encoded_headers, encoded_body) == checksum
