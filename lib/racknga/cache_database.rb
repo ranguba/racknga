@@ -46,10 +46,8 @@ module Racknga
       previous_age = (age - 1).modulo(age_modulo)
       configuration.age = (age + 1).modulo(age_modulo)
 
-      responses.select do |record|
-        record.age == previous_age
-      end.each do |response|
-        response.key.delete
+      responses.each do |response|
+        response.delete if response.age == previous_age
       end
     end
 
