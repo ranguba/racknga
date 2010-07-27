@@ -45,7 +45,7 @@ module Racknga
         request = Rack::Request.new(environment)
         format = "%s - %s [%s] \"%s %s %s\" %d %s %0.4f"
         message = format % [request.ip || "-",
-                            environment["REMOTE_USER"] ||
+                            environment["REMOTE_USER"] || "-",
                             end_time.strftime("%d/%b/%Y %H:%M:%S"),
                             request.request_method,
                             environment["HTTP_VERSION"],
