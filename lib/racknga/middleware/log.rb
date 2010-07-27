@@ -48,6 +48,7 @@ module Racknga
                             environment["REMOTE_USER"] || "-",
                             end_time.strftime("%d/%b/%Y %H:%M:%S"),
                             request.request_method,
+                            request.fullpath,
                             environment["HTTP_VERSION"],
                             status.to_s[0..3],
                             length,
