@@ -21,7 +21,7 @@ require 'racknga/log_database'
 module Racknga
   module Middleware
     class Log
-      KEY_KEY = "racknga.logger"
+      LOGGER_KEY = "racknga.logger"
 
       def initialize(application, options={})
         @application = application
@@ -33,7 +33,7 @@ module Racknga
       end
 
       def call(environment)
-        environment["racknga.logger"] = @logger
+        environment[LOGGER_KEY] = @logger
 
         start_time = Time.now
         status, headers, body = @application.call(environment)
@@ -41,7 +41,7 @@ module Racknga
         request_time = end_time - start_time
 
         length = headers["Content-Length"] || "-"
-        length = "0" if length == "0"
+        length = "-" if length == "0"
         request = Rack::Request.new(environment)
         format = "%s - %s [%s] \"%s %s %s\" %d %s %0.4f"
         message = format % [request.ip || "-",
@@ -54,7 +54,7 @@ module Racknga
                             request_time]
         @logger.log("access",
                     request.fullpath,
-                    message,
+                    :message => message,
                     :runtime => request_time)
 
         [status, headers, body]
@@ -74,10 +74,9 @@ module Racknga
           @entries = @database.entries
         end
 
-        def log(tag, path, message, options={})
+        def log(tag, path, options={})
           @entries.add(options.merge(:tag => tag,
-                                     :path => path,
-                                     :message => message))
+                                     :path => path))
         end
       end
     end
