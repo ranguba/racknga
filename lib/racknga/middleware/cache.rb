@@ -128,7 +128,7 @@ module Racknga
         headers = record.headers
         body = record.body
         checksum = record.checksum
-        if valid_cache?(status, headers, body, checksum)
+        unless valid_cache?(status, headers, body, checksum)
           return handle_request(cache, key, age, request)
         end
 
