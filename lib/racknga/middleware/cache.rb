@@ -127,14 +127,14 @@ module Racknga
         [status, headers, body]
       end
 
-      def handle_request_with_cache(cache, key, age, record, request, start_time)
+      def handle_request_with_cache(cache, key, age, record, request)
         status = record.status
         headers = record.headers
         body = record.body
         checksum = record.checksum
         unless valid_cache?(status, headers, body, checksum)
           log("invalid", request)
-          return handle_request(cache, key, age, request, start_time)
+          return handle_request(cache, key, age, request)
         end
 
         log("hit", request)
@@ -163,7 +163,7 @@ module Racknga
         logger = env[Middleware::Log::LOGGER_KEY]
         return if logger.nil?
         start_time = env[START_TIME_KEY]
-        runtime = Time.now - start_time_key
+        runtime = Time.now - start_time
         logger.log("cache-#{tag}", request.fullpath, :runtime => runtime)
       end
     end
