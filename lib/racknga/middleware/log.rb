@@ -76,7 +76,8 @@ module Racknga
         end
 
         def log(tag, path, options={})
-          @entries.add(options.merge(:tag => tag,
+          @entries.add(options.merge(:time_stamp => Time.now,
+                                     :tag => tag,
                                      :path => path))
         end
       end
