@@ -73,7 +73,7 @@ module Racknga
                             :key_type => "ShortText") do |table|
           table.uint32("status")
           table.short_text("headers")
-          table.text("body", :compress => :lzo)
+          table.text("body", :compress => :zlib)
           table.short_text("checksum")
           table.uint32("age")
           table.time("created_at")
