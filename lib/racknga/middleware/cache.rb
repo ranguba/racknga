@@ -43,6 +43,7 @@ module Racknga
 
     class Cache
       KEY_KEY = "racknga.cache.key"
+      START_TIME_KEY = "racknga.cache.start_time"
 
       def initialize(application, options={})
         @application = application
@@ -57,6 +58,7 @@ module Racknga
         return @application.call(environment) unless use_cache?(request)
         age = @database.configuration.age
         key = environment[KEY_KEY] || request.fullpath
+        environment[START_TIME_KEY] = Time.now
         cache = @database.responses
         record = cache[key]
         if record and record.age == age
@@ -98,6 +100,7 @@ module Racknga
       def handle_request(cache, key, age, request)
         status, headers, body = @application.call(request.env)
         if skip_caching_response?(status, headers, body)
+          log("skip", request)
           return [status, headers, body]
         end
 
@@ -120,18 +123,21 @@ module Racknga
           :created_at => now,
         }
         body = [stringified_body]
+        log("store", request)
         [status, headers, body]
       end
 
-      def handle_request_with_cache(cache, key, age, record, request)
+      def handle_request_with_cache(cache, key, age, record, request, start_time)
         status = record.status
         headers = record.headers
         body = record.body
         checksum = record.checksum
         unless valid_cache?(status, headers, body, checksum)
-          return handle_request(cache, key, age, request)
+          log("invalid", request)
+          return handle_request(cache, key, age, request, start_time)
         end
 
+        log("hit", request)
         [status, YAML.load(headers), [body]]
       end
 
@@ -149,6 +155,16 @@ module Racknga
         return false if status.nil? or encoded_headers.nil? or encoded_body.nil?
         return false if checksum.nil?
         compute_checksum(status, encoded_headers, encoded_body) == checksum
+      end
+
+      def log(tag, request)
+        return unless Middleware.const_defined?(:Log)
+        env = request.env
+        logger = env[Middleware::Log::LOGGER_KEY]
+        return if logger.nil?
+        start_time = env[START_TIME_KEY]
+        runtime = Time.now - start_time_key
+        logger.log("cache-#{tag}", request.fullpath, :runtime => runtime)
       end
     end
   end
