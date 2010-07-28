@@ -45,8 +45,17 @@ module Racknga
       @database.close
     end
 
+    def purge_old_entries(base_time=nil)
+      base_time ||= Time.now - 60 * 60 * 24
+      entries.select do |record|
+        record.time_stamp < base_time
+      end.each do |record|
+        record.key.delete
+      end
+    end
+
     private
-    def create_responses_table
+    def create_tables
       Groonga::Schema.define(:context => @context) do |schema|
         schema.create_table("Tags",
                             :type => :hash,
@@ -83,7 +92,7 @@ module Racknga
     end
 
     def ensure_tables
-      create_responses_table
+      create_tables
     end
   end
 end
