@@ -63,7 +63,7 @@ module Racknga
         end
 
         schema.create_table("Paths",
-                            :type => :hash,
+                            :type => :patricia_trie,
                             :key_type => "ShortText") do |table|
         end
 
