@@ -61,7 +61,7 @@ module Racknga
         format = "%s - %s [%s] \"%s %s %s\" %s %s \"%s\" \"%s\" %0.8f"
         message = format % [request.ip || "-",
                             request.env["REMOTE_USER"] || "-",
-                            end_time.strftime("%d/%b/%Y %H:%M:%S"),
+                            end_time.dup.utc.strftime("%d/%b/%Y:%H:%M:%S %z"),
                             request.request_method,
                             request.fullpath,
                             request.env["SERVER_PROTOCOL"] || "-",
