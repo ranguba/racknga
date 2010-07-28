@@ -58,7 +58,7 @@ module Racknga
         request_time = end_time - start_time
         length = headers["Content-Length"] || "-"
         length = "-" if length == "0"
-        format = "%s - %s [%s] \"%s %s %s\" %s %s \"%s\" \"%s\" %0.4f"
+        format = "%s - %s [%s] \"%s %s %s\" %s %s \"%s\" \"%s\" %0.8f"
         message = format % [request.ip || "-",
                             request.env["REMOTE_USER"] || "-",
                             end_time.strftime("%d/%b/%Y %H:%M:%S"),
