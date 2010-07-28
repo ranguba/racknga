@@ -58,7 +58,7 @@ module Racknga
     def create_tables
       Groonga::Schema.define(:context => @context) do |schema|
         schema.create_table("Tags",
-                            :type => :hash,
+                            :type => :patricia_trie,
                             :key_type => "ShortText") do |table|
         end
 
