@@ -64,7 +64,7 @@ module Racknga
                             end_time.strftime("%d/%b/%Y %H:%M:%S"),
                             request.request_method,
                             request.fullpath,
-                            request.env["HTTP_VERSION"],
+                            request.env["SERVER_PROTOCOL"] || "-",
                             status.to_s[0..3],
                             length,
                             request.env["HTTP_REFERER"] || "-",
