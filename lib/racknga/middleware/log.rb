@@ -38,25 +38,9 @@ module Racknga
         start_time = Time.now
         status, headers, body = @application.call(environment)
         end_time = Time.now
-        request_time = end_time - start_time
 
-        length = headers["Content-Length"] || "-"
-        length = "-" if length == "0"
         request = Rack::Request.new(environment)
-        format = "%s - %s [%s] \"%s %s %s\" %d %s %0.4f"
-        message = format % [request.ip || "-",
-                            environment["REMOTE_USER"] || "-",
-                            end_time.strftime("%d/%b/%Y %H:%M:%S"),
-                            request.request_method,
-                            request.fullpath,
-                            environment["HTTP_VERSION"],
-                            status.to_s[0..3],
-                            length,
-                            request_time]
-        @logger.log("access",
-                    request.fullpath,
-                    :message => message,
-                    :runtime => request_time)
+        log(start_time, end_time, request, status, headers, body)
 
         [status, headers, body]
       end
@@ -67,6 +51,29 @@ module Racknga
 
       def close_database
         @database.close_database
+      end
+
+      private
+      def log(start_time, end_time, request, status, headers, body)
+        request_time = end_time - start_time
+        length = headers["Content-Length"] || "-"
+        length = "-" if length == "0"
+        format = "%s - %s [%s] \"%s %s %s\" %s %s \"%s\" \"%s\" %0.4f"
+        message = format % [request.ip || "-",
+                            request.env["REMOTE_USER"] || "-",
+                            end_time.strftime("%d/%b/%Y %H:%M:%S"),
+                            request.request_method,
+                            request.fullpath,
+                            request.env["HTTP_VERSION"],
+                            status.to_s[0..3],
+                            length,
+                            request.env["HTTP_REFERER"] || "-",
+                            request.user_agent || "-",
+                            request_time]
+        @logger.log("access",
+                    request.fullpath,
+                    :message => message,
+                    :runtime => request_time)
       end
 
       class Logger
