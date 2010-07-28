@@ -67,10 +67,16 @@ module Racknga
                             :key_type => "ShortText") do |table|
         end
 
+        schema.create_table("UserAgents",
+                            :type => :hash,
+                            :key_type => "ShortText") do |table|
+        end
+
         schema.create_table("Entries") do |table|
           table.time("time_stamp")
           table.reference("tag", "Tags")
           table.reference("path", "Paths")
+          table.reference("user_agent", "UserAgents")
           table.float("runtime")
           table.short_text("message", :compress => :zlib)
         end
@@ -81,6 +87,10 @@ module Racknga
 
         schema.change_table("Paths") do |table|
           table.index("Entries.path")
+        end
+
+        schema.change_table("UserAgents") do |table|
+          table.index("Entries.user_agent")
         end
       end
     end

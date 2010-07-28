@@ -73,6 +73,7 @@ module Racknga
         @logger.log("access",
                     request.fullpath,
                     :message => message,
+                    :user_agent => request.user_agent,
                     :runtime => request_time)
       end
 
