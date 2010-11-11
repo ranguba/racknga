@@ -37,7 +37,7 @@ module Groonga
     end
 
     def offset
-      start_offset || 0
+      (start_offset || 0) - 1
     end
   end
 
