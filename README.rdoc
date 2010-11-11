@@ -28,6 +28,10 @@ inclidng contributed patches.)
 * rroonga
 * Rack
 
+== Suggested libraries
+
+* will_paginate
+
 == Install
 
   % sudo gem install racknga

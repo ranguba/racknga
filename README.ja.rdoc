@@ -33,6 +33,7 @@ license/lgpl-2.1.txtを見てください。
 === あるとよいソフトウェア
 
 * jpmobile
+* will_paginate
 
 == インストール
 
@@ -51,6 +52,26 @@ RackngaにはRackアプリケーションに有用なミドルウェアをたく
 http://groonga.rubyforge.org/racknga/ を参照してください。
 
 === Racknga::Middleware::Cache
+
+...
+
+=== Racknga::Middleware::Deflater
+
+...
+
+=== Racknga::Middleware::ExceptionNotifier
+
+...
+
+=== Racknga::Middleware::JSONP
+
+...
+
+=== Racknga::Middleware::Range
+
+...
+
+=== Racknga::Middleware::Log
 
 ...
 
