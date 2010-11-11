@@ -105,7 +105,7 @@ Hoe.spec('racknga') do
                          ["rack"]]
   project.spec_extras = {
     :extra_rdoc_files => Dir.glob("**/*.rdoc"),
-    :licenses => ["LGPL 2.1"]
+    :licenses => ["LGPL 2.1 or later"]
   }
   project.readme_file = "README.ja.rdoc"
 
