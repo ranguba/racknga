@@ -18,7 +18,8 @@ Kouhei Sutou:: <tt><kou@clear-code.com></tt>
 
 == ライセンス
 
-LGPL 2.1またはそれ以降のバージョンです。詳しくはlicense/LGPLを見てください。
+LGPL 2.1またはそれ以降のバージョンです。詳しくは
+license/lgpl-2.1.txtを見てください。
 
 （コントリビュートされたパッチなども含み、Kouhei Sutouが
 ライセンスを変更する権利を持ちます。）
