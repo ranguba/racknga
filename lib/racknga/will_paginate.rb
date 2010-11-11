@@ -19,13 +19,29 @@
 require "groonga"
 
 module Groonga
-  module Pagination
-    alias :total_pages :n_pages
-    alias :per_page :n_records_in_page
-    alias :total_entries :n_records
-    alias :out_of_bounds? :have_pages?
+  module WillPaginateAPI
+    def total_pages
+      n_pages
+    end
+
+    def per_page
+      n_records_in_page
+    end
+
+    def total_entries
+      n_records
+    end
+
+    def out_of_bounds?
+      current_page > total_pages
+    end
+
     def offset
       start_offset || 0
     end
+  end
+
+  module Pagination
+    include WillPaginateAPI
   end
 end
