@@ -151,7 +151,7 @@ def config
 
   domain = extract_domain(result)
   if domain.nil?
-    puts("domain doesn't exist: #{@domain}: #{result}")
+    puts("domain doesn't exist: #{@domain}: <\n#{result}\n>")
     exit(false)
   end
 
@@ -184,7 +184,7 @@ def report
   end
   domain = extract_domain(result)
   if domain.nil?
-    puts("domain doesn't exist: #{@domain}: #{result}")
+    puts("domain doesn't exist: #{@domain}: <\n#{result}\n>")
     exit(false)
   end
 
@@ -211,7 +211,7 @@ when "suggest"
   if success
     domains = extract_domains(result)
     if domains.empty?
-      puts "no domain: #{result.inspect}"
+      puts("no domain: <\n#{result}\n>")
       exit(false)
     else
       domains.each do |domain, processes|
