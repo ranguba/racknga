@@ -119,6 +119,10 @@ def parse_result(result)
   sections
 end
 
+def domains(result)
+  parse_result(result)["Domains"] || []
+end
+
 def vlabel
   case @type
   when "sessions"
@@ -144,7 +148,6 @@ def config
   else
     title = "Passenger: #{@type}: #{@domain}"
   end
-  sections = parse_result(result)
   puts(<<-EOC)
 graph_title #{title}
 graph_category passenger
@@ -152,7 +155,7 @@ graph_info Passenger #{@domain} #{@type}
 graph_vlabel #{vlabel}
 
 EOC
-  sections["Domains"].each do |domain, processes|
+  domains(result).each do |domain, processes|
     next if domain != @domain
     processes.sort_by do |attributes|
       attributes[:pid]
@@ -169,8 +172,7 @@ def report
     exit(false)
   end
 
-  sections = parse_result(result)
-  sections["Domains"].each do |domain, processes|
+  domains(result).each do |domain, processes|
     next if domain != @domain
     processes.sort_by do |attributes|
       attributes[:pid]
@@ -193,18 +195,17 @@ when "auto", "autoconf", "detect"
 when "suggest"
   success, result = passenger_status
   if success
-    sections = parse_result(result)
-    domains = sections["Domains"]
-    if domains
+    _domains = domains(result)
+    if _domains.empty?
+      puts "no domain: #{result.inspect}"
+      exit(false)
+    else
       domains.each do |domain, processes|
         puts "#{domain}_sessions"
         puts "#{domain}_processed"
         puts "#{domain}_uptime"
       end
       exit(true)
-    else
-      puts "no domain: #{result.inspect}"
-      exit(false)
     end
   else
     puts result
