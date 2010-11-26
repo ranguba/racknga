@@ -119,8 +119,14 @@ def parse_result(result)
   sections
 end
 
-def domains(result)
+def extract_domains(result)
   parse_result(result)["Domains"] || []
+end
+
+def extract_domain(result)
+  extract_domains(result).find do |name, processes|
+    name == @domain
+  end
 end
 
 def vlabel
@@ -143,11 +149,18 @@ def config
     exit(false)
   end
 
+  domain = extract_domain(result)
+  if domain.nil?
+    puts("domain doesn't exist: #{@domain}: #{result}")
+    exit(false)
+  end
+
   if @label
     title = "Passenger: #{@label}: #{@type}: #{@domain}"
   else
     title = "Passenger: #{@type}: #{@domain}"
   end
+
   puts(<<-EOC)
 graph_title #{title}
 graph_category passenger
@@ -155,13 +168,11 @@ graph_info Passenger #{@domain} #{@type}
 graph_vlabel #{vlabel}
 
 EOC
-  domains(result).each do |domain, processes|
-    next if domain != @domain
-    processes.sort_by do |attributes|
-      attributes[:pid]
-    end.each_with_index do |attributes, i|
-      puts("#{@type}#{i}.label #{i} (PID #{attributes[:pid]})")
-    end
+  name, processes = domain
+  processes.sort_by do |attributes|
+    attributes[:pid]
+  end.each_with_index do |attributes, i|
+    puts("#{@type}#{i}.label #{i} (PID #{attributes[:pid]})")
   end
 end
 
@@ -171,14 +182,17 @@ def report
     puts result
     exit(false)
   end
+  domain = extract_domain(result)
+  if domain.nil?
+    puts("domain doesn't exist: #{@domain}: #{result}")
+    exit(false)
+  end
 
-  domains(result).each do |domain, processes|
-    next if domain != @domain
-    processes.sort_by do |attributes|
-      attributes[:pid]
-    end.each_with_index do |attributes, i|
-      puts("#{@type}#{i}.value #{attributes[@type.to_sym]}")
-    end
+  name, processes = domain
+  processes.sort_by do |attributes|
+    attributes[:pid]
+  end.each_with_index do |attributes, i|
+    puts("#{@type}#{i}.value #{attributes[@type.to_sym]}")
   end
 end
 
@@ -195,8 +209,8 @@ when "auto", "autoconf", "detect"
 when "suggest"
   success, result = passenger_status
   if success
-    _domains = domains(result)
-    if _domains.empty?
+    domains = extract_domains(result)
+    if domains.empty?
       puts "no domain: #{result.inspect}"
       exit(false)
     else
