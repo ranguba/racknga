@@ -35,17 +35,17 @@ end
 end
 
 if @label
-  parameter_prefix = /\Apassenger_(?:#{@label}_)?domain_/
+  parameter_prefix = /\Apassenger_(?:#{@label}_)?application_/
 else
-  parameter_prefix = /\Apassenger_domain_/
+  parameter_prefix = /\Apassenger_application_/
 end
 parameter = File.basename($0).gsub(parameter_prefix, '')
 if /_(sessions|processed|uptime)\z/ =~ parameter
-  @domain = $PREMATCH
+  @application = $PREMATCH
   @type = $1
-  @domain = nil if @domain and @domain.empty?
+  @application = nil if @application and @application.empty?
 else
-  @domain = @type = nil
+  @application = @type = nil
 end
 
 def passenger_status
@@ -72,7 +72,7 @@ def parse_uptime(uptime)
   uptime_in_minutes
 end
 
-def extract_domain(path)
+def extract_application_name(path)
   components = path.split(/\//)
   ignore_components = ["current"]
   while ignore_components.include?(components.last)
@@ -84,24 +84,25 @@ end
 def parse_result(result)
   sections = {}
   section = nil
-  domain = nil
+  application_name = nil
   result.each_line do |line|
     case section
-    when "Domains"
+    when "Application groups"
       case line.chomp
       when /\A(.+):\s*\z/
         path = $1
-        domain = extract_domain(path)
-        sections[section] << [domain, []]
-      when /\A\s+PID:\s+(\d+)\s+
-                 Sessions:\s+(\d+)\s+
-                 Processed:\s+(\d+)\s+
-                 Uptime:\s+(.+)\z/x
+        application_name = extract_application_name(path)
+        sections[section] << [application_name, []]
+      when /\A\s+\*\s+
+              PID:\s+(\d+)\s+
+              Sessions:\s+(\d+)\s+
+              Processed:\s+(\d+)\s+
+              Uptime:\s+(.+)\z/x
         pid = $1.to_i
         sessions = $2.to_i
         processed = $3.to_i
         uptime = parse_uptime($4)
-        _domain, processes = sections[section].last
+        _application_name, processes = sections[section].last
         processes << {
           :pid => pid,
           :sessions => sessions,
@@ -119,13 +120,13 @@ def parse_result(result)
   sections
 end
 
-def extract_domains(result)
-  parse_result(result)["Domains"] || []
+def extract_applications(result)
+  parse_result(result)["Application groups"] || []
 end
 
-def extract_domain(result)
-  extract_domains(result).find do |name, processes|
-    name == @domain
+def extract_application(result)
+  extract_applications(result).find do |name, processes|
+    name == @application
   end
 end
 
@@ -149,26 +150,26 @@ def config
     exit(false)
   end
 
-  domain = extract_domain(result)
-  if domain.nil?
-    puts("domain doesn't exist: #{@domain}: <\n#{result}\n>")
+  application = extract_application(result)
+  if application.nil?
+    puts("application doesn't exist: #{@application}: <\n#{result}\n>")
     exit(false)
   end
 
   if @label
-    title = "Passenger: #{@label}: #{@type}: #{@domain}"
+    title = "Passenger: #{@label}: #{@type}: #{@application}"
   else
-    title = "Passenger: #{@type}: #{@domain}"
+    title = "Passenger: #{@type}: #{@application}"
   end
 
   puts(<<-EOC)
 graph_title #{title}
 graph_category passenger
-graph_info Passenger #{@domain} #{@type}
+graph_info Passenger #{@application} #{@type}
 graph_vlabel #{vlabel}
 
 EOC
-  name, processes = domain
+  name, processes = application
   processes.sort_by do |attributes|
     attributes[:pid]
   end.each_with_index do |attributes, i|
@@ -182,13 +183,13 @@ def report
     puts result
     exit(false)
   end
-  domain = extract_domain(result)
-  if domain.nil?
-    puts("domain doesn't exist: #{@domain}: <\n#{result}\n>")
+  application = extract_application(result)
+  if application.nil?
+    puts("application doesn't exist: #{@application}: <\n#{result}\n>")
     exit(false)
   end
 
-  name, processes = domain
+  name, processes = application
   processes.sort_by do |attributes|
     attributes[:pid]
   end.each_with_index do |attributes, i|
@@ -209,15 +210,15 @@ when "auto", "autoconf", "detect"
 when "suggest"
   success, result = passenger_status
   if success
-    domains = extract_domains(result)
-    if domains.empty?
-      puts("no domain: <\n#{result}\n>")
+    applications = extract_applications(result)
+    if applications.empty?
+      puts("no application: <\n#{result}\n>")
       exit(false)
     else
-      domains.each do |domain, processes|
-        puts "#{domain}_sessions"
-        puts "#{domain}_processed"
-        puts "#{domain}_uptime"
+      applications.each do |application, processes|
+        puts "#{application}_sessions"
+        puts "#{application}_processed"
+        puts "#{application}_uptime"
       end
       exit(true)
     end
@@ -226,12 +227,12 @@ when "suggest"
     exit(false)
   end
 else
-  if @domain.nil?
-    puts "no domain"
+  if @application.nil?
+    puts "no application"
     exit(false)
   end
   if @type.nil?
-    puts "no type: #{@domain}"
+    puts "no type: #{@application}"
     exit(false)
   end
   case mode
