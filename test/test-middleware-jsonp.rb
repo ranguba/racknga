@@ -40,13 +40,12 @@ class MiddlewareJSONPTest < Test::Unit::TestCase
 
   def test_no_jsonp
     get "/"
-    assert_equal(@body, webrat_session.response.body)
+    assert_not_jsonp_response(@body)
   end
 
   def test_jsonp
     get "/?callback=jsonp_callback"
-    assert_equal("jsonp_callback(#{@body});",
-                 webrat_session.response.body)
+    assert_jsonp_response("jsonp_callback(#{@body});")
   end
 
   def test_no_jsonp_cache_key
@@ -74,5 +73,30 @@ class MiddlewareJSONPTest < Test::Unit::TestCase
     get "/?callback=jsonp_callback"
     assert_equal("pc:/",
                  @environment[@cache_key_key])
+  end
+
+  private
+  def assert_jsonp_response(body)
+    response = webrat_session.response
+    assert_equal({
+                   :content_type => "text/javascript",
+                   :body => body,
+                 },
+                 {
+                   :content_type => response.headers["Content-Type"],
+                   :body => response.body,
+                 })
+  end
+
+  def assert_not_jsonp_response(body)
+    response = webrat_session.response
+    assert_equal({
+                   :content_type => "application/json",
+                   :body => body,
+                 },
+                 {
+                   :content_type => response.headers["Content-Type"],
+                   :body => response.body,
+                 })
   end
 end

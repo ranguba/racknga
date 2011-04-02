@@ -29,9 +29,11 @@ module Racknga
         update_cache_key(request) if callback
         status, headers, body = @application.call(environment)
         return [status, headers, body] unless callback
-        return [status, headers, body] unless json_response?(headers)
+        header_hash = Rack::Utils::HeaderHash.new(headers)
+        return [status, headers, body] unless json_response?(header_hash)
         body = Writer.new(callback, body)
-        [status, headers, body]
+        update_content_type(header_hash)
+        [status, header_hash, body]
       end
 
       private
@@ -53,11 +55,19 @@ module Racknga
         request.env[cache_key_key] = [key, path].compact.join(":")
       end
 
-      def json_response?(headers)
-        content_type = Rack::Utils::HeaderHash.new(headers)["Content-Type"]
-        content_type == "application/json" or
-          content_type == "application/javascript" or
-          content_type == "text/javascript"
+      def json_response?(header_hash)
+        content_type = header_hash["Content-Type"]
+        media_type = content_type.split(/\s*;\s*/, 2).first.downcase
+        media_type == "application/json" or
+          media_type == "application/javascript" or
+          media_type == "text/javascript"
+      end
+
+      def update_content_type(header_hash)
+        content_type = header_hash["Content-Type"]
+        media_type, parameters = content_type.split(/\s*;\s*/, 2)
+        updated_content_type = ["text/javascript", parameters].compact.join("; ")
+        header_hash["Content-Type"] = updated_content_type
       end
 
       class Writer
