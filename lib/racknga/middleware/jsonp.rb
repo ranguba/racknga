@@ -66,6 +66,8 @@ module Racknga
       def update_content_type(header_hash)
         content_type = header_hash["Content-Type"]
         media_type, parameters = content_type.split(/\s*;\s*/, 2)
+        # We should use application/javascript not
+        # text/javascript when all IE <= 8 are deprecated. :<
         updated_content_type = ["text/javascript", parameters].compact.join("; ")
         header_hash["Content-Type"] = updated_content_type
       end
