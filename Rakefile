@@ -17,7 +17,6 @@
 
 require 'English'
 
-require 'find'
 require 'fileutils'
 require 'pathname'
 require 'erb'
@@ -62,7 +61,7 @@ Racknga is a Rack middlewares that uses rroonga features.
 EOD
   spec.license = "LGPLv2.1 or later"
   spec.files = FileList["lib/**/*.rb",
-                        "{license,munin}/**/*",
+                        "{license,munin,doc/text/}/**/*",
                         "example/*.rb",
                         "AUTHORS",
                         "Rakefile",
@@ -121,11 +120,10 @@ namespace :reference do
   CLOBBER.include(reference_base_dir.to_s)
 
   po_dir = "doc/po"
+  pot_file = "#{po_dir}/#{spec.name}.pot"
   namespace :pot do
-    pot_file = "#{po_dir}/#{spec.name}.pot"
-
     directory po_dir
-    file pot_file => ["po", *html_files] do |t|
+    file pot_file => [po_dir, *html_files] do |t|
       sh("xml2po", "--keep-entities", "--output", t.name, *html_files)
     end
 
@@ -139,7 +137,15 @@ namespace :reference do
         po_file = "#{po_dir}/#{language}.po"
 
         file po_file => html_files do |t|
-          sh("xml2po", "--keep-entities", "--update", t.name, *html_files)
+          if Pathname(po_file).exist?
+            sh("xml2po", "--keep-entities", "--update", t.name, *html_files)
+          else
+            rake("reference:pot:generate")
+            sh("msginit",
+               "--input", pot_file,
+               "--output-file", po_file,
+               "--locale", language.to_s)
+          end
         end
 
         desc "Updates po file for #{language}."
@@ -149,10 +155,10 @@ namespace :reference do
 
     desc "Updates po files."
     task :update do
-      ruby($0, "clobber")
-      ruby($0, "yard")
+      rake("clobber")
+      rake("yard")
       translate_languages.each do |language|
-        ruby($0, "reference:po:#{language}:update")
+        rake("reference:po:#{language}:update")
       end
     end
   end
