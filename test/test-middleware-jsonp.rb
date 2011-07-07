@@ -36,31 +36,32 @@ class MiddlewareJSONPTest < Test::Unit::TestCase
     @environment = nil
     @body = "{}"
     @update_environment = nil
+    Capybara.app = app
   end
 
   def test_no_jsonp
-    get "/"
+    visit("/")
     assert_not_jsonp_response(@body)
   end
 
   def test_jsonp
-    get "/?callback=jsonp_callback"
+    visit("/?callback=jsonp_callback")
     assert_jsonp_response("jsonp_callback(#{@body});")
   end
 
   def test_no_jsonp_cache_key
-    get "/"
+    visit("/")
     assert_nil(@environment[@cache_key_key])
   end
 
   def test_jsonp_cache_key
-    get "/?callback=jsonp_callback"
+    visit("/?callback=jsonp_callback")
     assert_equal("/",
                  @environment[@cache_key_key])
   end
 
   def test_jsonp_cache_key_with_parameters
-    get "/?query=ruby&callback=jsonp_callback&_=1279288762"
+    visit("/?query=ruby&callback=jsonp_callback&_=1279288762")
     assert_equal("/?query=ruby",
                  @environment[@cache_key_key])
   end
@@ -70,33 +71,31 @@ class MiddlewareJSONPTest < Test::Unit::TestCase
       environment[@cache_key_key] = "pc"
       environment
     end
-    get "/?callback=jsonp_callback"
+    visit("/?callback=jsonp_callback")
     assert_equal("pc:/",
                  @environment[@cache_key_key])
   end
 
   private
   def assert_jsonp_response(body)
-    response = webrat_session.response
     assert_equal({
                    :content_type => "text/javascript",
                    :body => body,
                  },
                  {
-                   :content_type => response.headers["Content-Type"],
-                   :body => response.body,
+                   :content_type => page.response_headers["Content-Type"],
+                   :body => page.source,
                  })
   end
 
   def assert_not_jsonp_response(body)
-    response = webrat_session.response
     assert_equal({
                    :content_type => "application/json",
                    :body => body,
                  },
                  {
-                   :content_type => response.headers["Content-Type"],
-                   :body => response.body,
+                   :content_type => page.response_headers["Content-Type"],
+                   :body => page.source,
                  })
   end
 end

@@ -14,29 +14,25 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-require 'rubygems'
-
-require 'rack/test'
-require 'webrat'
+require "test/unit/capybara"
 require 'json'
 
 require 'racknga'
 require 'racknga/middleware/cache'
 
-Webrat.configure do |config|
-  config.mode = :rack
+Capybara.configure do |config|
+  config.default_driver = nil
+  config.current_driver = nil
 end
 
 module RackngaTestUtils
-  include Rack::Test::Methods
-  include Webrat::Methods
-  include Webrat::Matchers
+  include Capybara::DSL
 
   def fixtures_dir
     Pathname(__FILE__).dirname + "fixtures"
   end
 
-  def response
-    webrat_session.response
+  def get(*args)
+    page.driver.get(*args)
   end
 end

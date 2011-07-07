@@ -39,6 +39,7 @@ module MiddlewareRangeTests
     end
     stat = @ogv.stat
     @etag = "%x-%x-%x" % [stat.ino, stat.size, stat.mtime.to_i * 1_000_000]
+    Capybara.app = app
   end
 
   def test_both
@@ -135,10 +136,10 @@ module MiddlewareRangeTests
                    :body => body,
                  },
                  {
-                   :status => response.status,
-                   :content_length => response.headers["Content-Length"],
-                   :content_range => response.headers["Content-Range"],
-                   :body => response.body,
+                   :status => page.status_code,
+                   :content_length => page.response_headers["Content-Length"],
+                   :content_range => page.response_headers["Content-Range"],
+                   :body => page.source,
                  })
   end
 end
