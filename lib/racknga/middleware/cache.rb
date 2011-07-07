@@ -45,6 +45,7 @@ module Racknga
       KEY_KEY = "racknga.cache.key"
       START_TIME_KEY = "racknga.cache.start_time"
 
+      attr_reader :database
       def initialize(application, options={})
         @application = application
         @options = Utils.normalize_options(options || {})
@@ -57,7 +58,7 @@ module Racknga
         request = Rack::Request.new(environment)
         return @application.call(environment) unless use_cache?(request)
         age = @database.configuration.age
-        key = environment[KEY_KEY] || request.fullpath
+        key = normalize_key(environment[KEY_KEY] || request.fullpath)
         environment[START_TIME_KEY] = Time.now
         cache = @database.responses
         record = cache[key]
@@ -95,6 +96,14 @@ module Racknga
           return false if /\+xml\z/ =~ sub_type
         end
         true
+      end
+
+      def normalize_key(key)
+        if key.size > 4096
+          Digest::SHA1.hexdigest(key).force_encoding("ASCII-8BIT")
+        else
+          key
+        end
       end
 
       def handle_request(cache, key, age, request)
