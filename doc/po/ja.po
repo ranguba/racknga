@@ -1,0 +1,4407 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Racknga 0.9.1\n"
+"POT-Creation-Date: 2011-07-07 17:54+0900\n"
+"PO-Revision-Date: 2011-07-07 17:58+0900\n"
+"Last-Translator: Kouhei Sutou <kou@clear-code.com>\n"
+"Language-Team: Japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: doc/html/en/file.news.html:6(title)
+msgid "File: news &mdash; racknga - 0.9.1"
+msgstr ""
+
+#: doc/html/en/file.news.html:17(script)
+#: doc/html/en/file.README.html:17(script) doc/html/en/Groonga.html:17(script)
+#: doc/html/en/index.html:17(script)
+#: doc/html/en/top-level-namespace.html:17(script)
+#: doc/html/en/_index.html:15(script) doc/html/en/Racknga.html:17(script)
+msgid "relpath = ''; if (relpath != '') relpath += '/';"
+msgstr ""
+
+#: doc/html/en/file.news.html:29(script)
+#: doc/html/en/file.README.html:29(script) doc/html/en/Groonga.html:29(script)
+#: doc/html/en/Groonga/Pagination.html:29(script)
+#: doc/html/en/Groonga/WillPaginateAPI.html:29(script)
+#: doc/html/en/index.html:29(script)
+#: doc/html/en/top-level-namespace.html:29(script)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:29(script)
+#: doc/html/en/Racknga/Middleware.html:29(script)
+#: doc/html/en/Racknga/Utils.html:29(script)
+#: doc/html/en/Racknga/LogDatabase.html:29(script)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:29(script)
+#: doc/html/en/Racknga/Middleware/Deflater.html:29(script)
+#: doc/html/en/Racknga/Middleware/Cache.html:29(script)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:29(script)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:29(script)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:29(script)
+#: doc/html/en/Racknga/Middleware/Log.html:29(script)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:29(script)
+#: doc/html/en/Racknga/Middleware/JSONP.html:29(script)
+#: doc/html/en/Racknga/Middleware/Range.html:29(script)
+#: doc/html/en/Racknga/CacheDatabase.html:29(script)
+#: doc/html/en/_index.html:27(script) doc/html/en/Racknga.html:29(script)
+msgid "if (window.top.frames.main) document.body.className = 'frames';"
+msgstr ""
+
+#: doc/html/en/file.news.html:36(a) doc/html/en/file.README.html:36(a)
+#: doc/html/en/index.html:36(a) doc/html/en/top-level-namespace.html:36(a)
+msgid "Index"
+msgstr ""
+
+#: doc/html/en/file.news.html:37(span)
+msgid "File: news"
+msgstr ""
+
+#: doc/html/en/file.news.html:40(span) doc/html/en/file.README.html:40(span)
+#: doc/html/en/Groonga.html:42(span)
+#: doc/html/en/Groonga/Pagination.html:42(span)
+#: doc/html/en/Groonga/WillPaginateAPI.html:42(span)
+#: doc/html/en/Groonga/WillPaginateAPI.html:232(span)
+#: doc/html/en/index.html:40(span)
+#: doc/html/en/top-level-namespace.html:42(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:42(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:200(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:201(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:241(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:244(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:245(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:246(span)
+#: doc/html/en/Racknga/Middleware.html:42(span)
+#: doc/html/en/Racknga/Utils.html:42(span)
+#: doc/html/en/Racknga/Utils.html:190(span)
+#: doc/html/en/Racknga/Utils.html:193(span)
+#: doc/html/en/Racknga/LogDatabase.html:42(span)
+#: doc/html/en/Racknga/LogDatabase.html:255(span)
+#: doc/html/en/Racknga/LogDatabase.html:257(span)
+#: doc/html/en/Racknga/LogDatabase.html:328(span)
+#: doc/html/en/Racknga/LogDatabase.html:329(span)
+#: doc/html/en/Racknga/LogDatabase.html:395(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:42(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:190(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:235(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:238(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:244(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:245(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:42(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:192(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:194(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:195(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:234(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:235(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:236(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:238(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:42(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:268(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:270(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:273(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:319(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:320(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:321(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:328(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:330(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:42(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:191(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:230(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:231(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:232(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:233(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:42(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:192(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:265(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:266(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:274(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:276(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:292(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:295(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:42(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:191(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:230(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:231(span)
+#: doc/html/en/Racknga/Middleware/Log.html:42(span)
+#: doc/html/en/Racknga/Middleware/Log.html:273(span)
+#: doc/html/en/Racknga/Middleware/Log.html:275(span)
+#: doc/html/en/Racknga/Middleware/Log.html:278(span)
+#: doc/html/en/Racknga/Middleware/Log.html:279(span)
+#: doc/html/en/Racknga/Middleware/Log.html:323(span)
+#: doc/html/en/Racknga/Middleware/Log.html:327(span)
+#: doc/html/en/Racknga/Middleware/Log.html:330(span)
+#: doc/html/en/Racknga/Middleware/Log.html:331(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:42(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:192(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:194(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:246(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:247(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:251(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:254(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:255(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:256(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:257(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:258(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:42(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:200(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:245(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:246(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:248(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:249(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:251(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:252(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:253(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:254(span)
+#: doc/html/en/Racknga/Middleware/Range.html:42(span)
+#: doc/html/en/Racknga/Middleware/Range.html:200(span)
+#: doc/html/en/Racknga/Middleware/Range.html:248(span)
+#: doc/html/en/Racknga/Middleware/Range.html:249(span)
+#: doc/html/en/Racknga/Middleware/Range.html:252(span)
+#: doc/html/en/Racknga/Middleware/Range.html:254(span)
+#: doc/html/en/Racknga/Middleware/Range.html:258(span)
+#: doc/html/en/Racknga/CacheDatabase.html:42(span)
+#: doc/html/en/Racknga/CacheDatabase.html:297(span)
+#: doc/html/en/Racknga/CacheDatabase.html:299(span)
+#: doc/html/en/Racknga/CacheDatabase.html:429(span)
+#: doc/html/en/Racknga/CacheDatabase.html:430(span)
+#: doc/html/en/Racknga/CacheDatabase.html:473(span)
+#: doc/html/en/Racknga/CacheDatabase.html:474(span)
+#: doc/html/en/_index.html:38(span) doc/html/en/Racknga.html:42(span)
+msgid "("
+msgstr ""
+
+#: doc/html/en/file.news.html:40(a) doc/html/en/file.README.html:40(a)
+#: doc/html/en/Groonga.html:42(a) doc/html/en/Groonga/Pagination.html:42(a)
+#: doc/html/en/Groonga/WillPaginateAPI.html:42(a) doc/html/en/index.html:40(a)
+#: doc/html/en/top-level-namespace.html:42(a)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:42(a)
+#: doc/html/en/Racknga/Middleware.html:42(a)
+#: doc/html/en/Racknga/Utils.html:42(a)
+#: doc/html/en/Racknga/LogDatabase.html:42(a)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:42(a)
+#: doc/html/en/Racknga/Middleware/Deflater.html:42(a)
+#: doc/html/en/Racknga/Middleware/Cache.html:42(a)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:42(a)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:42(a)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:42(a)
+#: doc/html/en/Racknga/Middleware/Log.html:42(a)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:42(a)
+#: doc/html/en/Racknga/Middleware/JSONP.html:42(a)
+#: doc/html/en/Racknga/Middleware/Range.html:42(a)
+#: doc/html/en/Racknga/CacheDatabase.html:42(a) doc/html/en/_index.html:38(a)
+#: doc/html/en/Racknga.html:42(a)
+msgid "no frames"
+msgstr ""
+
+#: doc/html/en/file.news.html:40(span) doc/html/en/file.README.html:40(span)
+#: doc/html/en/Groonga.html:42(span)
+#: doc/html/en/Groonga/Pagination.html:42(span)
+#: doc/html/en/Groonga/WillPaginateAPI.html:42(span)
+#: doc/html/en/Groonga/WillPaginateAPI.html:232(span)
+#: doc/html/en/index.html:40(span)
+#: doc/html/en/top-level-namespace.html:42(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:42(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:200(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:201(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:241(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:244(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:245(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:246(span)
+#: doc/html/en/Racknga/Middleware.html:42(span)
+#: doc/html/en/Racknga/Utils.html:42(span)
+#: doc/html/en/Racknga/Utils.html:190(span)
+#: doc/html/en/Racknga/Utils.html:193(span)
+#: doc/html/en/Racknga/LogDatabase.html:42(span)
+#: doc/html/en/Racknga/LogDatabase.html:255(span)
+#: doc/html/en/Racknga/LogDatabase.html:257(span)
+#: doc/html/en/Racknga/LogDatabase.html:328(span)
+#: doc/html/en/Racknga/LogDatabase.html:329(span)
+#: doc/html/en/Racknga/LogDatabase.html:395(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:42(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:190(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:235(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:238(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:244(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:245(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:42(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:192(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:194(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:195(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:234(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:235(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:236(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:238(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:42(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:268(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:270(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:273(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:319(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:320(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:321(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:328(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:330(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:42(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:191(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:230(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:231(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:232(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:233(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:42(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:192(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:265(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:266(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:274(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:276(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:292(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:295(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:42(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:191(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:230(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:233(span)
+#: doc/html/en/Racknga/Middleware/Log.html:42(span)
+#: doc/html/en/Racknga/Middleware/Log.html:273(span)
+#: doc/html/en/Racknga/Middleware/Log.html:275(span)
+#: doc/html/en/Racknga/Middleware/Log.html:278(span)
+#: doc/html/en/Racknga/Middleware/Log.html:279(span)
+#: doc/html/en/Racknga/Middleware/Log.html:323(span)
+#: doc/html/en/Racknga/Middleware/Log.html:327(span)
+#: doc/html/en/Racknga/Middleware/Log.html:330(span)
+#: doc/html/en/Racknga/Middleware/Log.html:331(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:42(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:192(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:194(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:246(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:247(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:251(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:254(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:255(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:256(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:257(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:258(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:42(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:200(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:245(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:246(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:248(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:249(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:251(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:252(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:253(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:254(span)
+#: doc/html/en/Racknga/Middleware/Range.html:42(span)
+#: doc/html/en/Racknga/Middleware/Range.html:200(span)
+#: doc/html/en/Racknga/Middleware/Range.html:248(span)
+#: doc/html/en/Racknga/Middleware/Range.html:249(span)
+#: doc/html/en/Racknga/Middleware/Range.html:252(span)
+#: doc/html/en/Racknga/Middleware/Range.html:254(span)
+#: doc/html/en/Racknga/Middleware/Range.html:259(span)
+#: doc/html/en/Racknga/CacheDatabase.html:42(span)
+#: doc/html/en/Racknga/CacheDatabase.html:297(span)
+#: doc/html/en/Racknga/CacheDatabase.html:299(span)
+#: doc/html/en/Racknga/CacheDatabase.html:429(span)
+#: doc/html/en/Racknga/CacheDatabase.html:430(span)
+#: doc/html/en/Racknga/CacheDatabase.html:473(span)
+#: doc/html/en/Racknga/CacheDatabase.html:474(span)
+#: doc/html/en/_index.html:38(span) doc/html/en/Racknga.html:42(span)
+msgid ")"
+msgstr ""
+
+#: doc/html/en/file.news.html:45(a) doc/html/en/file.README.html:45(a)
+#: doc/html/en/Groonga.html:47(a) doc/html/en/Groonga/Pagination.html:47(a)
+#: doc/html/en/Groonga/WillPaginateAPI.html:47(a) doc/html/en/index.html:45(a)
+#: doc/html/en/class_list.html:28(h1)
+#: doc/html/en/top-level-namespace.html:47(a)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:47(a)
+#: doc/html/en/Racknga/Middleware.html:47(a)
+#: doc/html/en/Racknga/Utils.html:47(a)
+#: doc/html/en/Racknga/LogDatabase.html:47(a)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:47(a)
+#: doc/html/en/Racknga/Middleware/Deflater.html:47(a)
+#: doc/html/en/Racknga/Middleware/Cache.html:47(a)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:47(a)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:47(a)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:47(a)
+#: doc/html/en/Racknga/Middleware/Log.html:47(a)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:47(a)
+#: doc/html/en/Racknga/Middleware/JSONP.html:47(a)
+#: doc/html/en/Racknga/Middleware/Range.html:47(a)
+#: doc/html/en/Racknga/CacheDatabase.html:47(a) doc/html/en/_index.html:43(a)
+#: doc/html/en/Racknga.html:47(a)
+msgid "Class List"
+msgstr ""
+
+#: doc/html/en/file.news.html:47(a) doc/html/en/file.README.html:47(a)
+#: doc/html/en/Groonga.html:49(a) doc/html/en/Groonga/Pagination.html:49(a)
+#: doc/html/en/Groonga/WillPaginateAPI.html:49(a) doc/html/en/index.html:47(a)
+#: doc/html/en/top-level-namespace.html:49(a)
+#: doc/html/en/method_list.html:28(h1)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:49(a)
+#: doc/html/en/Racknga/Middleware.html:49(a)
+#: doc/html/en/Racknga/Utils.html:49(a)
+#: doc/html/en/Racknga/LogDatabase.html:49(a)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:49(a)
+#: doc/html/en/Racknga/Middleware/Deflater.html:49(a)
+#: doc/html/en/Racknga/Middleware/Cache.html:49(a)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:49(a)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:49(a)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:49(a)
+#: doc/html/en/Racknga/Middleware/Log.html:49(a)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:49(a)
+#: doc/html/en/Racknga/Middleware/JSONP.html:49(a)
+#: doc/html/en/Racknga/Middleware/Range.html:49(a)
+#: doc/html/en/Racknga/CacheDatabase.html:49(a) doc/html/en/_index.html:45(a)
+#: doc/html/en/Racknga.html:49(a)
+msgid "Method List"
+msgstr ""
+
+#: doc/html/en/file.news.html:49(a) doc/html/en/file.README.html:49(a)
+#: doc/html/en/Groonga.html:51(a) doc/html/en/Groonga/Pagination.html:51(a)
+#: doc/html/en/Groonga/WillPaginateAPI.html:51(a) doc/html/en/index.html:49(a)
+#: doc/html/en/top-level-namespace.html:51(a)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:51(a)
+#: doc/html/en/Racknga/Middleware.html:51(a)
+#: doc/html/en/Racknga/Utils.html:51(a)
+#: doc/html/en/Racknga/LogDatabase.html:51(a)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:51(a)
+#: doc/html/en/Racknga/Middleware/Deflater.html:51(a)
+#: doc/html/en/Racknga/Middleware/Cache.html:51(a)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:51(a)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:51(a)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:51(a)
+#: doc/html/en/Racknga/Middleware/Log.html:51(a)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:51(a)
+#: doc/html/en/Racknga/Middleware/JSONP.html:51(a)
+#: doc/html/en/Racknga/Middleware/Range.html:51(a)
+#: doc/html/en/Racknga/CacheDatabase.html:51(a) doc/html/en/_index.html:47(a)
+#: doc/html/en/Racknga.html:51(a) doc/html/en/file_list.html:28(h1)
+msgid "File List"
+msgstr ""
+
+#: doc/html/en/file.news.html:57(span)
+msgid "NEWS"
+msgstr "おしらせ"
+
+#: doc/html/en/file.news.html:58(h2)
+msgid "0.9.1: 2010-11-11"
+msgstr ""
+
+#: doc/html/en/file.news.html:60(li)
+msgid "Improved cache validation."
+msgstr "キャッシュの正当性チェックを強化。"
+
+#: doc/html/en/file.news.html:61(li)
+msgid "Supported caches per User-Agent."
+msgstr "User-Agent毎のキャッシュをサポート。"
+
+#: doc/html/en/file.news.html:62(span) doc/html/en/class_list.html:42(a)
+#: doc/html/en/Racknga/Middleware.html:88(a)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:37(a)
+#: doc/html/en/Racknga/Middleware/JSONP.html:39(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:173(a)
+#: doc/html/en/_index.html:159(a)
+msgid "JSONP"
+msgstr ""
+
+#: doc/html/en/file.news.html:62(li)
+msgid "Added a <placeholder-1/> middleware."
+msgstr "<placeholder-1/>ミドルウェアを追加。"
+
+#: doc/html/en/file.news.html:63(span)
+msgid "HTTP"
+msgstr ""
+
+#: doc/html/en/file.news.html:63(li)
+msgid "Added a <placeholder-1/> Range support middleware."
+msgstr "<placeholder-1/>のRangeをサポートするミドルウェアを追加。"
+
+#: doc/html/en/file.news.html:64(li)
+msgid "Added a logging access to groogna databsae middleware."
+msgstr "groongaデータベースにアクセスログを記録するミドルウェアを追加。"
+
+#: doc/html/en/file.news.html:65(li)
+msgid "Added Munin plugins for Passenger."
+msgstr "Passengerの状態を視覚化するMuninプラグインを追加。"
+
+#: doc/html/en/file.news.html:66(li)
+msgid "Changed license to LGPLv2.1 or later from LGPLv2.1."
+msgstr "ライセンスをLGPLv2.1からLGPLv2.1 or laterに変更。"
+
+#: doc/html/en/file.news.html:67(li)
+msgid "Supported will_paginate."
+msgstr "will_paginate対応。"
+
+#: doc/html/en/file.news.html:69(h2)
+msgid "0.9.0: 2010-07-04"
+msgstr ""
+
+#: doc/html/en/file.news.html:71(li)
+msgid "Initial release!"
+msgstr "最初のリリース！"
+
+#: doc/html/en/file.README.html:6(title) doc/html/en/index.html:6(title)
+msgid "File: README &mdash; racknga - 0.9.1"
+msgstr ""
+
+#: doc/html/en/file.README.html:37(span) doc/html/en/index.html:37(span)
+msgid "File: README"
+msgstr ""
+
+#: doc/html/en/file.README.html:58(h1) doc/html/en/index.html:58(h1)
+#: doc/html/en/_index.html:63(a) doc/html/en/file_list.html:43(a)
+msgid "README"
+msgstr ""
+
+#: doc/html/en/file.README.html:60(h2) doc/html/en/index.html:60(h2)
+msgid "Name"
+msgstr ""
+
+#: doc/html/en/file.README.html:62(p) doc/html/en/file.README.html:102(span)
+#: doc/html/en/index.html:62(p) doc/html/en/index.html:102(span)
+msgid "racknga"
+msgstr ""
+
+#: doc/html/en/file.README.html:64(h2) doc/html/en/index.html:64(h2)
+msgid "Description"
+msgstr ""
+
+#: doc/html/en/file.README.html:66(p) doc/html/en/index.html:66(p)
+msgid "Rack middlewares that uses rroonga features."
+msgstr ""
+
+#: doc/html/en/file.README.html:68(a) doc/html/en/index.html:68(a)
+msgid "groonga.rubyforge.org"
+msgstr ""
+
+#: doc/html/en/file.README.html:68(p) doc/html/en/index.html:68(p)
+msgid "rroonga: <placeholder-1/>/"
+msgstr ""
+
+#: doc/html/en/file.README.html:70(a) doc/html/en/index.html:70(a)
+msgid "rack.rubyforge.org"
+msgstr ""
+
+#: doc/html/en/file.README.html:70(p) doc/html/en/index.html:70(p)
+msgid "Rack: <placeholder-1/>/"
+msgstr ""
+
+#: doc/html/en/file.README.html:73(h2) doc/html/en/index.html:73(h2)
+msgid "Authors"
+msgstr ""
+
+#: doc/html/en/file.README.html:74(p) doc/html/en/index.html:74(p)
+msgid "Kouhei Sutou"
+msgstr ""
+
+#: doc/html/en/file.README.html:76(tt) doc/html/en/index.html:76(tt)
+msgid "&lt;kou@clear-code.com&gt;"
+msgstr ""
+
+#: doc/html/en/file.README.html:79(h2) doc/html/en/index.html:79(h2)
+msgid "License"
+msgstr ""
+
+#: doc/html/en/file.README.html:81(p) doc/html/en/index.html:81(p)
+msgid "LGPL 2.1 or later. See license/lgpl-2.1.txt for details."
+msgstr ""
+
+#: doc/html/en/file.README.html:83(p) doc/html/en/index.html:83(p)
+msgid ""
+"(Kouhei Sutou has a right to change the license inclidng contributed "
+"patches.)"
+msgstr ""
+
+#: doc/html/en/file.README.html:86(h2) doc/html/en/index.html:86(h2)
+msgid "Dependencies"
+msgstr ""
+
+#: doc/html/en/file.README.html:88(p) doc/html/en/index.html:88(p)
+msgid "Ruby &gt;= 1.9.1"
+msgstr ""
+
+#: doc/html/en/file.README.html:90(p) doc/html/en/index.html:90(p)
+msgid "rroonga"
+msgstr ""
+
+#: doc/html/en/file.README.html:92(p) doc/html/en/index.html:92(p)
+#: doc/html/en/Racknga/Middleware/Deflater.html:194(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:320(span)
+#: doc/html/en/Racknga/Middleware/Log.html:330(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:246(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:251(span)
+#: doc/html/en/Racknga/Middleware/Range.html:252(span)
+#: doc/html/en/Racknga/Middleware/Range.html:254(span)
+msgid "Rack"
+msgstr ""
+
+#: doc/html/en/file.README.html:95(h2) doc/html/en/index.html:95(h2)
+msgid "Suggested libraries"
+msgstr ""
+
+#: doc/html/en/file.README.html:97(p) doc/html/en/index.html:97(p)
+msgid "will_paginate"
+msgstr ""
+
+#: doc/html/en/file.README.html:100(h2) doc/html/en/index.html:100(h2)
+msgid "Install"
+msgstr ""
+
+#: doc/html/en/file.README.html:102(span) doc/html/en/index.html:102(span)
+msgid "% sudo"
+msgstr ""
+
+#: doc/html/en/file.README.html:102(span) doc/html/en/index.html:102(span)
+msgid "gem"
+msgstr ""
+
+#: doc/html/en/file.README.html:102(span) doc/html/en/index.html:102(span)
+msgid "install"
+msgstr ""
+
+#: doc/html/en/file.README.html:105(h2) doc/html/en/index.html:105(h2)
+msgid "Documents"
+msgstr ""
+
+#: doc/html/en/file.README.html:107(p) doc/html/en/index.html:107(p)
+msgid "Japanese only. Sorry."
+msgstr ""
+
+#: doc/html/en/file.README.html:110(a) doc/html/en/index.html:110(a)
+msgid "groonga.rubyforge.org/racknga"
+msgstr ""
+
+#: doc/html/en/file.README.html:109(p) doc/html/en/index.html:109(p)
+msgid "<placeholder-1/>/"
+msgstr ""
+
+#: doc/html/en/file.README.html:112(h2) doc/html/en/index.html:112(h2)
+msgid "Mailing list"
+msgstr ""
+
+#: doc/html/en/file.README.html:115(a) doc/html/en/index.html:115(a)
+msgid "rubyforge.org/mailman/listinfo/groonga-users-en"
+msgstr ""
+
+#: doc/html/en/file.README.html:117(h2) doc/html/en/index.html:117(h2)
+msgid "Thanks"
+msgstr ""
+
+#: doc/html/en/file.README.html:119(p) doc/html/en/index.html:119(p)
+msgid "…"
+msgstr ""
+
+#: doc/html/en/Groonga.html:6(title)
+msgid "Module: Groonga &mdash; racknga - 0.9.1"
+msgstr ""
+
+#: doc/html/en/Groonga.html:36(a)
+msgid "Index (G)"
+msgstr ""
+
+#: doc/html/en/Groonga.html:39(span) doc/html/en/Groonga/Pagination.html:37(a)
+#: doc/html/en/Groonga/WillPaginateAPI.html:37(a)
+#: doc/html/en/class_list.html:42(a) doc/html/en/class_list.html:42(small)
+#: doc/html/en/top-level-namespace.html:81(a)
+#: doc/html/en/Racknga/LogDatabase.html:257(span)
+#: doc/html/en/Racknga/LogDatabase.html:329(span)
+#: doc/html/en/Racknga/CacheDatabase.html:299(span)
+#: doc/html/en/Racknga/CacheDatabase.html:430(span)
+#: doc/html/en/_index.html:146(a)
+msgid "Groonga"
+msgstr ""
+
+#: doc/html/en/Groonga.html:59(h1)
+msgid "Module: Groonga"
+msgstr ""
+
+#: doc/html/en/Groonga.html:74(dt) doc/html/en/Groonga/Pagination.html:78(dt)
+#: doc/html/en/Groonga/WillPaginateAPI.html:78(dt)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:89(dt)
+#: doc/html/en/Racknga/Middleware.html:74(dt)
+#: doc/html/en/Racknga/Utils.html:74(dt)
+#: doc/html/en/Racknga/LogDatabase.html:89(dt)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:89(dt)
+#: doc/html/en/Racknga/Middleware/Deflater.html:89(dt)
+#: doc/html/en/Racknga/Middleware/Cache.html:89(dt)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:89(dt)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:89(dt)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:89(dt)
+#: doc/html/en/Racknga/Middleware/Log.html:89(dt)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:89(dt)
+#: doc/html/en/Racknga/Middleware/JSONP.html:89(dt)
+#: doc/html/en/Racknga/Middleware/Range.html:89(dt)
+#: doc/html/en/Racknga/CacheDatabase.html:89(dt)
+#: doc/html/en/Racknga.html:74(dt)
+msgid "Defined in:"
+msgstr ""
+
+#: doc/html/en/Groonga.html:75(dd) doc/html/en/Groonga/Pagination.html:79(dd)
+#: doc/html/en/Groonga/WillPaginateAPI.html:79(dd)
+msgid "lib/racknga/will_paginate.rb"
+msgstr ""
+
+#: doc/html/en/Groonga.html:80(h2) doc/html/en/top-level-namespace.html:77(h2)
+#: doc/html/en/Racknga/Middleware.html:82(h2)
+#: doc/html/en/Racknga/Middleware/Log.html:95(h2)
+#: doc/html/en/Racknga/Middleware/JSONP.html:95(h2)
+#: doc/html/en/Racknga/Middleware/Range.html:95(h2)
+#: doc/html/en/Racknga.html:106(h2)
+msgid "Defined Under Namespace"
+msgstr ""
+
+#: doc/html/en/Groonga.html:84(strong)
+#: doc/html/en/top-level-namespace.html:81(strong)
+#: doc/html/en/Racknga.html:110(strong)
+msgid "Modules:"
+msgstr ""
+
+#: doc/html/en/Groonga.html:84(a) doc/html/en/Groonga/Pagination.html:39(span)
+#: doc/html/en/Groonga/WillPaginateAPI.html:74(a)
+#: doc/html/en/class_list.html:42(a) doc/html/en/_index.html:221(a)
+msgid "Pagination"
+msgstr ""
+
+#: doc/html/en/Groonga.html:84(a) doc/html/en/Groonga/Pagination.html:72(a)
+#: doc/html/en/Groonga/Pagination.html:104(a)
+#: doc/html/en/Groonga/WillPaginateAPI.html:39(span)
+#: doc/html/en/class_list.html:42(a) doc/html/en/_index.html:285(a)
+msgid "WillPaginateAPI"
+msgstr ""
+
+#: doc/html/en/Groonga.html:81(p) doc/html/en/top-level-namespace.html:78(p)
+msgid ""
+"<placeholder-1/> <span class=\"object_link\"><placeholder-2/></span>, <span "
+"class=\"object_link\"><placeholder-3/></span>"
+msgstr ""
+
+#: doc/html/en/Groonga/Pagination.html:6(title)
+msgid "Module: Groonga::Pagination &mdash; racknga - 0.9.1"
+msgstr ""
+
+#: doc/html/en/Groonga/Pagination.html:17(script)
+#: doc/html/en/Groonga/WillPaginateAPI.html:17(script)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:17(script)
+#: doc/html/en/Racknga/Middleware.html:17(script)
+#: doc/html/en/Racknga/Utils.html:17(script)
+#: doc/html/en/Racknga/LogDatabase.html:17(script)
+#: doc/html/en/Racknga/CacheDatabase.html:17(script)
+msgid "relpath = '..'; if (relpath != '') relpath += '/';"
+msgstr ""
+
+#: doc/html/en/Groonga/Pagination.html:36(a)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:36(a)
+msgid "Index (P)"
+msgstr ""
+
+#: doc/html/en/Groonga/Pagination.html:59(h1)
+msgid "Module: Groonga::Pagination"
+msgstr ""
+
+#: doc/html/en/Groonga/Pagination.html:71(dt)
+msgid "Includes:"
+msgstr ""
+
+#: doc/html/en/Groonga/Pagination.html:102(h2)
+msgid "Method Summary"
+msgstr ""
+
+#: doc/html/en/Groonga/Pagination.html:104(h3)
+msgid ""
+"Methods included from <span class=\"object_link\"><placeholder-1/></span>"
+msgstr ""
+
+#: doc/html/en/Groonga/Pagination.html:105(a)
+#: doc/html/en/method_list.html:332(a)
+msgid "#offset"
+msgstr ""
+
+#: doc/html/en/Groonga/Pagination.html:105(a)
+#: doc/html/en/method_list.html:340(a)
+msgid "#out_of_bounds?"
+msgstr ""
+
+#: doc/html/en/Groonga/Pagination.html:105(a)
+#: doc/html/en/method_list.html:356(a)
+msgid "#per_page"
+msgstr ""
+
+#: doc/html/en/Groonga/Pagination.html:105(a)
+#: doc/html/en/method_list.html:396(a)
+msgid "#total_entries"
+msgstr ""
+
+#: doc/html/en/Groonga/Pagination.html:105(a)
+#: doc/html/en/method_list.html:404(a)
+msgid "#total_pages"
+msgstr ""
+
+#: doc/html/en/Groonga/Pagination.html:105(p)
+msgid ""
+"<span class=\"object_link\"><placeholder-1/></span>, <span class="
+"\"object_link\"><placeholder-2/></span>, <span class=\"object_link"
+"\"><placeholder-3/></span>, <span class=\"object_link\"><placeholder-4/></"
+"span>, <span class=\"object_link\"><placeholder-5/></span>"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:6(title)
+msgid "Module: Groonga::WillPaginateAPI &mdash; racknga - 0.9.1"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:36(a)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:36(a)
+msgid "Index (W)"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:59(h1)
+msgid "Module: Groonga::WillPaginateAPI"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:73(dt)
+msgid "Included in:"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:92(a)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:113(a)
+#: doc/html/en/Racknga/Utils.html:88(a)
+#: doc/html/en/Racknga/LogDatabase.html:103(a)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:103(a)
+#: doc/html/en/Racknga/Middleware/Deflater.html:103(a)
+#: doc/html/en/Racknga/Middleware/Cache.html:122(a)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:103(a)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:103(a)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:103(a)
+#: doc/html/en/Racknga/Middleware/Log.html:126(a)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:103(a)
+#: doc/html/en/Racknga/Middleware/JSONP.html:113(a)
+#: doc/html/en/Racknga/Middleware/Range.html:113(a)
+#: doc/html/en/Racknga/CacheDatabase.html:103(a)
+msgid "collapse"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:92(small)
+#: doc/html/en/Groonga/WillPaginateAPI.html:260(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:113(small)
+#: doc/html/en/Racknga/Utils.html:88(small)
+#: doc/html/en/Racknga/Utils.html:224(span)
+#: doc/html/en/Racknga/Utils.html:276(span)
+#: doc/html/en/Racknga/LogDatabase.html:103(small)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:103(small)
+#: doc/html/en/Racknga/Middleware/Deflater.html:103(small)
+#: doc/html/en/Racknga/Middleware/Cache.html:122(small)
+#: doc/html/en/Racknga/Middleware/Cache.html:243(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:103(small)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:103(small)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:103(small)
+#: doc/html/en/Racknga/Middleware/Log.html:126(small)
+#: doc/html/en/Racknga/Middleware/Log.html:247(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:103(small)
+#: doc/html/en/Racknga/Middleware/JSONP.html:113(small)
+#: doc/html/en/Racknga/Middleware/Range.html:113(small)
+#: doc/html/en/Racknga/CacheDatabase.html:103(small)
+msgid "(<placeholder-1/>)"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:90(h2)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:111(h2)
+#: doc/html/en/Racknga/Utils.html:86(h2)
+#: doc/html/en/Racknga/LogDatabase.html:101(h2)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:101(h2)
+#: doc/html/en/Racknga/Middleware/Deflater.html:101(h2)
+#: doc/html/en/Racknga/Middleware/Cache.html:120(h2)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:101(h2)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:101(h2)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:101(h2)
+#: doc/html/en/Racknga/Middleware/Log.html:124(h2)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:101(h2)
+#: doc/html/en/Racknga/Middleware/JSONP.html:111(h2)
+#: doc/html/en/Racknga/Middleware/Range.html:111(h2)
+#: doc/html/en/Racknga/CacheDatabase.html:101(h2)
+msgid "Instance Method Summary <placeholder-1/>"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:100(strong)
+#: doc/html/en/Groonga/WillPaginateAPI.html:214(strong)
+#: doc/html/en/Groonga/WillPaginateAPI.html:231(span)
+msgid "offset"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:100(a)
+#: doc/html/en/Groonga/WillPaginateAPI.html:142(a)
+#: doc/html/en/Groonga/WillPaginateAPI.html:163(a)
+#: doc/html/en/Groonga/WillPaginateAPI.html:184(a)
+#: doc/html/en/Racknga/LogDatabase.html:111(a)
+#: doc/html/en/Racknga/LogDatabase.html:132(a)
+#: doc/html/en/Racknga/LogDatabase.html:153(a)
+#: doc/html/en/Racknga/Middleware/Cache.html:151(a)
+#: doc/html/en/Racknga/Middleware/Cache.html:172(a)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:111(a)
+#: doc/html/en/Racknga/Middleware/Log.html:155(a)
+#: doc/html/en/Racknga/Middleware/Log.html:176(a)
+#: doc/html/en/Racknga/CacheDatabase.html:111(a)
+#: doc/html/en/Racknga/CacheDatabase.html:132(a)
+#: doc/html/en/Racknga/CacheDatabase.html:153(a)
+#: doc/html/en/Racknga/CacheDatabase.html:174(a)
+#: doc/html/en/Racknga/CacheDatabase.html:220(a)
+#: doc/html/en/Racknga/CacheDatabase.html:241(a)
+msgid "- (Object) <placeholder-1/>"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:121(strong)
+#: doc/html/en/Groonga/WillPaginateAPI.html:243(strong)
+#: doc/html/en/Groonga/WillPaginateAPI.html:281(span)
+msgid "out_of_bounds?"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:121(a)
+#: doc/html/en/Racknga/Utils.html:117(a) doc/html/en/Racknga/Utils.html:138(a)
+msgid "- (Boolean) <placeholder-1/>"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:142(strong)
+#: doc/html/en/Groonga/WillPaginateAPI.html:293(strong)
+#: doc/html/en/Groonga/WillPaginateAPI.html:310(span)
+msgid "per_page"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:163(strong)
+#: doc/html/en/Groonga/WillPaginateAPI.html:322(strong)
+#: doc/html/en/Groonga/WillPaginateAPI.html:339(span)
+msgid "total_entries"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:184(strong)
+#: doc/html/en/Groonga/WillPaginateAPI.html:282(span)
+#: doc/html/en/Groonga/WillPaginateAPI.html:351(strong)
+#: doc/html/en/Groonga/WillPaginateAPI.html:368(span)
+msgid "total_pages"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:208(h2)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:213(h2)
+#: doc/html/en/Racknga/Utils.html:162(h2)
+#: doc/html/en/Racknga/LogDatabase.html:270(h2)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:203(h2)
+#: doc/html/en/Racknga/Middleware/Deflater.html:207(h2)
+#: doc/html/en/Racknga/Middleware/Cache.html:285(h2)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:205(h2)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:207(h2)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:205(h2)
+#: doc/html/en/Racknga/Middleware/Log.html:291(h2)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:207(h2)
+#: doc/html/en/Racknga/Middleware/JSONP.html:213(h2)
+#: doc/html/en/Racknga/Middleware/Range.html:213(h2)
+#: doc/html/en/Racknga/CacheDatabase.html:312(h2)
+msgid "Instance Method Details"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:214(tt)
+#: doc/html/en/Groonga/WillPaginateAPI.html:293(tt)
+#: doc/html/en/Groonga/WillPaginateAPI.html:322(tt)
+#: doc/html/en/Groonga/WillPaginateAPI.html:351(tt)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:69(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:72(li)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:219(tt)
+#: doc/html/en/Racknga/Utils.html:168(tt)
+#: doc/html/en/Racknga/LogDatabase.html:69(span)
+#: doc/html/en/Racknga/LogDatabase.html:72(li)
+#: doc/html/en/Racknga/LogDatabase.html:276(tt)
+#: doc/html/en/Racknga/LogDatabase.html:305(tt)
+#: doc/html/en/Racknga/LogDatabase.html:344(tt)
+#: doc/html/en/Racknga/LogDatabase.html:373(tt)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:69(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:72(li)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:209(tt)
+#: doc/html/en/Racknga/Middleware/Deflater.html:69(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:72(li)
+#: doc/html/en/Racknga/Middleware/Deflater.html:213(tt)
+#: doc/html/en/Racknga/Middleware/Cache.html:69(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:72(li)
+#: doc/html/en/Racknga/Middleware/Cache.html:291(tt)
+#: doc/html/en/Racknga/Middleware/Cache.html:342(tt)
+#: doc/html/en/Racknga/Middleware/Cache.html:371(tt)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:69(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:72(li)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:211(tt)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:69(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:72(li)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:213(tt)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:69(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:72(li)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:211(tt)
+#: doc/html/en/Racknga/Middleware/Log.html:69(span)
+#: doc/html/en/Racknga/Middleware/Log.html:72(li)
+#: doc/html/en/Racknga/Middleware/Log.html:297(tt)
+#: doc/html/en/Racknga/Middleware/Log.html:344(tt)
+#: doc/html/en/Racknga/Middleware/Log.html:373(tt)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:69(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:72(li)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:213(tt)
+#: doc/html/en/Racknga/Middleware/JSONP.html:69(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:72(li)
+#: doc/html/en/Racknga/Middleware/JSONP.html:219(tt)
+#: doc/html/en/Racknga/Middleware/Range.html:69(span)
+#: doc/html/en/Racknga/Middleware/Range.html:72(li)
+#: doc/html/en/Racknga/Middleware/Range.html:219(tt)
+#: doc/html/en/Racknga/CacheDatabase.html:69(span)
+#: doc/html/en/Racknga/CacheDatabase.html:72(li)
+#: doc/html/en/Racknga/CacheDatabase.html:318(tt)
+#: doc/html/en/Racknga/CacheDatabase.html:347(tt)
+#: doc/html/en/Racknga/CacheDatabase.html:376(tt)
+#: doc/html/en/Racknga/CacheDatabase.html:405(tt)
+#: doc/html/en/Racknga/CacheDatabase.html:446(tt)
+#: doc/html/en/Racknga/CacheDatabase.html:489(tt)
+msgid "Object"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:212(p)
+#: doc/html/en/Groonga/WillPaginateAPI.html:241(p)
+#: doc/html/en/Groonga/WillPaginateAPI.html:291(p)
+#: doc/html/en/Groonga/WillPaginateAPI.html:320(p)
+#: doc/html/en/Groonga/WillPaginateAPI.html:349(p)
+#: doc/html/en/Racknga/Utils.html:205(p) doc/html/en/Racknga/Utils.html:257(p)
+#: doc/html/en/Racknga/LogDatabase.html:274(p)
+#: doc/html/en/Racknga/LogDatabase.html:303(p)
+#: doc/html/en/Racknga/LogDatabase.html:342(p)
+#: doc/html/en/Racknga/Middleware/Cache.html:340(p)
+#: doc/html/en/Racknga/Middleware/Cache.html:369(p)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:211(p)
+#: doc/html/en/Racknga/Middleware/Log.html:342(p)
+#: doc/html/en/Racknga/Middleware/Log.html:371(p)
+#: doc/html/en/Racknga/CacheDatabase.html:316(p)
+#: doc/html/en/Racknga/CacheDatabase.html:345(p)
+#: doc/html/en/Racknga/CacheDatabase.html:374(p)
+#: doc/html/en/Racknga/CacheDatabase.html:403(p)
+#: doc/html/en/Racknga/CacheDatabase.html:444(p)
+#: doc/html/en/Racknga/CacheDatabase.html:487(p)
+msgid "- (<placeholder-1/>) <placeholder-2/>"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:221(pre)
+#: doc/html/en/Racknga/CacheDatabase.html:354(pre)
+msgid "39 40 41"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:229(span)
+msgid "# File 'lib/racknga/will_paginate.rb', line 39"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:231(span)
+#: doc/html/en/Groonga/WillPaginateAPI.html:281(span)
+#: doc/html/en/Groonga/WillPaginateAPI.html:310(span)
+#: doc/html/en/Groonga/WillPaginateAPI.html:339(span)
+#: doc/html/en/Groonga/WillPaginateAPI.html:368(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:200(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:241(span)
+#: doc/html/en/Racknga/Utils.html:190(span)
+#: doc/html/en/Racknga/Utils.html:246(span)
+#: doc/html/en/Racknga/Utils.html:297(span)
+#: doc/html/en/Racknga/LogDatabase.html:255(span)
+#: doc/html/en/Racknga/LogDatabase.html:293(span)
+#: doc/html/en/Racknga/LogDatabase.html:327(span)
+#: doc/html/en/Racknga/LogDatabase.html:361(span)
+#: doc/html/en/Racknga/LogDatabase.html:395(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:190(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:235(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:192(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:234(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:268(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:319(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:359(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:388(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:191(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:230(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:192(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:264(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:191(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:230(span)
+#: doc/html/en/Racknga/Middleware/Log.html:273(span)
+#: doc/html/en/Racknga/Middleware/Log.html:323(span)
+#: doc/html/en/Racknga/Middleware/Log.html:361(span)
+#: doc/html/en/Racknga/Middleware/Log.html:390(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:192(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:246(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:200(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:245(span)
+#: doc/html/en/Racknga/Middleware/Range.html:200(span)
+#: doc/html/en/Racknga/Middleware/Range.html:248(span)
+#: doc/html/en/Racknga/CacheDatabase.html:297(span)
+#: doc/html/en/Racknga/CacheDatabase.html:335(span)
+#: doc/html/en/Racknga/CacheDatabase.html:364(span)
+#: doc/html/en/Racknga/CacheDatabase.html:393(span)
+#: doc/html/en/Racknga/CacheDatabase.html:428(span)
+#: doc/html/en/Racknga/CacheDatabase.html:470(span)
+#: doc/html/en/Racknga/CacheDatabase.html:506(span)
+msgid "def"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:232(span)
+msgid "start_offset"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:232(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:201(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:242(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:195(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:270(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:323(span)
+#: doc/html/en/Racknga/Middleware/Log.html:275(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:194(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:195(span)
+msgid "||"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:232(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:267(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:281(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:288(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:295(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:298(span)
+msgid "0"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:232(span)
+#: doc/html/en/Racknga/LogDatabase.html:396(span)
+#: doc/html/en/Racknga/CacheDatabase.html:473(span)
+msgid "-"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:232(span)
+#: doc/html/en/Racknga/CacheDatabase.html:473(span)
+#: doc/html/en/Racknga/CacheDatabase.html:474(span)
+msgid "1"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:233(span)
+#: doc/html/en/Groonga/WillPaginateAPI.html:283(span)
+#: doc/html/en/Groonga/WillPaginateAPI.html:312(span)
+#: doc/html/en/Groonga/WillPaginateAPI.html:341(span)
+#: doc/html/en/Groonga/WillPaginateAPI.html:370(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:202(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:247(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:248(span)
+#: doc/html/en/Racknga/Utils.html:195(span)
+#: doc/html/en/Racknga/Utils.html:197(span)
+#: doc/html/en/Racknga/Utils.html:249(span)
+#: doc/html/en/Racknga/Utils.html:299(span)
+#: doc/html/en/Racknga/LogDatabase.html:259(span)
+#: doc/html/en/Racknga/LogDatabase.html:295(span)
+#: doc/html/en/Racknga/LogDatabase.html:332(span)
+#: doc/html/en/Racknga/LogDatabase.html:334(span)
+#: doc/html/en/Racknga/LogDatabase.html:363(span)
+#: doc/html/en/Racknga/LogDatabase.html:399(span)
+#: doc/html/en/Racknga/LogDatabase.html:401(span)
+#: doc/html/en/Racknga/LogDatabase.html:402(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:192(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:242(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:246(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:196(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:239(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:240(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:274(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:331(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:332(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:361(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:390(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:194(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:234(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:196(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:270(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:277(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:278(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:289(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:290(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:297(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:299(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:300(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:194(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:234(span)
+#: doc/html/en/Racknga/Middleware/Log.html:280(span)
+#: doc/html/en/Racknga/Middleware/Log.html:334(span)
+#: doc/html/en/Racknga/Middleware/Log.html:363(span)
+#: doc/html/en/Racknga/Middleware/Log.html:392(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:196(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:260(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:261(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:262(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:264(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:202(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:256(span)
+#: doc/html/en/Racknga/Middleware/Range.html:202(span)
+#: doc/html/en/Racknga/Middleware/Range.html:260(span)
+#: doc/html/en/Racknga/Middleware/Range.html:262(span)
+#: doc/html/en/Racknga/CacheDatabase.html:301(span)
+#: doc/html/en/Racknga/CacheDatabase.html:337(span)
+#: doc/html/en/Racknga/CacheDatabase.html:366(span)
+#: doc/html/en/Racknga/CacheDatabase.html:395(span)
+#: doc/html/en/Racknga/CacheDatabase.html:433(span)
+#: doc/html/en/Racknga/CacheDatabase.html:436(span)
+#: doc/html/en/Racknga/CacheDatabase.html:478(span)
+#: doc/html/en/Racknga/CacheDatabase.html:479(span)
+#: doc/html/en/Racknga/CacheDatabase.html:508(span)
+msgid "end"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:243(tt)
+#: doc/html/en/Groonga/WillPaginateAPI.html:260(tt)
+#: doc/html/en/Racknga/Utils.html:207(tt)
+#: doc/html/en/Racknga/Utils.html:224(tt)
+#: doc/html/en/Racknga/Utils.html:259(tt)
+#: doc/html/en/Racknga/Utils.html:276(tt)
+msgid "Boolean"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:254(h3)
+#: doc/html/en/Racknga/Utils.html:218(h3)
+#: doc/html/en/Racknga/Utils.html:270(h3)
+msgid "Returns:"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:271(pre)
+#: doc/html/en/Racknga/CacheDatabase.html:383(pre)
+msgid "35 36 37"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:279(span)
+msgid "# File 'lib/racknga/will_paginate.rb', line 35"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:282(span)
+msgid "current_page"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:282(span)
+#: doc/html/en/Racknga/LogDatabase.html:257(span)
+#: doc/html/en/Racknga/LogDatabase.html:329(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:281(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:291(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:231(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:232(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:233(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:248(span)
+#: doc/html/en/Racknga/CacheDatabase.html:299(span)
+#: doc/html/en/Racknga/CacheDatabase.html:430(span)
+msgid "&gt;"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:300(pre)
+msgid "27 28 29"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:308(span)
+msgid "# File 'lib/racknga/will_paginate.rb', line 27"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:311(span)
+msgid "n_records_in_page"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:329(pre)
+#: doc/html/en/Racknga/LogDatabase.html:351(pre)
+#: doc/html/en/Racknga/CacheDatabase.html:496(pre)
+msgid "31 32 33"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:337(span)
+msgid "# File 'lib/racknga/will_paginate.rb', line 31"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:340(span)
+msgid "n_records"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:358(pre)
+msgid "23 24 25"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:366(span)
+msgid "# File 'lib/racknga/will_paginate.rb', line 23"
+msgstr ""
+
+#: doc/html/en/Groonga/WillPaginateAPI.html:369(span)
+msgid "n_pages"
+msgstr ""
+
+#: doc/html/en/class_list.html:21(script)
+#: doc/html/en/method_list.html:21(script)
+#: doc/html/en/file_list.html:21(script)
+msgid ""
+"if (window.top.frames.main) { document.getElementById('base_target').target "
+"= 'main'; document.body.className = 'frames'; }"
+msgstr ""
+
+#: doc/html/en/class_list.html:31(a) doc/html/en/method_list.html:31(a)
+#: doc/html/en/file_list.html:31(a)
+msgid "Classes"
+msgstr ""
+
+#: doc/html/en/class_list.html:33(a) doc/html/en/method_list.html:33(a)
+#: doc/html/en/file_list.html:33(a)
+msgid "Methods"
+msgstr ""
+
+#: doc/html/en/class_list.html:35(a) doc/html/en/method_list.html:35(a)
+#: doc/html/en/file_list.html:35(a)
+msgid "Files"
+msgstr ""
+
+#: doc/html/en/class_list.html:38(div) doc/html/en/method_list.html:38(div)
+#: doc/html/en/file_list.html:38(div)
+msgid "Search: <input type=\"text\"/>"
+msgstr ""
+
+#: doc/html/en/class_list.html:41(a) doc/html/en/class_list.html:42(small)
+#: doc/html/en/top-level-namespace.html:39(span)
+#: doc/html/en/top-level-namespace.html:59(h1)
+msgid "Top Level Namespace"
+msgstr ""
+
+#: doc/html/en/class_list.html:42(a) doc/html/en/class_list.html:42(small)
+#: doc/html/en/top-level-namespace.html:81(a)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:37(a)
+#: doc/html/en/Racknga/Middleware.html:37(a)
+#: doc/html/en/Racknga/Utils.html:37(a)
+#: doc/html/en/Racknga/LogDatabase.html:37(a)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:37(a)
+#: doc/html/en/Racknga/Middleware/Deflater.html:37(a)
+#: doc/html/en/Racknga/Middleware/Cache.html:37(a)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:37(a)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:37(a)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:37(a)
+#: doc/html/en/Racknga/Middleware/Log.html:37(a)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:37(a)
+#: doc/html/en/Racknga/Middleware/JSONP.html:37(a)
+#: doc/html/en/Racknga/Middleware/Range.html:37(a)
+#: doc/html/en/Racknga/CacheDatabase.html:37(a) doc/html/en/_index.html:243(a)
+#: doc/html/en/Racknga.html:39(span)
+msgid "Racknga"
+msgstr ""
+
+#: doc/html/en/class_list.html:42(a)
+#: doc/html/en/Racknga/Middleware/Cache.html:273(span)
+#: doc/html/en/Racknga/CacheDatabase.html:39(span)
+#: doc/html/en/Racknga/CacheDatabase.html:268(a) doc/html/en/_index.html:94(a)
+#: doc/html/en/Racknga.html:114(a)
+msgid "CacheDatabase"
+msgstr ""
+
+#: doc/html/en/class_list.html:42(li)
+msgid ""
+"<span class=\"object_link\"><placeholder-1/></span> &lt; "
+"Object<placeholder-2/>"
+msgstr ""
+
+#: doc/html/en/class_list.html:42(a)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:39(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:173(a)
+#: doc/html/en/_index.html:124(a) doc/html/en/Racknga.html:114(a)
+msgid "ExceptionMailNotifier"
+msgstr ""
+
+#: doc/html/en/class_list.html:42(a)
+#: doc/html/en/Racknga/LogDatabase.html:39(span)
+#: doc/html/en/Racknga/LogDatabase.html:226(a)
+#: doc/html/en/Racknga/Middleware/Log.html:278(span)
+#: doc/html/en/_index.html:181(a) doc/html/en/Racknga.html:114(a)
+msgid "LogDatabase"
+msgstr ""
+
+#: doc/html/en/class_list.html:42(a)
+#: doc/html/en/Racknga/Middleware.html:39(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:37(a)
+#: doc/html/en/Racknga/Middleware/Deflater.html:37(a)
+#: doc/html/en/Racknga/Middleware/Cache.html:37(a)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:37(a)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:37(a)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:37(a)
+#: doc/html/en/Racknga/Middleware/Log.html:37(a)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:37(a)
+#: doc/html/en/Racknga/Middleware/JSONP.html:37(a)
+#: doc/html/en/Racknga/Middleware/Range.html:37(a)
+#: doc/html/en/_index.html:203(a) doc/html/en/Racknga.html:110(a)
+msgid "Middleware"
+msgstr ""
+
+#: doc/html/en/class_list.html:42(a) doc/html/en/Racknga/Middleware.html:88(a)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:243(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:244(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:39(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:224(a)
+#: doc/html/en/_index.html:87(a)
+msgid "Cache"
+msgstr ""
+
+#: doc/html/en/class_list.html:42(small)
+msgid "Racknga::Middleware"
+msgstr ""
+
+#: doc/html/en/class_list.html:42(a) doc/html/en/Racknga/Middleware.html:88(a)
+#: doc/html/en/Racknga/Middleware/Deflater.html:39(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:163(a)
+#: doc/html/en/Racknga/Middleware/Deflater.html:194(span)
+#: doc/html/en/_index.html:109(a)
+msgid "Deflater"
+msgstr ""
+
+#: doc/html/en/class_list.html:42(a) doc/html/en/Racknga/Middleware.html:88(a)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:39(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:163(a)
+#: doc/html/en/_index.html:131(a)
+msgid "ExceptionNotifier"
+msgstr ""
+
+#: doc/html/en/class_list.html:42(li)
+msgid ""
+"<a class=\"toggle\"/> <span class=\"object_link\"><placeholder-1/></span> "
+"&lt; Object<placeholder-2/>"
+msgstr ""
+
+#: doc/html/en/class_list.html:42(a)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:39(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:163(a)
+#: doc/html/en/Racknga/Middleware/JSONP.html:101(a)
+#: doc/html/en/Racknga/Middleware/JSONP.html:253(span)
+#: doc/html/en/_index.html:292(a)
+msgid "Writer"
+msgstr ""
+
+#: doc/html/en/class_list.html:42(small)
+#: doc/html/en/method_list.html:54(small)
+#: doc/html/en/method_list.html:222(small)
+#: doc/html/en/Racknga/Middleware/JSONP.html:74(li)
+msgid "Racknga::Middleware::JSONP"
+msgstr ""
+
+#: doc/html/en/class_list.html:42(a) doc/html/en/Racknga/Middleware.html:88(a)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:37(a)
+#: doc/html/en/Racknga/Middleware/Log.html:39(span)
+#: doc/html/en/Racknga/Middleware/Log.html:228(a)
+#: doc/html/en/_index.html:174(a)
+msgid "Log"
+msgstr ""
+
+#: doc/html/en/class_list.html:42(a)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:39(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:163(a)
+#: doc/html/en/Racknga/Middleware/Log.html:101(a)
+#: doc/html/en/Racknga/Middleware/Log.html:279(span)
+#: doc/html/en/_index.html:188(a)
+msgid "Logger"
+msgstr ""
+
+#: doc/html/en/class_list.html:42(small)
+#: doc/html/en/method_list.html:86(small)
+#: doc/html/en/method_list.html:102(small)
+#: doc/html/en/method_list.html:174(small)
+#: doc/html/en/method_list.html:262(small)
+#: doc/html/en/Racknga/Middleware/Log.html:74(li)
+msgid "Racknga::Middleware::Log"
+msgstr ""
+
+#: doc/html/en/class_list.html:42(a) doc/html/en/Racknga/Middleware.html:88(a)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:39(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:163(a)
+#: doc/html/en/_index.html:228(a)
+msgid "PerUserAgentCache"
+msgstr ""
+
+#: doc/html/en/class_list.html:42(a) doc/html/en/Racknga/Middleware.html:88(a)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:37(a)
+#: doc/html/en/Racknga/Middleware/Range.html:39(span)
+#: doc/html/en/Racknga/Middleware/Range.html:173(a)
+#: doc/html/en/_index.html:248(a)
+msgid "Range"
+msgstr ""
+
+#: doc/html/en/class_list.html:42(a)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:39(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:163(a)
+#: doc/html/en/Racknga/Middleware/Range.html:101(a)
+#: doc/html/en/_index.html:255(a)
+msgid "RangeStream"
+msgstr ""
+
+#: doc/html/en/class_list.html:42(small)
+#: doc/html/en/method_list.html:78(small)
+#: doc/html/en/method_list.html:230(small)
+#: doc/html/en/Racknga/Middleware/Range.html:74(li)
+msgid "Racknga::Middleware::Range"
+msgstr ""
+
+#: doc/html/en/class_list.html:42(a)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:201(span)
+#: doc/html/en/Racknga/Utils.html:39(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:195(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:270(span)
+#: doc/html/en/Racknga/Middleware/Log.html:275(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:194(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:251(span)
+#: doc/html/en/Racknga/Middleware/Range.html:252(span)
+#: doc/html/en/_index.html:270(a) doc/html/en/Racknga.html:110(a)
+msgid "Utils"
+msgstr ""
+
+#: doc/html/en/top-level-namespace.html:6(title)
+msgid "Top Level Namespace &mdash; racknga - 0.9.1"
+msgstr ""
+
+#: doc/html/en/method_list.html:44(a) doc/html/en/method_list.html:52(a)
+#: doc/html/en/method_list.html:60(a) doc/html/en/method_list.html:68(a)
+#: doc/html/en/method_list.html:76(a) doc/html/en/method_list.html:84(a)
+#: doc/html/en/method_list.html:92(a)
+msgid "#call"
+msgstr ""
+
+#: doc/html/en/method_list.html:46(small)
+#: doc/html/en/method_list.html:118(small)
+#: doc/html/en/method_list.html:182(small)
+#: doc/html/en/method_list.html:302(small)
+#: doc/html/en/Racknga/Middleware/Cache.html:74(li)
+msgid "Racknga::Middleware::Cache"
+msgstr ""
+
+#: doc/html/en/method_list.html:62(small)
+#: doc/html/en/method_list.html:246(small)
+#: doc/html/en/Racknga/Middleware/Deflater.html:74(li)
+msgid "Racknga::Middleware::Deflater"
+msgstr ""
+
+#: doc/html/en/method_list.html:70(small)
+#: doc/html/en/method_list.html:270(small)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:74(li)
+msgid "Racknga::Middleware::ExceptionNotifier"
+msgstr ""
+
+#: doc/html/en/method_list.html:94(small)
+#: doc/html/en/method_list.html:238(small)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:74(li)
+msgid "Racknga::Middleware::PerUserAgentCache"
+msgstr ""
+
+#: doc/html/en/method_list.html:100(a) doc/html/en/method_list.html:108(a)
+#: doc/html/en/method_list.html:116(a) doc/html/en/method_list.html:124(a)
+msgid "#close_database"
+msgstr ""
+
+#: doc/html/en/method_list.html:110(small)
+#: doc/html/en/method_list.html:190(small)
+#: doc/html/en/method_list.html:198(small)
+#: doc/html/en/method_list.html:214(small)
+#: doc/html/en/method_list.html:374(small)
+#: doc/html/en/Racknga/LogDatabase.html:74(li)
+msgid "Racknga::LogDatabase"
+msgstr ""
+
+#: doc/html/en/method_list.html:126(small)
+#: doc/html/en/method_list.html:134(small)
+#: doc/html/en/method_list.html:142(small)
+#: doc/html/en/method_list.html:166(small)
+#: doc/html/en/method_list.html:286(small)
+#: doc/html/en/method_list.html:382(small)
+#: doc/html/en/method_list.html:390(small)
+#: doc/html/en/Racknga/CacheDatabase.html:74(li)
+msgid "Racknga::CacheDatabase"
+msgstr ""
+
+#: doc/html/en/method_list.html:132(a)
+msgid "#configuration"
+msgstr ""
+
+#: doc/html/en/method_list.html:140(a)
+msgid "#configurations"
+msgstr ""
+
+#: doc/html/en/method_list.html:148(a) doc/html/en/method_list.html:156(a)
+msgid "#each"
+msgstr ""
+
+#: doc/html/en/method_list.html:150(small)
+#: doc/html/en/method_list.html:254(small)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:74(li)
+msgid "Racknga::Middleware::JSONP::Writer"
+msgstr ""
+
+#: doc/html/en/method_list.html:158(small)
+#: doc/html/en/method_list.html:278(small)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:74(li)
+msgid "Racknga::Middleware::Range::RangeStream"
+msgstr ""
+
+#: doc/html/en/method_list.html:164(a) doc/html/en/method_list.html:172(a)
+#: doc/html/en/method_list.html:180(a) doc/html/en/method_list.html:188(a)
+msgid "#ensure_database"
+msgstr ""
+
+#: doc/html/en/method_list.html:196(a)
+msgid "#entries"
+msgstr ""
+
+#: doc/html/en/method_list.html:204(a) doc/html/en/method_list.html:212(a)
+#: doc/html/en/method_list.html:220(a) doc/html/en/method_list.html:228(a)
+#: doc/html/en/method_list.html:236(a) doc/html/en/method_list.html:244(a)
+#: doc/html/en/method_list.html:252(a) doc/html/en/method_list.html:260(a)
+#: doc/html/en/method_list.html:268(a) doc/html/en/method_list.html:276(a)
+#: doc/html/en/method_list.html:284(a) doc/html/en/method_list.html:292(a)
+#: doc/html/en/method_list.html:300(a)
+msgid "#initialize"
+msgstr ""
+
+#: doc/html/en/method_list.html:206(small)
+#: doc/html/en/method_list.html:310(small)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:74(li)
+msgid "Racknga::Middleware::Log::Logger"
+msgstr ""
+
+#: doc/html/en/method_list.html:294(small)
+#: doc/html/en/method_list.html:326(small)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:74(li)
+msgid "Racknga::ExceptionMailNotifier"
+msgstr ""
+
+#: doc/html/en/method_list.html:308(a)
+msgid "#log"
+msgstr ""
+
+#: doc/html/en/method_list.html:316(a)
+msgid "#normalize_options"
+msgstr ""
+
+#: doc/html/en/method_list.html:318(small)
+#: doc/html/en/method_list.html:350(small)
+#: doc/html/en/method_list.html:366(small)
+msgid "Racknga::Utils"
+msgstr ""
+
+#: doc/html/en/method_list.html:324(a)
+msgid "#notify"
+msgstr ""
+
+#: doc/html/en/method_list.html:334(small)
+#: doc/html/en/method_list.html:342(small)
+#: doc/html/en/method_list.html:358(small)
+#: doc/html/en/method_list.html:398(small)
+#: doc/html/en/method_list.html:406(small)
+msgid "Groonga::WillPaginateAPI"
+msgstr ""
+
+#: doc/html/en/method_list.html:348(a)
+msgid "#passenger?"
+msgstr ""
+
+#: doc/html/en/method_list.html:364(a)
+msgid "#production?"
+msgstr ""
+
+#: doc/html/en/method_list.html:372(a)
+msgid "#purge_old_entries"
+msgstr ""
+
+#: doc/html/en/method_list.html:380(a)
+msgid "#purge_old_responses"
+msgstr ""
+
+#: doc/html/en/method_list.html:388(a)
+msgid "#responses"
+msgstr ""
+
+#: doc/html/en/frames.html:7(title) doc/html/en/_index.html:6(title)
+#: doc/html/en/_index.html:55(h1)
+msgid "racknga - 0.9.1"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:6(title)
+msgid "Class: Racknga::ExceptionMailNotifier &mdash; racknga - 0.9.1"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:36(a)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:36(a)
+msgid "Index (E)"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:59(h1)
+msgid "Class: Racknga::ExceptionMailNotifier"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:67(dt)
+#: doc/html/en/Racknga/LogDatabase.html:67(dt)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:67(dt)
+#: doc/html/en/Racknga/Middleware/Deflater.html:67(dt)
+#: doc/html/en/Racknga/Middleware/Cache.html:67(dt)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:67(dt)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:67(dt)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:67(dt)
+#: doc/html/en/Racknga/Middleware/Log.html:67(dt)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:67(dt)
+#: doc/html/en/Racknga/Middleware/JSONP.html:67(dt)
+#: doc/html/en/Racknga/Middleware/Range.html:67(dt)
+#: doc/html/en/Racknga/CacheDatabase.html:67(dt)
+msgid "Inherits:"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:77(a)
+#: doc/html/en/Racknga/LogDatabase.html:77(a)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:77(a)
+#: doc/html/en/Racknga/Middleware/Deflater.html:77(a)
+#: doc/html/en/Racknga/Middleware/Cache.html:77(a)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:77(a)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:77(a)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:77(a)
+#: doc/html/en/Racknga/Middleware/Log.html:77(a)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:77(a)
+#: doc/html/en/Racknga/Middleware/JSONP.html:77(a)
+#: doc/html/en/Racknga/Middleware/Range.html:77(a)
+#: doc/html/en/Racknga/CacheDatabase.html:77(a)
+msgid "show all"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:90(dd)
+msgid "lib/racknga/exception_mail_notifier.rb"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:95(h2)
+#: doc/html/en/Racknga.html:82(h2)
+msgid "Overview"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:98(p)
+msgid "Ruby 1.9 only. 1.8 isn’t supported."
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:121(strong)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:173(strong)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:200(span)
+#: doc/html/en/Racknga/LogDatabase.html:174(strong)
+#: doc/html/en/Racknga/LogDatabase.html:226(strong)
+#: doc/html/en/Racknga/LogDatabase.html:255(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:132(strong)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:163(strong)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:190(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:132(strong)
+#: doc/html/en/Racknga/Middleware/Deflater.html:163(strong)
+#: doc/html/en/Racknga/Middleware/Deflater.html:192(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:193(strong)
+#: doc/html/en/Racknga/Middleware/Cache.html:224(strong)
+#: doc/html/en/Racknga/Middleware/Cache.html:268(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:132(strong)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:163(strong)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:191(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:132(strong)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:163(strong)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:192(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:111(strong)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:163(strong)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:191(span)
+#: doc/html/en/Racknga/Middleware/Log.html:197(strong)
+#: doc/html/en/Racknga/Middleware/Log.html:228(strong)
+#: doc/html/en/Racknga/Middleware/Log.html:273(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:132(strong)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:163(strong)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:192(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:142(strong)
+#: doc/html/en/Racknga/Middleware/JSONP.html:173(strong)
+#: doc/html/en/Racknga/Middleware/JSONP.html:200(span)
+#: doc/html/en/Racknga/Middleware/Range.html:142(strong)
+#: doc/html/en/Racknga/Middleware/Range.html:173(strong)
+#: doc/html/en/Racknga/Middleware/Range.html:200(span)
+#: doc/html/en/Racknga/CacheDatabase.html:195(strong)
+#: doc/html/en/Racknga/CacheDatabase.html:268(strong)
+#: doc/html/en/Racknga/CacheDatabase.html:297(span)
+msgid "initialize"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:121(a)
+msgid "- (ExceptionMailNotifier) <placeholder-1/>(options)"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:127(span)
+#: doc/html/en/Racknga/LogDatabase.html:180(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:138(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:138(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:199(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:138(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:138(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:117(span)
+#: doc/html/en/Racknga/Middleware/Log.html:203(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:138(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:148(span)
+#: doc/html/en/Racknga/Middleware/Range.html:148(span)
+#: doc/html/en/Racknga/CacheDatabase.html:201(span)
+msgid "constructor"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:137(p)
+msgid "A new instance of ExceptionMailNotifier."
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:146(strong)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:219(strong)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:241(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:251(span)
+msgid "notify"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:146(a)
+msgid "- (Object) <placeholder-1/>(exception, environment)"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:168(h2)
+#: doc/html/en/Racknga/LogDatabase.html:221(h2)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:158(h2)
+#: doc/html/en/Racknga/Middleware/Deflater.html:158(h2)
+#: doc/html/en/Racknga/Middleware/Cache.html:219(h2)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:158(h2)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:158(h2)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:158(h2)
+#: doc/html/en/Racknga/Middleware/Log.html:223(h2)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:158(h2)
+#: doc/html/en/Racknga/Middleware/JSONP.html:168(h2)
+#: doc/html/en/Racknga/Middleware/Range.html:168(h2)
+#: doc/html/en/Racknga/CacheDatabase.html:263(h2)
+msgid "Constructor Details"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:171(p)
+msgid ""
+"- (<tt><span class=\"object_link\"><placeholder-1/></span></tt>) "
+"<placeholder-2/>(options)"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:180(p)
+msgid "A new instance of ExceptionMailNotifier"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:190(pre)
+msgid "30 31 32"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:198(span)
+msgid "# File 'lib/racknga/exception_mail_notifier.rb', line 30"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:200(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:201(span)
+#: doc/html/en/Racknga/Utils.html:190(span)
+#: doc/html/en/Racknga/Utils.html:192(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:192(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:195(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:268(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:270(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:230(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:231(span)
+#: doc/html/en/Racknga/Middleware/Log.html:273(span)
+#: doc/html/en/Racknga/Middleware/Log.html:275(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:192(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:194(span)
+msgid "options"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:201(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:242(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:245(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:195(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:270(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:271(span)
+#: doc/html/en/Racknga/Middleware/Log.html:275(span)
+#: doc/html/en/Racknga/Middleware/Log.html:276(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:194(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:195(span)
+msgid "@options"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:201(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:242(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:244(span)
+#: doc/html/en/Racknga/Utils.html:191(span)
+#: doc/html/en/Racknga/Utils.html:193(span)
+#: doc/html/en/Racknga/Utils.html:194(span)
+#: doc/html/en/Racknga/LogDatabase.html:256(span)
+#: doc/html/en/Racknga/LogDatabase.html:257(span)
+#: doc/html/en/Racknga/LogDatabase.html:329(span)
+#: doc/html/en/Racknga/LogDatabase.html:395(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:191(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:236(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:238(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:239(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:241(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:243(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:244(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:192(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:193(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:194(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:195(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:268(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:269(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:270(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:271(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:273(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:320(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:322(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:323(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:324(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:325(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:326(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:192(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:193(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:193(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:194(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:195(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:267(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:269(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:271(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:276(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:280(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:286(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:288(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:192(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:193(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:230(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:231(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:232(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:233(span)
+#: doc/html/en/Racknga/Middleware/Log.html:273(span)
+#: doc/html/en/Racknga/Middleware/Log.html:274(span)
+#: doc/html/en/Racknga/Middleware/Log.html:275(span)
+#: doc/html/en/Racknga/Middleware/Log.html:276(span)
+#: doc/html/en/Racknga/Middleware/Log.html:278(span)
+#: doc/html/en/Racknga/Middleware/Log.html:279(span)
+#: doc/html/en/Racknga/Middleware/Log.html:324(span)
+#: doc/html/en/Racknga/Middleware/Log.html:326(span)
+#: doc/html/en/Racknga/Middleware/Log.html:327(span)
+#: doc/html/en/Racknga/Middleware/Log.html:328(span)
+#: doc/html/en/Racknga/Middleware/Log.html:330(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:192(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:193(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:194(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:195(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:248(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:201(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:246(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:247(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:249(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:251(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:253(span)
+#: doc/html/en/Racknga/Middleware/Range.html:201(span)
+#: doc/html/en/Racknga/Middleware/Range.html:249(span)
+#: doc/html/en/Racknga/Middleware/Range.html:252(span)
+#: doc/html/en/Racknga/Middleware/Range.html:253(span)
+#: doc/html/en/Racknga/Middleware/Range.html:254(span)
+#: doc/html/en/Racknga/Middleware/Range.html:255(span)
+#: doc/html/en/Racknga/Middleware/Range.html:257(span)
+#: doc/html/en/Racknga/Middleware/Range.html:258(span)
+#: doc/html/en/Racknga/CacheDatabase.html:298(span)
+#: doc/html/en/Racknga/CacheDatabase.html:299(span)
+#: doc/html/en/Racknga/CacheDatabase.html:430(span)
+#: doc/html/en/Racknga/CacheDatabase.html:471(span)
+#: doc/html/en/Racknga/CacheDatabase.html:472(span)
+#: doc/html/en/Racknga/CacheDatabase.html:473(span)
+#: doc/html/en/Racknga/CacheDatabase.html:474(span)
+msgid "="
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:201(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:243(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:245(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:246(span)
+#: doc/html/en/Racknga/Utils.html:192(span)
+#: doc/html/en/Racknga/Utils.html:193(span)
+#: doc/html/en/Racknga/Utils.html:194(span)
+#: doc/html/en/Racknga/Utils.html:248(span)
+#: doc/html/en/Racknga/LogDatabase.html:257(span)
+#: doc/html/en/Racknga/LogDatabase.html:294(span)
+#: doc/html/en/Racknga/LogDatabase.html:328(span)
+#: doc/html/en/Racknga/LogDatabase.html:329(span)
+#: doc/html/en/Racknga/LogDatabase.html:396(span)
+#: doc/html/en/Racknga/LogDatabase.html:397(span)
+#: doc/html/en/Racknga/LogDatabase.html:398(span)
+#: doc/html/en/Racknga/LogDatabase.html:399(span)
+#: doc/html/en/Racknga/LogDatabase.html:400(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:238(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:244(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:245(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:194(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:195(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:236(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:238(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:270(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:272(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:273(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:320(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:321(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:322(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:323(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:324(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:325(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:327(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:360(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:389(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:231(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:232(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:233(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:265(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:266(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:273(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:274(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:275(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:276(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:280(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:193(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:231(span)
+#: doc/html/en/Racknga/Middleware/Log.html:275(span)
+#: doc/html/en/Racknga/Middleware/Log.html:277(span)
+#: doc/html/en/Racknga/Middleware/Log.html:278(span)
+#: doc/html/en/Racknga/Middleware/Log.html:279(span)
+#: doc/html/en/Racknga/Middleware/Log.html:326(span)
+#: doc/html/en/Racknga/Middleware/Log.html:327(span)
+#: doc/html/en/Racknga/Middleware/Log.html:328(span)
+#: doc/html/en/Racknga/Middleware/Log.html:330(span)
+#: doc/html/en/Racknga/Middleware/Log.html:362(span)
+#: doc/html/en/Racknga/Middleware/Log.html:391(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:194(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:247(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:249(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:251(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:254(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:255(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:256(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:257(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:258(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:246(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:249(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:251(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:253(span)
+#: doc/html/en/Racknga/Middleware/Range.html:249(span)
+#: doc/html/en/Racknga/Middleware/Range.html:252(span)
+#: doc/html/en/Racknga/Middleware/Range.html:254(span)
+#: doc/html/en/Racknga/Middleware/Range.html:255(span)
+#: doc/html/en/Racknga/Middleware/Range.html:261(span)
+#: doc/html/en/Racknga/CacheDatabase.html:299(span)
+#: doc/html/en/Racknga/CacheDatabase.html:336(span)
+#: doc/html/en/Racknga/CacheDatabase.html:429(span)
+#: doc/html/en/Racknga/CacheDatabase.html:430(span)
+#: doc/html/en/Racknga/CacheDatabase.html:472(span)
+#: doc/html/en/Racknga/CacheDatabase.html:473(span)
+#: doc/html/en/Racknga/CacheDatabase.html:474(span)
+#: doc/html/en/Racknga/CacheDatabase.html:476(span)
+#: doc/html/en/Racknga/CacheDatabase.html:477(span)
+msgid "."
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:201(span)
+#: doc/html/en/Racknga/Utils.html:96(strong)
+#: doc/html/en/Racknga/Utils.html:168(strong)
+#: doc/html/en/Racknga/Utils.html:190(span)
+#: doc/html/en/Racknga/Utils.html:193(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:195(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:270(span)
+#: doc/html/en/Racknga/Middleware/Log.html:275(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:194(span)
+msgid "normalize_options"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:201(span)
+#: doc/html/en/Racknga/Utils.html:191(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:192(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:195(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:268(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:270(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:230(span)
+#: doc/html/en/Racknga/Middleware/Log.html:273(span)
+#: doc/html/en/Racknga/Middleware/Log.html:275(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:192(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:194(span)
+msgid "{"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:201(span)
+#: doc/html/en/Racknga/Utils.html:191(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:192(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:195(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:268(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:270(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:230(span)
+#: doc/html/en/Racknga/Middleware/Log.html:273(span)
+#: doc/html/en/Racknga/Middleware/Log.html:275(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:192(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:194(span)
+msgid "}"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:217(p)
+msgid "- (<placeholder-1/>) <placeholder-2/>(exception, environment)"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:226(pre)
+msgid "34 35 36 37 38 39 40 41"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:239(span)
+msgid "# File 'lib/racknga/exception_mail_notifier.rb', line 34"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:241(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:244(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:248(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:251(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:258(span)
+msgid "exception"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:241(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:244(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:245(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:246(span)
+#: doc/html/en/Racknga/Utils.html:192(span)
+#: doc/html/en/Racknga/LogDatabase.html:329(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:244(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:192(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:268(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:272(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:328(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:330(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:191(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:192(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:295(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:230(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:231(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:232(span)
+#: doc/html/en/Racknga/Middleware/Log.html:273(span)
+#: doc/html/en/Racknga/Middleware/Log.html:277(span)
+#: doc/html/en/Racknga/Middleware/Log.html:327(span)
+#: doc/html/en/Racknga/Middleware/Log.html:331(span)
+#: doc/html/en/Racknga/Middleware/Log.html:333(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:192(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:251(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:249(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:250(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:252(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:253(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:255(span)
+#: doc/html/en/Racknga/Middleware/Range.html:249(span)
+#: doc/html/en/Racknga/Middleware/Range.html:250(span)
+#: doc/html/en/Racknga/Middleware/Range.html:257(span)
+#: doc/html/en/Racknga/Middleware/Range.html:258(span)
+#: doc/html/en/Racknga/Middleware/Range.html:259(span)
+#: doc/html/en/Racknga/Middleware/Range.html:261(span)
+#: doc/html/en/Racknga/CacheDatabase.html:430(span)
+msgid ","
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:241(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:244(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:235(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:236(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:243(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:244(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:245(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:234(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:235(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:236(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:238(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:319(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:320(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:321(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:323(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:324(span)
+#: doc/html/en/Racknga/Middleware/Log.html:323(span)
+#: doc/html/en/Racknga/Middleware/Log.html:324(span)
+#: doc/html/en/Racknga/Middleware/Log.html:327(span)
+#: doc/html/en/Racknga/Middleware/Log.html:330(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:246(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:247(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:251(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:245(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:246(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:249(span)
+#: doc/html/en/Racknga/Middleware/Range.html:248(span)
+#: doc/html/en/Racknga/Middleware/Range.html:249(span)
+#: doc/html/en/Racknga/Middleware/Range.html:254(span)
+msgid "environment"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:242(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:245(span)
+msgid "host"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:242(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:245(span)
+#: doc/html/en/Racknga/Utils.html:194(span)
+#: doc/html/en/Racknga/Utils.html:247(span)
+#: doc/html/en/Racknga/Utils.html:248(span)
+#: doc/html/en/Racknga/Utils.html:298(span)
+#: doc/html/en/Racknga/LogDatabase.html:362(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:236(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:243(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:244(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:271(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:323(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:324(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:326(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:286(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:295(span)
+#: doc/html/en/Racknga/Middleware/Log.html:276(span)
+#: doc/html/en/Racknga/Middleware/Log.html:324(span)
+#: doc/html/en/Racknga/Middleware/Log.html:333(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:195(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:247(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:250(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:252(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:255(span)
+#: doc/html/en/Racknga/Middleware/Range.html:250(span)
+#: doc/html/en/Racknga/Middleware/Range.html:253(span)
+#: doc/html/en/Racknga/Middleware/Range.html:255(span)
+#: doc/html/en/Racknga/Middleware/Range.html:261(span)
+#: doc/html/en/Racknga/CacheDatabase.html:365(span)
+#: doc/html/en/Racknga/CacheDatabase.html:394(span)
+#: doc/html/en/Racknga/CacheDatabase.html:507(span)
+msgid "["
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:242(span)
+msgid ":host"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:242(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:245(span)
+#: doc/html/en/Racknga/Utils.html:194(span)
+#: doc/html/en/Racknga/Utils.html:247(span)
+#: doc/html/en/Racknga/Utils.html:248(span)
+#: doc/html/en/Racknga/Utils.html:298(span)
+#: doc/html/en/Racknga/LogDatabase.html:362(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:236(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:243(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:244(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:271(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:323(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:324(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:326(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:286(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:295(span)
+#: doc/html/en/Racknga/Middleware/Log.html:276(span)
+#: doc/html/en/Racknga/Middleware/Log.html:324(span)
+#: doc/html/en/Racknga/Middleware/Log.html:333(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:195(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:247(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:250(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:252(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:255(span)
+#: doc/html/en/Racknga/Middleware/Range.html:250(span)
+#: doc/html/en/Racknga/Middleware/Range.html:253(span)
+#: doc/html/en/Racknga/Middleware/Range.html:255(span)
+#: doc/html/en/Racknga/Middleware/Range.html:261(span)
+#: doc/html/en/Racknga/CacheDatabase.html:365(span)
+#: doc/html/en/Racknga/CacheDatabase.html:394(span)
+#: doc/html/en/Racknga/CacheDatabase.html:507(span)
+msgid "]"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:242(span)
+msgid "\"localhost\""
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:243(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:321(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:250(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:252(span)
+#: doc/html/en/Racknga/Middleware/Range.html:250(span)
+msgid "return"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:243(span)
+#: doc/html/en/Racknga/Utils.html:193(span)
+#: doc/html/en/Racknga/LogDatabase.html:328(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:237(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:235(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:272(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:327(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:265(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:274(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:275(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:281(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:282(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:291(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:298(span)
+#: doc/html/en/Racknga/Middleware/Log.html:277(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:248(span)
+#: doc/html/en/Racknga/Middleware/Range.html:250(span)
+#: doc/html/en/Racknga/Middleware/Range.html:256(span)
+#: doc/html/en/Racknga/CacheDatabase.html:429(span)
+#: doc/html/en/Racknga/CacheDatabase.html:477(span)
+msgid "if"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:243(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:246(span)
+msgid "to"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:243(span)
+msgid "empty?"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:244(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:246(span)
+msgid "mail"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:244(span)
+msgid "format"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:245(span)
+msgid "Net"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:245(span)
+#: doc/html/en/Racknga/LogDatabase.html:257(span)
+#: doc/html/en/Racknga/LogDatabase.html:329(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:243(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:244(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:194(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:320(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:275(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:276(span)
+#: doc/html/en/Racknga/Middleware/Log.html:330(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:246(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:251(span)
+#: doc/html/en/Racknga/Middleware/Range.html:252(span)
+#: doc/html/en/Racknga/Middleware/Range.html:254(span)
+#: doc/html/en/Racknga/CacheDatabase.html:299(span)
+#: doc/html/en/Racknga/CacheDatabase.html:430(span)
+msgid "::"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:245(span)
+msgid "SMTP"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:245(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:267(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:269(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:281(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:282(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:283(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:286(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:287(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:288(span)
+msgid "start"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:245(span)
+msgid ":port"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:245(span)
+#: doc/html/en/Racknga/Utils.html:192(span)
+#: doc/html/en/Racknga/LogDatabase.html:397(span)
+#: doc/html/en/Racknga/LogDatabase.html:399(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:273(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:249(span)
+#: doc/html/en/Racknga/CacheDatabase.html:476(span)
+msgid "do"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:245(span)
+#: doc/html/en/Racknga/Utils.html:192(span)
+#: doc/html/en/Racknga/LogDatabase.html:397(span)
+#: doc/html/en/Racknga/LogDatabase.html:399(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:273(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:249(span)
+#: doc/html/en/Racknga/CacheDatabase.html:476(span)
+msgid "|"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:245(span)
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:246(span)
+msgid "smtp"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:246(span)
+msgid "send_message"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:246(span)
+msgid "from"
+msgstr ""
+
+#: doc/html/en/Racknga/ExceptionMailNotifier.html:246(span)
+#: doc/html/en/Racknga/LogDatabase.html:396(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:256(span)
+msgid "*"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware.html:6(title)
+msgid "Module: Racknga::Middleware &mdash; racknga - 0.9.1"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware.html:36(a)
+msgid "Index (M)"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware.html:59(h1)
+msgid "Module: Racknga::Middleware"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware.html:75(span)
+msgid ""
+",<br/> lib/racknga/middleware/cache.rb,<br/> lib/racknga/middleware/range.rb,"
+"<br/> lib/racknga/middleware/jsonp.rb,<br/> lib/racknga/middleware/deflater."
+"rb,<br/> lib/racknga/middleware/exception_notifier.rb"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware.html:75(dd)
+msgid "lib/racknga/middleware/log.rb<placeholder-1/>"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware.html:88(strong)
+#: doc/html/en/Racknga/Middleware/Log.html:101(strong)
+#: doc/html/en/Racknga/Middleware/JSONP.html:101(strong)
+#: doc/html/en/Racknga/Middleware/Range.html:101(strong)
+#: doc/html/en/Racknga.html:114(strong)
+msgid "Classes:"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware.html:83(p)
+msgid ""
+"<placeholder-1/> <span class=\"object_link\"><placeholder-2/></span>, <span "
+"class=\"object_link\"><placeholder-3/></span>, <span class=\"object_link"
+"\"><placeholder-4/></span>, <span class=\"object_link\"><placeholder-5/></"
+"span>, <span class=\"object_link\"><placeholder-6/></span>, <span class="
+"\"object_link\"><placeholder-7/></span>, <span class=\"object_link"
+"\"><placeholder-8/></span>"
+msgstr ""
+
+#: doc/html/en/Racknga/Utils.html:6(title)
+msgid "Module: Racknga::Utils &mdash; racknga - 0.9.1"
+msgstr ""
+
+#: doc/html/en/Racknga/Utils.html:36(a)
+msgid "Index (U)"
+msgstr ""
+
+#: doc/html/en/Racknga/Utils.html:59(h1)
+msgid "Module: Racknga::Utils"
+msgstr ""
+
+#: doc/html/en/Racknga/Utils.html:75(dd)
+msgid "lib/racknga/utils.rb"
+msgstr ""
+
+#: doc/html/en/Racknga/Utils.html:96(a)
+msgid "- (Object) <placeholder-1/>(options)"
+msgstr ""
+
+#: doc/html/en/Racknga/Utils.html:117(strong)
+#: doc/html/en/Racknga/Utils.html:207(strong)
+#: doc/html/en/Racknga/Utils.html:246(span)
+msgid "passenger?"
+msgstr ""
+
+#: doc/html/en/Racknga/Utils.html:138(strong)
+#: doc/html/en/Racknga/Utils.html:259(strong)
+#: doc/html/en/Racknga/Utils.html:297(span)
+msgid "production?"
+msgstr ""
+
+#: doc/html/en/Racknga/Utils.html:166(p)
+msgid "- (<placeholder-1/>) <placeholder-2/>(options)"
+msgstr ""
+
+#: doc/html/en/Racknga/Utils.html:175(pre)
+msgid "31 32 33 34 35 36 37 38"
+msgstr ""
+
+#: doc/html/en/Racknga/Utils.html:188(span)
+msgid "# File 'lib/racknga/utils.rb', line 31"
+msgstr ""
+
+#: doc/html/en/Racknga/Utils.html:191(span)
+#: doc/html/en/Racknga/Utils.html:194(span)
+#: doc/html/en/Racknga/Utils.html:196(span)
+msgid "normalized_options"
+msgstr ""
+
+#: doc/html/en/Racknga/Utils.html:192(span)
+#: doc/html/en/Racknga/LogDatabase.html:399(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:111(strong)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:211(strong)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:230(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:232(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:111(strong)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:213(strong)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:264(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:273(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:249(span)
+#: doc/html/en/Racknga/CacheDatabase.html:476(span)
+msgid "each"
+msgstr ""
+
+#: doc/html/en/Racknga/Utils.html:192(span)
+#: doc/html/en/Racknga/Utils.html:194(span)
+#: doc/html/en/Racknga/LogDatabase.html:400(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:243(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:244(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:323(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:326(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:328(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:330(span)
+msgid "key"
+msgstr ""
+
+#: doc/html/en/Racknga/Utils.html:192(span)
+#: doc/html/en/Racknga/Utils.html:193(span)
+#: doc/html/en/Racknga/Utils.html:194(span)
+msgid "value"
+msgstr ""
+
+#: doc/html/en/Racknga/Utils.html:193(span)
+msgid "is_a?"
+msgstr ""
+
+#: doc/html/en/Racknga/Utils.html:193(span)
+msgid "Hash"
+msgstr ""
+
+#: doc/html/en/Racknga/Utils.html:194(span)
+msgid "to_sym"
+msgstr ""
+
+#: doc/html/en/Racknga/Utils.html:235(pre)
+msgid "26 27 28 29"
+msgstr ""
+
+#: doc/html/en/Racknga/Utils.html:244(span)
+msgid "# File 'lib/racknga/utils.rb', line 26"
+msgstr ""
+
+#: doc/html/en/Racknga/Utils.html:247(span)
+#: doc/html/en/Racknga/Utils.html:248(span)
+#: doc/html/en/Racknga/Utils.html:298(span)
+msgid "ENV"
+msgstr ""
+
+#: doc/html/en/Racknga/Utils.html:247(span)
+msgid "\"PASSENGER_ENVIRONMENT\""
+msgstr ""
+
+#: doc/html/en/Racknga/Utils.html:247(span)
+msgid "or"
+msgstr ""
+
+#: doc/html/en/Racknga/Utils.html:248(span)
+msgid "/Phusion_Passenger/"
+msgstr ""
+
+#: doc/html/en/Racknga/Utils.html:248(span)
+#: doc/html/en/Racknga/Middleware/Range.html:256(span)
+msgid "=~"
+msgstr ""
+
+#: doc/html/en/Racknga/Utils.html:248(span)
+msgid "\"SERVER_SOFTWARE\""
+msgstr ""
+
+#: doc/html/en/Racknga/Utils.html:248(span)
+msgid "to_s"
+msgstr ""
+
+#: doc/html/en/Racknga/Utils.html:287(pre)
+#: doc/html/en/Racknga/Middleware/JSONP.html:190(pre)
+msgid "22 23 24"
+msgstr ""
+
+#: doc/html/en/Racknga/Utils.html:295(span)
+msgid "# File 'lib/racknga/utils.rb', line 22"
+msgstr ""
+
+#: doc/html/en/Racknga/Utils.html:298(span)
+msgid "\"RACK_ENV\""
+msgstr ""
+
+#: doc/html/en/Racknga/Utils.html:298(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:327(span)
+#: doc/html/en/Racknga/CacheDatabase.html:477(span)
+msgid "=="
+msgstr ""
+
+#: doc/html/en/Racknga/Utils.html:298(span)
+msgid "\"production\""
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:6(title)
+msgid "Class: Racknga::LogDatabase &mdash; racknga - 0.9.1"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:36(a)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:36(a)
+#: doc/html/en/Racknga/Middleware/Log.html:36(a)
+msgid "Index (L)"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:59(h1)
+msgid "Class: Racknga::LogDatabase"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:90(dd)
+msgid "lib/racknga/log_database.rb"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:111(strong)
+#: doc/html/en/Racknga/LogDatabase.html:276(strong)
+#: doc/html/en/Racknga/LogDatabase.html:293(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:151(strong)
+#: doc/html/en/Racknga/Middleware/Cache.html:342(strong)
+#: doc/html/en/Racknga/Middleware/Cache.html:359(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:360(span)
+#: doc/html/en/Racknga/Middleware/Log.html:155(strong)
+#: doc/html/en/Racknga/Middleware/Log.html:344(strong)
+#: doc/html/en/Racknga/Middleware/Log.html:361(span)
+#: doc/html/en/Racknga/Middleware/Log.html:362(span)
+#: doc/html/en/Racknga/CacheDatabase.html:111(strong)
+#: doc/html/en/Racknga/CacheDatabase.html:318(strong)
+#: doc/html/en/Racknga/CacheDatabase.html:335(span)
+msgid "close_database"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:132(strong)
+#: doc/html/en/Racknga/LogDatabase.html:258(span)
+#: doc/html/en/Racknga/LogDatabase.html:305(strong)
+#: doc/html/en/Racknga/LogDatabase.html:327(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:172(strong)
+#: doc/html/en/Racknga/Middleware/Cache.html:371(strong)
+#: doc/html/en/Racknga/Middleware/Cache.html:388(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:389(span)
+#: doc/html/en/Racknga/Middleware/Log.html:176(strong)
+#: doc/html/en/Racknga/Middleware/Log.html:373(strong)
+#: doc/html/en/Racknga/Middleware/Log.html:390(span)
+#: doc/html/en/Racknga/Middleware/Log.html:391(span)
+#: doc/html/en/Racknga/CacheDatabase.html:174(strong)
+#: doc/html/en/Racknga/CacheDatabase.html:300(span)
+#: doc/html/en/Racknga/CacheDatabase.html:405(strong)
+#: doc/html/en/Racknga/CacheDatabase.html:428(span)
+msgid "ensure_database"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:153(strong)
+#: doc/html/en/Racknga/LogDatabase.html:344(strong)
+#: doc/html/en/Racknga/LogDatabase.html:361(span)
+#: doc/html/en/Racknga/LogDatabase.html:397(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:193(span)
+msgid "entries"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:174(a)
+msgid "- (LogDatabase) <placeholder-1/>(database_path)"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:190(p)
+msgid "A new instance of LogDatabase."
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:199(strong)
+#: doc/html/en/Racknga/LogDatabase.html:373(strong)
+#: doc/html/en/Racknga/LogDatabase.html:395(span)
+msgid "purge_old_entries"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:199(a)
+msgid "- (Object) <placeholder-1/>(base_time = nil)"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:224(p)
+#: doc/html/en/Racknga/CacheDatabase.html:266(p)
+msgid ""
+"- (<tt><span class=\"object_link\"><placeholder-1/></span></tt>) "
+"<placeholder-2/>(database_path)"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:233(p)
+msgid "A new instance of LogDatabase"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:243(pre)
+#: doc/html/en/Racknga/CacheDatabase.html:285(pre)
+msgid "25 26 27 28 29"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:253(span)
+msgid "# File 'lib/racknga/log_database.rb', line 25"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:255(span)
+#: doc/html/en/Racknga/LogDatabase.html:256(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:271(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:272(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:273(span)
+#: doc/html/en/Racknga/Middleware/Log.html:276(span)
+#: doc/html/en/Racknga/Middleware/Log.html:277(span)
+#: doc/html/en/Racknga/Middleware/Log.html:278(span)
+#: doc/html/en/Racknga/CacheDatabase.html:297(span)
+#: doc/html/en/Racknga/CacheDatabase.html:298(span)
+msgid "database_path"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:256(span)
+#: doc/html/en/Racknga/LogDatabase.html:328(span)
+#: doc/html/en/Racknga/LogDatabase.html:329(span)
+#: doc/html/en/Racknga/CacheDatabase.html:298(span)
+#: doc/html/en/Racknga/CacheDatabase.html:429(span)
+#: doc/html/en/Racknga/CacheDatabase.html:430(span)
+msgid "@database_path"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:257(span)
+#: doc/html/en/Racknga/LogDatabase.html:329(span)
+#: doc/html/en/Racknga/LogDatabase.html:362(span)
+#: doc/html/en/Racknga/CacheDatabase.html:299(span)
+#: doc/html/en/Racknga/CacheDatabase.html:394(span)
+#: doc/html/en/Racknga/CacheDatabase.html:430(span)
+#: doc/html/en/Racknga/CacheDatabase.html:507(span)
+msgid "@context"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:257(span)
+#: doc/html/en/Racknga/CacheDatabase.html:299(span)
+msgid "Context"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:257(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:194(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:273(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:320(span)
+#: doc/html/en/Racknga/Middleware/Log.html:278(span)
+#: doc/html/en/Racknga/Middleware/Log.html:279(span)
+#: doc/html/en/Racknga/Middleware/Log.html:330(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:246(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:251(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:253(span)
+#: doc/html/en/Racknga/Middleware/Range.html:252(span)
+#: doc/html/en/Racknga/Middleware/Range.html:254(span)
+#: doc/html/en/Racknga/CacheDatabase.html:299(span)
+msgid "new"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:257(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:274(span)
+#: doc/html/en/Racknga/CacheDatabase.html:299(span)
+msgid ":encoding"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:257(span)
+#: doc/html/en/Racknga/CacheDatabase.html:299(span)
+msgid ":none"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:283(pre)
+msgid "44 45 46"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:291(span)
+msgid "# File 'lib/racknga/log_database.rb', line 44"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:294(span)
+#: doc/html/en/Racknga/LogDatabase.html:329(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:273(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:322(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:325(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:360(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:389(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:192(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:193(span)
+#: doc/html/en/Racknga/Middleware/Log.html:278(span)
+#: doc/html/en/Racknga/Middleware/Log.html:279(span)
+#: doc/html/en/Racknga/Middleware/Log.html:362(span)
+#: doc/html/en/Racknga/Middleware/Log.html:391(span)
+#: doc/html/en/Racknga/CacheDatabase.html:336(span)
+#: doc/html/en/Racknga/CacheDatabase.html:430(span)
+msgid "@database"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:294(span)
+#: doc/html/en/Racknga/CacheDatabase.html:336(span)
+msgid "close"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:312(pre)
+msgid "35 36 37 38 39 40 41 42"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:325(span)
+msgid "# File 'lib/racknga/log_database.rb', line 35"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:328(span)
+#: doc/html/en/Racknga/CacheDatabase.html:429(span)
+msgid "File"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:328(span)
+#: doc/html/en/Racknga/CacheDatabase.html:429(span)
+msgid "exist?"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:329(span)
+#: doc/html/en/Racknga/CacheDatabase.html:430(span)
+msgid "Database"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:329(span)
+#: doc/html/en/Racknga/CacheDatabase.html:430(span)
+msgid "open"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:329(span)
+#: doc/html/en/Racknga/CacheDatabase.html:430(span)
+msgid ":context"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:330(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:240(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:237(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:329(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:268(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:285(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:294(span)
+#: doc/html/en/Racknga/CacheDatabase.html:431(span)
+msgid "else"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:331(span)
+#: doc/html/en/Racknga/CacheDatabase.html:432(span)
+msgid "create_database"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:333(span)
+#: doc/html/en/Racknga/CacheDatabase.html:434(span)
+msgid "ensure_tables"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:359(span)
+msgid "# File 'lib/racknga/log_database.rb', line 31"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:362(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:193(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:231(span)
+msgid "@entries"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:362(span)
+#: doc/html/en/Racknga/LogDatabase.html:396(span)
+msgid "||="
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:362(span)
+msgid "\"Entries\""
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:371(p)
+msgid "- (<placeholder-1/>) <placeholder-2/>(base_time = nil)"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:380(pre)
+msgid "48 49 50 51 52 53 54 55"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:393(span)
+msgid "# File 'lib/racknga/log_database.rb', line 48"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:395(span)
+#: doc/html/en/Racknga/LogDatabase.html:396(span)
+#: doc/html/en/Racknga/LogDatabase.html:398(span)
+msgid "base_time"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:395(span)
+msgid "nil"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:396(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:324(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:231(span)
+#: doc/html/en/Racknga/Middleware/Log.html:326(span)
+#: doc/html/en/Racknga/Middleware/Log.html:328(span)
+msgid "Time"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:396(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:324(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:231(span)
+#: doc/html/en/Racknga/Middleware/Log.html:326(span)
+#: doc/html/en/Racknga/Middleware/Log.html:328(span)
+msgid "now"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:396(span)
+msgid "60"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:396(span)
+msgid "24"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:397(span)
+msgid "select"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:397(span)
+#: doc/html/en/Racknga/LogDatabase.html:398(span)
+#: doc/html/en/Racknga/LogDatabase.html:399(span)
+#: doc/html/en/Racknga/LogDatabase.html:400(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:326(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:327(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:328(span)
+msgid "record"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:398(span)
+msgid "time_stamp"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:398(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:282(span)
+msgid "&lt;"
+msgstr ""
+
+#: doc/html/en/Racknga/LogDatabase.html:400(span)
+#: doc/html/en/Racknga/CacheDatabase.html:477(span)
+msgid "delete"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:6(title)
+msgid "Class: Racknga::Middleware::PerUserAgentCache &mdash; racknga - 0.9.1"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:17(script)
+#: doc/html/en/Racknga/Middleware/Deflater.html:17(script)
+#: doc/html/en/Racknga/Middleware/Cache.html:17(script)
+#: doc/html/en/Racknga/Middleware/Log.html:17(script)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:17(script)
+#: doc/html/en/Racknga/Middleware/JSONP.html:17(script)
+#: doc/html/en/Racknga/Middleware/Range.html:17(script)
+msgid "relpath = '../..'; if (relpath != '') relpath += '/';"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:59(h1)
+msgid "Class: Racknga::Middleware::PerUserAgentCache"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:90(dd)
+#: doc/html/en/Racknga/Middleware/Cache.html:90(dd)
+msgid "lib/racknga/middleware/cache.rb"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:111(strong)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:209(strong)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:235(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:245(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:111(strong)
+#: doc/html/en/Racknga/Middleware/Deflater.html:213(strong)
+#: doc/html/en/Racknga/Middleware/Deflater.html:234(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:236(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:238(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:130(strong)
+#: doc/html/en/Racknga/Middleware/Cache.html:291(strong)
+#: doc/html/en/Racknga/Middleware/Cache.html:319(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:321(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:231(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:233(span)
+#: doc/html/en/Racknga/Middleware/Log.html:134(strong)
+#: doc/html/en/Racknga/Middleware/Log.html:297(strong)
+#: doc/html/en/Racknga/Middleware/Log.html:323(span)
+#: doc/html/en/Racknga/Middleware/Log.html:327(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:111(strong)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:213(strong)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:246(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:247(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:121(strong)
+#: doc/html/en/Racknga/Middleware/JSONP.html:219(strong)
+#: doc/html/en/Racknga/Middleware/JSONP.html:245(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:249(span)
+#: doc/html/en/Racknga/Middleware/Range.html:121(strong)
+#: doc/html/en/Racknga/Middleware/Range.html:219(strong)
+#: doc/html/en/Racknga/Middleware/Range.html:248(span)
+#: doc/html/en/Racknga/Middleware/Range.html:249(span)
+msgid "call"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:111(a)
+#: doc/html/en/Racknga/Middleware/Deflater.html:111(a)
+#: doc/html/en/Racknga/Middleware/Cache.html:130(a)
+#: doc/html/en/Racknga/Middleware/Log.html:134(a)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:111(a)
+#: doc/html/en/Racknga/Middleware/JSONP.html:121(a)
+#: doc/html/en/Racknga/Middleware/Range.html:121(a)
+msgid "- (Object) <placeholder-1/>(environment)"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:132(a)
+msgid "- (PerUserAgentCache) <placeholder-1/>(application)"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:148(p)
+msgid "A new instance of PerUserAgentCache."
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:161(p)
+#: doc/html/en/Racknga/Middleware/JSONP.html:171(p)
+#: doc/html/en/Racknga/Middleware/Range.html:171(p)
+msgid ""
+"- (<tt><span class=\"object_link\"><placeholder-1/></span></tt>) "
+"<placeholder-2/>(application)"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:170(p)
+msgid "A new instance of PerUserAgentCache"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:180(pre)
+msgid "26 27 28"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:188(span)
+msgid "# File 'lib/racknga/middleware/cache.rb', line 26"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:190(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:191(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:192(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:193(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:268(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:269(span)
+#: doc/html/en/Racknga/Middleware/Log.html:273(span)
+#: doc/html/en/Racknga/Middleware/Log.html:274(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:192(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:193(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:200(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:201(span)
+#: doc/html/en/Racknga/Middleware/Range.html:200(span)
+#: doc/html/en/Racknga/Middleware/Range.html:201(span)
+msgid "application"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:191(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:245(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:193(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:194(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:236(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:269(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:321(span)
+#: doc/html/en/Racknga/Middleware/Log.html:274(span)
+#: doc/html/en/Racknga/Middleware/Log.html:327(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:193(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:247(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:201(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:249(span)
+#: doc/html/en/Racknga/Middleware/Range.html:201(span)
+#: doc/html/en/Racknga/Middleware/Range.html:249(span)
+msgid "@application"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:207(p)
+#: doc/html/en/Racknga/Middleware/Deflater.html:211(p)
+#: doc/html/en/Racknga/Middleware/Cache.html:289(p)
+#: doc/html/en/Racknga/Middleware/Log.html:295(p)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:211(p)
+#: doc/html/en/Racknga/Middleware/JSONP.html:217(p)
+#: doc/html/en/Racknga/Middleware/Range.html:217(p)
+msgid "- (<placeholder-1/>) <placeholder-2/>(environment)"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:216(pre)
+msgid "30 31 32 33 34 35 36 37 38 39 40 41"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:233(span)
+msgid "# File 'lib/racknga/middleware/cache.rb', line 30"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:236(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:237(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:238(span)
+msgid "mobile"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:236(span)
+msgid "\"rack.jpmobile\""
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:238(span)
+msgid "last_component"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:238(span)
+msgid "class"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:238(span)
+msgid "name"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:238(span)
+msgid "split"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:238(span)
+msgid "/::/"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:238(span)
+msgid "last"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:239(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:241(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:244(span)
+msgid "user_agent_key"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:239(span)
+msgid "\"mobile:#{last_component.downcase}\""
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:241(span)
+msgid "\"pc\""
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:243(span)
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:244(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:323(span)
+msgid "KEY_KEY"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:244(span)
+msgid "join"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/PerUserAgentCache.html:244(span)
+msgid "\":\""
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Deflater.html:6(title)
+msgid "Class: Racknga::Middleware::Deflater &mdash; racknga - 0.9.1"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Deflater.html:36(a)
+msgid "Index (D)"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Deflater.html:59(h1)
+msgid "Class: Racknga::Middleware::Deflater"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Deflater.html:90(dd)
+msgid "lib/racknga/middleware/deflater.rb"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Deflater.html:132(a)
+msgid "- (Deflater) <placeholder-1/>(application, options = {})"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Deflater.html:148(p)
+msgid "A new instance of Deflater."
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Deflater.html:161(p)
+#: doc/html/en/Racknga/Middleware/Cache.html:222(p)
+#: doc/html/en/Racknga/Middleware/Log.html:226(p)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:161(p)
+msgid ""
+"- (<tt><span class=\"object_link\"><placeholder-1/></span></tt>) "
+"<placeholder-2/>(application, options = {})"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Deflater.html:170(p)
+msgid "A new instance of Deflater"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Deflater.html:180(pre)
+msgid "22 23 24 25 26"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Deflater.html:190(span)
+msgid "# File 'lib/racknga/middleware/deflater.rb', line 22"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Deflater.html:194(span)
+#: doc/html/en/Racknga/Middleware/Deflater.html:238(span)
+msgid "@deflater"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Deflater.html:220(pre)
+msgid "28 29 30 31 32 33 34"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Deflater.html:232(span)
+msgid "# File 'lib/racknga/middleware/deflater.rb', line 28"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Deflater.html:235(span)
+msgid "ie6?"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:6(title)
+msgid "Class: Racknga::Middleware::Cache &mdash; racknga - 0.9.1"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:36(a)
+#: doc/html/en/Racknga/CacheDatabase.html:36(a)
+msgid "Index (C)"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:59(h1)
+msgid "Class: Racknga::Middleware::Cache"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:96(h2)
+#: doc/html/en/Racknga/Middleware/Log.html:106(h2)
+#: doc/html/en/Racknga.html:119(h2)
+msgid "Constant Summary"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:100(dt)
+msgid "KEY_KEY ="
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:103(span)
+msgid "\"racknga.cache.key\""
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:106(dt)
+msgid "START_TIME_KEY ="
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:109(span)
+msgid "\"racknga.cache.start_time\""
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:193(a)
+msgid "- (Cache) <placeholder-1/>(application, options = {})"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:209(p)
+msgid "A new instance of Cache."
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:231(p)
+msgid "A new instance of Cache"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:237(h3)
+#: doc/html/en/Racknga/Middleware/Log.html:241(h3)
+msgid "Raises:"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:243(tt)
+#: doc/html/en/Racknga/Middleware/Cache.html:272(span)
+#: doc/html/en/Racknga/Middleware/Log.html:247(tt)
+#: doc/html/en/Racknga/Middleware/Log.html:277(span)
+msgid "ArgumentError"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:254(pre)
+msgid "48 49 50 51 52 53 54"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:266(span)
+msgid "# File 'lib/racknga/middleware/cache.rb', line 48"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:271(span)
+#: doc/html/en/Racknga/Middleware/Log.html:276(span)
+msgid ":database_path"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:272(span)
+#: doc/html/en/Racknga/Middleware/Log.html:277(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:263(span)
+msgid "raise"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:272(span)
+#: doc/html/en/Racknga/Middleware/Log.html:277(span)
+msgid "\":database_path is missing\""
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:272(span)
+#: doc/html/en/Racknga/Middleware/Log.html:277(span)
+msgid "nil?"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:298(pre)
+msgid "56 57 58 59 60 61 62 63 64 65 66 67 68 69"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:317(span)
+msgid "# File 'lib/racknga/middleware/cache.rb', line 56"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:320(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:321(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:323(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:328(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:330(span)
+#: doc/html/en/Racknga/Middleware/Log.html:330(span)
+#: doc/html/en/Racknga/Middleware/Log.html:331(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:246(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:247(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:248(span)
+#: doc/html/en/Racknga/Middleware/Range.html:254(span)
+#: doc/html/en/Racknga/Middleware/Range.html:255(span)
+#: doc/html/en/Racknga/Middleware/Range.html:258(span)
+msgid "request"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:320(span)
+#: doc/html/en/Racknga/Middleware/Log.html:330(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:246(span)
+#: doc/html/en/Racknga/Middleware/Range.html:254(span)
+msgid "Request"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:321(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:250(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:252(span)
+msgid "unless"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:321(span)
+msgid "use_cache?"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:322(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:327(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:328(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:330(span)
+#: doc/html/en/Racknga/CacheDatabase.html:472(span)
+#: doc/html/en/Racknga/CacheDatabase.html:473(span)
+#: doc/html/en/Racknga/CacheDatabase.html:474(span)
+#: doc/html/en/Racknga/CacheDatabase.html:477(span)
+msgid "age"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:322(span)
+#: doc/html/en/Racknga/CacheDatabase.html:132(strong)
+#: doc/html/en/Racknga/CacheDatabase.html:347(strong)
+#: doc/html/en/Racknga/CacheDatabase.html:364(span)
+#: doc/html/en/Racknga/CacheDatabase.html:472(span)
+#: doc/html/en/Racknga/CacheDatabase.html:474(span)
+msgid "configuration"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:323(span)
+msgid "fullpath"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:324(span)
+msgid "START_TIME_KEY"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:325(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:326(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:328(span)
+#: doc/html/en/Racknga/Middleware/Cache.html:330(span)
+msgid "cache"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:325(span)
+#: doc/html/en/Racknga/CacheDatabase.html:241(strong)
+#: doc/html/en/Racknga/CacheDatabase.html:476(span)
+#: doc/html/en/Racknga/CacheDatabase.html:489(strong)
+#: doc/html/en/Racknga/CacheDatabase.html:506(span)
+msgid "responses"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:327(span)
+#: doc/html/en/Racknga/Middleware/Range.html:256(span)
+msgid "and"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:328(span)
+msgid "handle_request_with_cache"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:330(span)
+msgid "handle_request"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:349(pre)
+msgid "75 76 77"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:357(span)
+msgid "# File 'lib/racknga/middleware/cache.rb', line 75"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:378(pre)
+msgid "71 72 73"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Cache.html:386(span)
+msgid "# File 'lib/racknga/middleware/cache.rb', line 71"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:6(title)
+msgid "Class: Racknga::Middleware::JSONP::Writer &mdash; racknga - 0.9.1"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:17(script)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:17(script)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:17(script)
+msgid "relpath = '../../..'; if (relpath != '') relpath += '/';"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:59(h1)
+msgid "Class: Racknga::Middleware::JSONP::Writer"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:90(dd)
+#: doc/html/en/Racknga/Middleware/JSONP.html:90(dd)
+msgid "lib/racknga/middleware/jsonp.rb"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:111(a)
+msgid "- (Object) <placeholder-1/>(&amp;block)"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:132(a)
+msgid "- (Writer) <placeholder-1/>(callback, body)"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:148(p)
+msgid "A new instance of Writer."
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:161(p)
+msgid ""
+"- (<tt><span class=\"object_link\"><placeholder-1/></span></tt>) "
+"<placeholder-2/>(callback, body)"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:170(p)
+msgid "A new instance of Writer"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:180(pre)
+msgid "76 77 78 79"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:189(span)
+msgid "# File 'lib/racknga/middleware/jsonp.rb', line 76"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:191(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:192(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:247(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:248(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:250(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:253(span)
+msgid "callback"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:191(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:193(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:192(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:193(span)
+#: doc/html/en/Racknga/Middleware/Log.html:327(span)
+#: doc/html/en/Racknga/Middleware/Log.html:331(span)
+#: doc/html/en/Racknga/Middleware/Log.html:333(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:249(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:250(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:252(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:253(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:255(span)
+#: doc/html/en/Racknga/Middleware/Range.html:249(span)
+#: doc/html/en/Racknga/Middleware/Range.html:250(span)
+#: doc/html/en/Racknga/Middleware/Range.html:258(span)
+#: doc/html/en/Racknga/Middleware/Range.html:261(span)
+msgid "body"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:192(span)
+msgid "@callback"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:193(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:232(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:193(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:265(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:266(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:273(span)
+msgid "@body"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:209(p)
+msgid "- (<placeholder-1/>) <placeholder-2/>(&amp;block)"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:218(pre)
+msgid "81 82 83 84 85"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:228(span)
+msgid "# File 'lib/racknga/middleware/jsonp.rb', line 81"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:230(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:232(span)
+msgid "&amp;"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:230(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:231(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:232(span)
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:233(span)
+msgid "block"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:231(span)
+msgid "\"#{@callback}(\""
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP/Writer.html:233(span)
+msgid "\");\""
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:6(title)
+msgid "Class: Racknga::Middleware::Range::RangeStream &mdash; racknga - 0.9.1"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:36(a)
+#: doc/html/en/Racknga/Middleware/Range.html:36(a)
+#: doc/html/en/Racknga.html:36(a)
+msgid "Index (R)"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:59(h1)
+msgid "Class: Racknga::Middleware::Range::RangeStream"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:90(dd)
+#: doc/html/en/Racknga/Middleware/Range.html:90(dd)
+msgid "lib/racknga/middleware/range.rb"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:132(a)
+msgid "- (RangeStream) <placeholder-1/>(body, first_byte, length)"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:148(p)
+msgid "A new instance of RangeStream."
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:161(p)
+msgid ""
+"- (<tt><span class=\"object_link\"><placeholder-1/></span></tt>) "
+"<placeholder-2/>(body, first_byte, length)"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:170(p)
+msgid "A new instance of RangeStream"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:180(pre)
+msgid "113 114 115 116 117"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:190(span)
+msgid "# File 'lib/racknga/middleware/range.rb', line 113"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:192(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:194(span)
+#: doc/html/en/Racknga/Middleware/Range.html:257(span)
+#: doc/html/en/Racknga/Middleware/Range.html:259(span)
+msgid "first_byte"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:192(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:195(span)
+msgid "length"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:194(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:266(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:269(span)
+msgid "@first_byte"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:195(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:271(span)
+msgid "@length"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:220(pre)
+msgid ""
+"119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 "
+"138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:262(span)
+msgid "# File 'lib/racknga/middleware/range.rb', line 119"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:265(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:274(span)
+msgid "respond_to?"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:265(span)
+msgid ":seek"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:266(span)
+msgid "seek"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:271(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:291(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:293(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:295(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:296(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:298(span)
+msgid "rest"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:273(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:274(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:275(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:276(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:280(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:286(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:292(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:295(span)
+msgid "chunk"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:275(span)
+msgid "encoding"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:275(span)
+#: doc/html/en/Racknga/Middleware/Range.html:250(span)
+msgid "!="
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:275(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:276(span)
+msgid "Encoding"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:275(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:276(span)
+msgid "ASCII_8BIT"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:276(span)
+msgid "dup"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:276(span)
+msgid "force_encoding"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:280(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:282(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:283(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:287(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:291(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:293(span)
+msgid "chunk_size"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:280(span)
+msgid "size"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:283(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:287(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:293(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:296(span)
+msgid "-="
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:284(span)
+msgid "next"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:286(span)
+msgid ".."
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:286(span)
+msgid "-1"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:292(span)
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:295(span)
+msgid "yield"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:298(span)
+msgid "break"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range/RangeStream.html:298(span)
+msgid "&lt;="
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:6(title)
+msgid "Class: Racknga::Middleware::Log::Logger &mdash; racknga - 0.9.1"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:59(h1)
+msgid "Class: Racknga::Middleware::Log::Logger"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:90(dd)
+#: doc/html/en/Racknga/Middleware/Log.html:90(dd)
+msgid "lib/racknga/middleware/log.rb"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:111(a)
+msgid "- (Logger) <placeholder-1/>(database)"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:127(p)
+msgid "A new instance of Logger."
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:136(strong)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:211(strong)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:230(span)
+#: doc/html/en/Racknga/Middleware/Log.html:331(span)
+msgid "log"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:136(a)
+msgid "- (Object) <placeholder-1/>(tag, path, options = {})"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:161(p)
+msgid ""
+"- (<tt><span class=\"object_link\"><placeholder-1/></span></tt>) "
+"<placeholder-2/>(database)"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:170(p)
+msgid "A new instance of Logger"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:180(pre)
+msgid "81 82 83 84"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:189(span)
+msgid "# File 'lib/racknga/middleware/log.rb', line 81"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:191(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:192(span)
+msgid "database"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:209(p)
+msgid "- (<placeholder-1/>) <placeholder-2/>(tag, path, options = {})"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:218(pre)
+msgid "86 87 88 89 90"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:228(span)
+msgid "# File 'lib/racknga/middleware/log.rb', line 86"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:230(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:232(span)
+msgid "tag"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:230(span)
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:233(span)
+msgid "path"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:231(span)
+msgid "add"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:231(span)
+msgid "merge"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:231(span)
+msgid ":time_stamp"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:232(span)
+msgid ":tag"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log/Logger.html:233(span)
+msgid ":path"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log.html:6(title)
+msgid "Class: Racknga::Middleware::Log &mdash; racknga - 0.9.1"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log.html:59(h1)
+msgid "Class: Racknga::Middleware::Log"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log.html:110(dt)
+msgid "LOGGER_KEY ="
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log.html:113(span)
+msgid "\"racknga.logger\""
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log.html:197(a)
+msgid "- (Log) <placeholder-1/>(application, options = {})"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log.html:213(p)
+msgid "A new instance of Log."
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log.html:235(p)
+msgid "A new instance of Log"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log.html:258(pre)
+msgid "26 27 28 29 30 31 32 33"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log.html:271(span)
+msgid "# File 'lib/racknga/middleware/log.rb', line 26"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log.html:279(span)
+#: doc/html/en/Racknga/Middleware/Log.html:324(span)
+msgid "@logger"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log.html:304(pre)
+msgid "35 36 37 38 39 40 41 42 43 44 45 46"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log.html:321(span)
+msgid "# File 'lib/racknga/middleware/log.rb', line 35"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log.html:324(span)
+msgid "LOGGER_KEY"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log.html:326(span)
+#: doc/html/en/Racknga/Middleware/Log.html:331(span)
+msgid "start_time"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log.html:327(span)
+#: doc/html/en/Racknga/Middleware/Log.html:331(span)
+#: doc/html/en/Racknga/Middleware/Log.html:333(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:249(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:250(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:252(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:255(span)
+#: doc/html/en/Racknga/Middleware/Range.html:249(span)
+#: doc/html/en/Racknga/Middleware/Range.html:250(span)
+#: doc/html/en/Racknga/Middleware/Range.html:258(span)
+#: doc/html/en/Racknga/Middleware/Range.html:261(span)
+msgid "status"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log.html:327(span)
+#: doc/html/en/Racknga/Middleware/Log.html:331(span)
+#: doc/html/en/Racknga/Middleware/Log.html:333(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:249(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:250(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:251(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:252(span)
+#: doc/html/en/Racknga/Middleware/Range.html:249(span)
+#: doc/html/en/Racknga/Middleware/Range.html:250(span)
+#: doc/html/en/Racknga/Middleware/Range.html:252(span)
+#: doc/html/en/Racknga/Middleware/Range.html:253(span)
+#: doc/html/en/Racknga/Middleware/Range.html:258(span)
+#: doc/html/en/Racknga/Middleware/Range.html:261(span)
+msgid "headers"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log.html:328(span)
+#: doc/html/en/Racknga/Middleware/Log.html:331(span)
+msgid "end_time"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log.html:351(pre)
+msgid "52 53 54"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log.html:359(span)
+msgid "# File 'lib/racknga/middleware/log.rb', line 52"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log.html:380(pre)
+msgid "48 49 50"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Log.html:388(span)
+msgid "# File 'lib/racknga/middleware/log.rb', line 48"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:6(title)
+msgid "Class: Racknga::Middleware::ExceptionNotifier &mdash; racknga - 0.9.1"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:59(h1)
+msgid "Class: Racknga::Middleware::ExceptionNotifier"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:90(dd)
+msgid "lib/racknga/middleware/exception_notifier.rb"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:132(a)
+msgid "- (ExceptionNotifier) <placeholder-1/>(application, options = {})"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:148(p)
+msgid "A new instance of ExceptionNotifier."
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:170(p)
+msgid "A new instance of ExceptionNotifier"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:180(pre)
+msgid "24 25 26 27 28"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:190(span)
+msgid "# File 'lib/racknga/middleware/exception_notifier.rb', line 24"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:195(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:249(span)
+msgid "@notifiers"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:195(span)
+msgid ":notifiers"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:220(pre)
+msgid "30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:244(span)
+msgid "# File 'lib/racknga/middleware/exception_notifier.rb', line 30"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:248(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:252(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:259(span)
+msgid "rescue"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:248(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:252(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:259(span)
+msgid "Exception"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:249(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:251(span)
+msgid "notifier"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:250(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:253(span)
+msgid "begin"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:254(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:255(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:256(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:257(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:258(span)
+msgid "$stderr"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:254(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:255(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:256(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:257(span)
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:258(span)
+msgid "puts"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:254(span)
+msgid "\"#{$!.class}: #{$!.message}\""
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:255(span)
+msgid "$@"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:256(span)
+msgid "\"-\""
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:256(span)
+msgid "10"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:257(span)
+msgid "\"#{exception.class}: #{exception.message}\""
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/ExceptionNotifier.html:258(span)
+msgid "backtrace"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP.html:6(title)
+msgid "Class: Racknga::Middleware::JSONP &mdash; racknga - 0.9.1"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP.html:36(a)
+msgid "Index (J)"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP.html:59(h1)
+msgid "Class: Racknga::Middleware::JSONP"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP.html:142(a)
+msgid "- (JSONP) <placeholder-1/>(application)"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP.html:158(p)
+msgid "A new instance of JSONP."
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP.html:180(p)
+msgid "A new instance of JSONP"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP.html:198(span)
+msgid "# File 'lib/racknga/middleware/jsonp.rb', line 22"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP.html:226(pre)
+msgid "26 27 28 29 30 31 32 33 34 35 36 37"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP.html:243(span)
+msgid "# File 'lib/racknga/middleware/jsonp.rb', line 26"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP.html:247(span)
+msgid "\"callback\""
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP.html:248(span)
+msgid "update_cache_key"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP.html:251(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:252(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:254(span)
+#: doc/html/en/Racknga/Middleware/JSONP.html:255(span)
+msgid "header_hash"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP.html:251(span)
+#: doc/html/en/Racknga/Middleware/Range.html:252(span)
+msgid "HeaderHash"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP.html:252(span)
+msgid "json_response?"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/JSONP.html:254(span)
+msgid "update_content_type"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range.html:6(title)
+msgid "Class: Racknga::Middleware::Range &mdash; racknga - 0.9.1"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range.html:59(h1)
+msgid "Class: Racknga::Middleware::Range"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range.html:142(a)
+msgid "- (Range) <placeholder-1/>(application)"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range.html:158(p)
+msgid "A new instance of Range."
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range.html:180(p)
+msgid "A new instance of Range"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range.html:190(pre)
+msgid "24 25 26"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range.html:198(span)
+msgid "# File 'lib/racknga/middleware/range.rb', line 24"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range.html:226(pre)
+msgid "28 29 30 31 32 33 34 35 36 37 38 39 40 41 42"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range.html:246(span)
+msgid "# File 'lib/racknga/middleware/range.rb', line 28"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range.html:250(span)
+msgid "200"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range.html:253(span)
+msgid "\"Accept-Ranges\""
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range.html:253(span)
+msgid "\"bytes\""
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range.html:255(span)
+#: doc/html/en/Racknga/Middleware/Range.html:256(span)
+msgid "range"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range.html:255(span)
+msgid "env"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range.html:255(span)
+msgid "\"HTTP_RANGE\""
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range.html:256(span)
+msgid "/\\Abytes=(\\d*)-(\\d*)\\z/"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range.html:257(span)
+#: doc/html/en/Racknga/Middleware/Range.html:259(span)
+msgid "last_byte"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range.html:257(span)
+msgid "$1"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range.html:257(span)
+msgid "$2"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range.html:258(span)
+msgid "apply_range"
+msgstr ""
+
+#: doc/html/en/Racknga/Middleware/Range.html:261(span)
+msgid "to_hash"
+msgstr ""
+
+#: doc/html/en/Racknga/CacheDatabase.html:6(title)
+msgid "Class: Racknga::CacheDatabase &mdash; racknga - 0.9.1"
+msgstr ""
+
+#: doc/html/en/Racknga/CacheDatabase.html:59(h1)
+msgid "Class: Racknga::CacheDatabase"
+msgstr ""
+
+#: doc/html/en/Racknga/CacheDatabase.html:90(dd)
+msgid "lib/racknga/cache_database.rb"
+msgstr ""
+
+#: doc/html/en/Racknga/CacheDatabase.html:153(strong)
+#: doc/html/en/Racknga/CacheDatabase.html:365(span)
+#: doc/html/en/Racknga/CacheDatabase.html:376(strong)
+#: doc/html/en/Racknga/CacheDatabase.html:393(span)
+msgid "configurations"
+msgstr ""
+
+#: doc/html/en/Racknga/CacheDatabase.html:195(a)
+msgid "- (CacheDatabase) <placeholder-1/>(database_path)"
+msgstr ""
+
+#: doc/html/en/Racknga/CacheDatabase.html:211(p)
+msgid "A new instance of CacheDatabase."
+msgstr ""
+
+#: doc/html/en/Racknga/CacheDatabase.html:220(strong)
+#: doc/html/en/Racknga/CacheDatabase.html:446(strong)
+#: doc/html/en/Racknga/CacheDatabase.html:470(span)
+msgid "purge_old_responses"
+msgstr ""
+
+#: doc/html/en/Racknga/CacheDatabase.html:275(p)
+msgid "A new instance of CacheDatabase"
+msgstr ""
+
+#: doc/html/en/Racknga/CacheDatabase.html:295(span)
+msgid "# File 'lib/racknga/cache_database.rb', line 25"
+msgstr ""
+
+#: doc/html/en/Racknga/CacheDatabase.html:325(pre)
+msgid "64 65 66"
+msgstr ""
+
+#: doc/html/en/Racknga/CacheDatabase.html:333(span)
+msgid "# File 'lib/racknga/cache_database.rb', line 64"
+msgstr ""
+
+#: doc/html/en/Racknga/CacheDatabase.html:362(span)
+msgid "# File 'lib/racknga/cache_database.rb', line 39"
+msgstr ""
+
+#: doc/html/en/Racknga/CacheDatabase.html:365(span)
+msgid "\"default\""
+msgstr ""
+
+#: doc/html/en/Racknga/CacheDatabase.html:391(span)
+msgid "# File 'lib/racknga/cache_database.rb', line 35"
+msgstr ""
+
+#: doc/html/en/Racknga/CacheDatabase.html:394(span)
+msgid "\"Configurations\""
+msgstr ""
+
+#: doc/html/en/Racknga/CacheDatabase.html:412(pre)
+msgid "54 55 56 57 58 59 60 61 62"
+msgstr ""
+
+#: doc/html/en/Racknga/CacheDatabase.html:426(span)
+msgid "# File 'lib/racknga/cache_database.rb', line 54"
+msgstr ""
+
+#: doc/html/en/Racknga/CacheDatabase.html:435(span)
+msgid "ensure_default_configuration"
+msgstr ""
+
+#: doc/html/en/Racknga/CacheDatabase.html:453(pre)
+msgid "43 44 45 46 47 48 49 50 51 52"
+msgstr ""
+
+#: doc/html/en/Racknga/CacheDatabase.html:468(span)
+msgid "# File 'lib/racknga/cache_database.rb', line 43"
+msgstr ""
+
+#: doc/html/en/Racknga/CacheDatabase.html:471(span)
+#: doc/html/en/Racknga/CacheDatabase.html:473(span)
+#: doc/html/en/Racknga/CacheDatabase.html:474(span)
+msgid "age_modulo"
+msgstr ""
+
+#: doc/html/en/Racknga/CacheDatabase.html:471(span)
+msgid "2"
+msgstr ""
+
+#: doc/html/en/Racknga/CacheDatabase.html:471(span)
+msgid "**"
+msgstr ""
+
+#: doc/html/en/Racknga/CacheDatabase.html:471(span)
+msgid "32"
+msgstr ""
+
+#: doc/html/en/Racknga/CacheDatabase.html:473(span)
+#: doc/html/en/Racknga/CacheDatabase.html:477(span)
+msgid "previous_age"
+msgstr ""
+
+#: doc/html/en/Racknga/CacheDatabase.html:473(span)
+#: doc/html/en/Racknga/CacheDatabase.html:474(span)
+msgid "modulo"
+msgstr ""
+
+#: doc/html/en/Racknga/CacheDatabase.html:474(span)
+msgid "+"
+msgstr ""
+
+#: doc/html/en/Racknga/CacheDatabase.html:476(span)
+#: doc/html/en/Racknga/CacheDatabase.html:477(span)
+msgid "response"
+msgstr ""
+
+#: doc/html/en/Racknga/CacheDatabase.html:504(span)
+msgid "# File 'lib/racknga/cache_database.rb', line 31"
+msgstr ""
+
+#: doc/html/en/Racknga/CacheDatabase.html:507(span)
+msgid "\"Responses\""
+msgstr ""
+
+#: doc/html/en/_index.html:57(h1)
+msgid "Alphabetic Index"
+msgstr ""
+
+#: doc/html/en/_index.html:59(h2)
+msgid "File Listing"
+msgstr ""
+
+#: doc/html/en/_index.html:66(a) doc/html/en/file_list.html:46(a)
+msgid "news"
+msgstr ""
+
+#: doc/html/en/_index.html:72(h2)
+msgid "Namespace Listing A-Z"
+msgstr ""
+
+#: doc/html/en/_index.html:83(li)
+msgid "C"
+msgstr ""
+
+#: doc/html/en/_index.html:89(small) doc/html/en/_index.html:111(small)
+#: doc/html/en/_index.html:133(small) doc/html/en/_index.html:161(small)
+#: doc/html/en/_index.html:176(small) doc/html/en/_index.html:230(small)
+#: doc/html/en/_index.html:250(small)
+msgid "(Racknga::Middleware)"
+msgstr ""
+
+#: doc/html/en/_index.html:96(small) doc/html/en/_index.html:126(small)
+#: doc/html/en/_index.html:183(small) doc/html/en/_index.html:205(small)
+#: doc/html/en/_index.html:272(small)
+msgid "(Racknga)"
+msgstr ""
+
+#: doc/html/en/_index.html:105(li)
+msgid "D"
+msgstr ""
+
+#: doc/html/en/_index.html:120(li)
+msgid "E"
+msgstr ""
+
+#: doc/html/en/_index.html:142(li)
+msgid "G"
+msgstr ""
+
+#: doc/html/en/_index.html:155(li)
+msgid "J"
+msgstr ""
+
+#: doc/html/en/_index.html:170(li)
+msgid "L"
+msgstr ""
+
+#: doc/html/en/_index.html:190(small)
+msgid "(Racknga::Middleware::Log)"
+msgstr ""
+
+#: doc/html/en/_index.html:199(li)
+msgid "M"
+msgstr ""
+
+#: doc/html/en/_index.html:217(li)
+msgid "P"
+msgstr ""
+
+#: doc/html/en/_index.html:223(small) doc/html/en/_index.html:287(small)
+msgid "(Groonga)"
+msgstr ""
+
+#: doc/html/en/_index.html:239(li)
+msgid "R"
+msgstr ""
+
+#: doc/html/en/_index.html:257(small)
+msgid "(Racknga::Middleware::Range)"
+msgstr ""
+
+#: doc/html/en/_index.html:266(li)
+msgid "U"
+msgstr ""
+
+#: doc/html/en/_index.html:281(li)
+msgid "W"
+msgstr ""
+
+#: doc/html/en/_index.html:294(small)
+msgid "(Racknga::Middleware::JSONP)"
+msgstr ""
+
+#: doc/html/en/Racknga.html:6(title)
+msgid "Module: Racknga &mdash; racknga - 0.9.1"
+msgstr ""
+
+#: doc/html/en/Racknga.html:59(h1)
+msgid "Module: Racknga"
+msgstr ""
+
+#: doc/html/en/Racknga.html:75(span)
+msgid ""
+",<br/> lib/racknga/version.rb,<br/> lib/racknga/log_database.rb,<br/> lib/"
+"racknga/cache_database.rb,<br/> lib/racknga/middleware/log.rb,<br/> lib/"
+"racknga/middleware/cache.rb,<br/> lib/racknga/middleware/range.rb,<br/> lib/"
+"racknga/middleware/jsonp.rb,<br/> lib/racknga/middleware/deflater.rb,<br/> "
+"lib/racknga/exception_mail_notifier.rb,<br/> lib/racknga/middleware/"
+"exception_notifier.rb"
+msgstr ""
+
+#: doc/html/en/Racknga.html:75(dd)
+msgid "lib/racknga/utils.rb<placeholder-1/>"
+msgstr ""
+
+#: doc/html/en/Racknga.html:85(p)
+msgid "Copyright (C) 2010 Kouhei Sutou &lt;kou@clear-code.com&gt;"
+msgstr ""
+
+#: doc/html/en/Racknga.html:87(p)
+msgid ""
+"This library is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU Lesser General Public License as published by the "
+"Free Software Foundation; either version 2.1 of the License, or (at your "
+"option) any later version."
+msgstr ""
+
+#: doc/html/en/Racknga.html:92(p)
+msgid ""
+"This library is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License "
+"for more details."
+msgstr ""
+
+#: doc/html/en/Racknga.html:97(p)
+msgid ""
+"You should have received a copy of the GNU Lesser General Public License "
+"along with this library; if not, write to the Free Software Foundation, "
+"Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA"
+msgstr ""
+
+#: doc/html/en/Racknga.html:107(p)
+msgid ""
+"<placeholder-1/> <span class=\"object_link\"><placeholder-2/></span>, <span "
+"class=\"object_link\"><placeholder-3/></span>\n"
+"    \n"
+"   \n"
+"    \n"
+"      <placeholder-4/> <span class=\"object_link\"><placeholder-5/></span>, "
+"<span class=\"object_link\"><placeholder-6/></span>, <span class="
+"\"object_link\"><placeholder-7/></span>"
+msgstr ""
+
+#: doc/html/en/Racknga.html:123(dt)
+msgid "VERSION ="
+msgstr ""
+
+#: doc/html/en/Racknga.html:126(span)
+msgid "'0.9.1'"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: doc/html/en/file_list.html:0(None)
+msgid "translator-credits"
+msgstr ""
