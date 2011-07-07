@@ -1,0 +1,16 @@
+h1. NEWS
+
+h2. 0.9.1: 2010-11-11
+
+* Improved cache validation.
+* Supported caches per User-Agent.
+* Added a JSONP middleware.
+* Added a HTTP Range support middleware.
+* Added a logging access to groogna databsae middleware.
+* Added Munin plugins for Passenger.
+* Changed license to LGPLv2.1 or later from LGPLv2.1.
+* Supported will_paginate.
+
+h2. 0.9.0: 2010-07-04
+
+* Initial release!

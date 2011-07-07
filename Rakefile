@@ -60,7 +60,7 @@ Jeweler::Tasks.new do |_spec|
   spec.description = <<-EOD.gsub(/\n/, ' ').strip
 Racknga is a Rack middlewares that uses rroonga features.
 EOD
-  spec.license = "LGPLv2"
+  spec.license = "LGPLv2.1 or later"
   spec.files = FileList["lib/**/*.rb",
                         "{license,munin}/**/*",
                         "example/*.rb",

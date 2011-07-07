@@ -1,9 +1,0 @@
-= NEWS
-
-== 0.9.1: 2010-11-11
-
-* Supported will_paginate.
-
-== 0.9.0: 2010-07-04
-
-* Initial release!

@@ -1,4 +1,4 @@
-/doc/
+/.yardoc/
+/doc/html/
 /pkg/
-/test-unit/
 /test/.test-result/
