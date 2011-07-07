@@ -66,7 +66,6 @@ EOD
                         "AUTHORS",
                         "Rakefile",
                         "Gemfile",
-                        "NEWS*",
                         "README*"]
   spec.test_files = FileList["test/**/*.rb"]
 end
