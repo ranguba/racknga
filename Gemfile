@@ -17,7 +17,8 @@
 
 source "http://rubygems.org/"
 
-gem 'rroonga'
+gem "rroonga"
+gem "rack"
 
 group :development, :test do
   gem "test-unit"
