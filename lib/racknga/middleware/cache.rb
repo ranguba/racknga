@@ -16,7 +16,7 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-require 'digest/md5'
+require 'digest'
 require 'yaml'
 require 'racknga/cache_database'
 
@@ -142,13 +142,13 @@ module Racknga
       end
 
       def compute_checksum(status, encoded_headers, encoded_body)
-        md5 = Digest::MD5.new
-        md5 << status.to_s
-        md5 << ":"
-        md5 << encoded_headers
-        md5 << ":"
-        md5 << encoded_body
-        md5.hexdigest.force_encoding("ASCII-8BIT")
+        checksum = Digest::SHA1.new
+        checksum << status.to_s
+        checksum << ":"
+        checksum << encoded_headers
+        checksum << ":"
+        checksum << encoded_body
+        checksum.hexdigest.force_encoding("ASCII-8BIT")
       end
 
       def valid_cache?(status, encoded_headers, encoded_body, checksum)
