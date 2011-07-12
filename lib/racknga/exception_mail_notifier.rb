@@ -27,8 +27,6 @@ require 'racknga/utils'
 module Racknga
   # Ruby 1.9 only. 1.8 isn't supported.
   class ExceptionMailNotifier
-    attr_writer :count_start_time
-
     def initialize(options)
       @options = Utils.normalize_options(options || {})
 
