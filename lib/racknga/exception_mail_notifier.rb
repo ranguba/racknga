@@ -27,20 +27,46 @@ require 'racknga/utils'
 module Racknga
   # Ruby 1.9 only. 1.8 isn't supported.
   class ExceptionMailNotifier
+    attr_writer :count_start_time
+
     def initialize(options)
       @options = Utils.normalize_options(options || {})
+
+      @mail_count = 0
+      @count_start_time = Time.now
+    end
+
+    def rate_limit_to_send_mail
+      now = Time.now
+      if (now - @count_start_time) > limit_duration
+        #TODO send summary mail for silently discarded mails at this point
+        @count_start_time = now
+        @mail_count = 0
+      end
+
+      if @mail_count < max_mail_count_in_limit_duration
+        yield
+      end
+
+      @mail_count += 1
     end
 
     def notify(exception, environment)
-      host = @options[:host] || "localhost"
       return if to.empty?
+      rate_limit_to_send_mail do
+        send_notify_mail(exception, environment)
+      end
+    end
+
+    private
+    def send_notify_mail(exception, environment)
+      host = @options[:host] || "localhost"
       mail = format(exception, environment)
       Net::SMTP.start(host, @options[:port]) do |smtp|
         smtp.send_message(mail, from, *to)
       end
     end
 
-    private
     def format(exception, environment)
       header = format_header(exception, environment)
       body = format_body(exception, environment)
@@ -123,6 +149,16 @@ EOE
 
     def charset
       @options[:charset] || 'utf-8'
+    end
+
+    DEFAULT_MAX_MAIL_COUNT_IN_LIMIT_DURATION = 2
+    def max_mail_count_in_limit_duration
+      @options[:max_mail_count_in_limit_duration] || DEFAULT_MAX_MAIL_COUNT_IN_LIMIT_DURATION
+    end
+
+    DEFAULT_LIMIT_DURATION = 60 # one minute
+    def limit_duration
+      @options[:limit_duration] || DEFAULT_LIMIT_DURATION
     end
 
     def transfer_encoding
