@@ -34,25 +34,22 @@ module Racknga
 
     def notify(exception, environment)
       return if to.empty?
-      send_notification(exception, environment)
-    end
 
-    private
-    def send_notification(exception, environment)
       if limitation_expired?
         send_report
         reset_limitation
       end
 
       if @mail_count < max_mail_count_in_limit_duration
-        send_one_notification(exception, environment)
+        send_notification(exception, environment)
       else
-        @summaries << summarize_for_report(exception, environment)
+        @summaries << summarize(exception, environment)
       end
 
       @mail_count += 1
     end
 
+    private
     def reset_limitation
       @mail_count = 0
       @count_start_time = Time.now
@@ -148,16 +145,11 @@ EOE
     def summarize(exception, environment)
       request = Rack::Request.new(environment)
       <<-EOB
+Timestamp: #{Time.now.rfc2822}
+--
 URL: #{request.url}
 --
 #{exception.class}: #{exception}
-EOB
-    end
-
-    def summarize_for_report(exception, environment)
-      <<-EOB
-#{Time.now.rfc2822}
-#{summarize(exception, environment)}
 EOB
     end
 
