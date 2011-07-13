@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2010  Kouhei Sutou <kou@clear-code.com>
+# Copyright (C) 2010-2011  Kouhei Sutou <kou@clear-code.com>
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -36,7 +36,7 @@ module Racknga
       return if to.empty?
 
       if limitation_expired?
-        send_report
+        send_summaries
         reset_limitation
       end
 
@@ -131,7 +131,7 @@ EOE
       body
     end
 
-    def send_report
+    def send_summaries
         return if @summaries.empty?
 
         subject = "summaries of #{@summaries.size} notifications"
