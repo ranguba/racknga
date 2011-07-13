@@ -135,7 +135,7 @@ EOE
     end
 
     def send_report
-        subject = "summaries of #{@summaries.size} mails"
+        subject = "summaries of #{@summaries.size} notifications"
         mail = create_mail(:subject => subject,
                            :body => report_body)
         send(mail)
