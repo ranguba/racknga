@@ -94,7 +94,7 @@ Date: #{Time.now.rfc2822}
 EOH
     end
 
-    def send_one_notification(exception, environment)
+    def send_notification(exception, environment)
       mail = create_mail(:subject => exception.to_s,
                          :body => notification_body(exception, environment))
       send(mail)
@@ -132,6 +132,8 @@ EOE
     end
 
     def send_report
+        return if @summaries.empty?
+
         subject = "summaries of #{@summaries.size} notifications"
         mail = create_mail(:subject => subject,
                            :body => report_body)
