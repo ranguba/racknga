@@ -66,7 +66,8 @@ module Racknga
     end
 
     def format(exception, environment)
-      header = format_header(exception, environment)
+      subject = subject(exception, environment)
+      header = header(:subject => subject)
       body = format_body(exception, environment)
       mail = "#{header}\r\n#{body}"
       mail.force_encoding("utf-8")
@@ -77,14 +78,14 @@ module Racknga
       mail.force_encoding("ASCII-8BIT")
     end
 
-    def format_header(exception, environment)
+    def header(options)
       <<-EOH
 MIME-Version: 1.0
 Content-Type: Text/Plain; charset=#{charset}
 Content-Transfer-Encoding: #{transfer_encoding}
 From: #{from}
 To: #{to.join(', ')}
-Subject: #{encode_subject(subject(exception, environment))}
+Subject: #{encode_subject(options[:subject])}
 Date: #{Time.now.rfc2822}
 EOH
     end
@@ -92,9 +93,7 @@ EOH
     def format_body(exception, environment)
       request = Rack::Request.new(environment)
       body = <<-EOB
-URL: #{request.url}
---
-#{exception.class}: #{exception}
+#{summary(exception, environment)}
 --
 #{exception.backtrace.join("\n")}
 EOB
@@ -120,6 +119,15 @@ EOE
       end
 
       body
+    end
+
+    def summary(exception, environment)
+      request = Rack::Request.new(environment)
+      <<-EOB
+URL: #{request.url}
+--
+#{exception.class}: #{exception}
+EOB
     end
 
     def subject(exception, environment)
