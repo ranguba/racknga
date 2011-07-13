@@ -29,47 +29,53 @@ module Racknga
   class ExceptionMailNotifier
     def initialize(options)
       @options = Utils.normalize_options(options || {})
-
-      @mail_count = 0
-      @count_start_time = Time.now
-      @summaries = []
+      reset_limitation
     end
 
     def notify(exception, environment)
       return if to.empty?
-      rate_limit_to_send_mail(exception, environment)
+      send_notification(exception, environment)
     end
 
     private
-    def rate_limit_to_send_mail(exception, environment)
-      now = Time.now
-      if (now - @count_start_time) > limit_duration
-        send_notify_mail(create_summary_mail)
-        @count_start_time = now
-        @mail_count = 0
-        @summaries = []
+    def send_notification(exception, environment)
+      if limitation_expired?
+        send_report
+        reset_limitation
       end
 
       if @mail_count < max_mail_count_in_limit_duration
-        send_notify_mail(create_notify_mail(exception, environment))
+        send_one_notification(exception, environment)
       else
-        @summaries << create_summary(exception, environment)
+        @summaries << summarize_for_report(exception, environment)
       end
 
       @mail_count += 1
     end
 
-    def send_notify_mail(mail)
+    def reset_limitation
+      @mail_count = 0
+      @count_start_time = Time.now
+      @summaries = []
+    end
+
+    def limitation_expired?
+      (Time.now - @count_start_time) > limit_duration
+    end
+
+    def send(mail)
       host = @options[:host] || "localhost"
       Net::SMTP.start(host, @options[:port]) do |smtp|
         smtp.send_message(mail, from, *to)
       end
     end
 
-    def create_envelope(options)
+    def create_mail(options)
       subject = [@options[:subject_label], options[:subject]].compact.join(' ')
       header = header(:subject => subject)
+
       body = options[:body]
+
       mail = "#{header}\r\n#{body}"
       mail.force_encoding("utf-8")
       begin
@@ -91,15 +97,16 @@ Date: #{Time.now.rfc2822}
 EOH
     end
 
-    def create_notify_mail(exception, environment)
-        create_envelope(:subject => exception.to_s,
-                        :body => body_with_details(exception, environment))
+    def send_one_notification(exception, environment)
+      mail = create_mail(:subject => exception.to_s,
+                         :body => notification_body(exception, environment))
+      send(mail)
     end
 
-    def body_with_details(exception, environment)
+    def notification_body(exception, environment)
       request = Rack::Request.new(environment)
       body = <<-EOB
-#{summary(exception, environment)}
+#{summarize(exception, environment)}
 --
 #{exception.backtrace.join("\n")}
 EOB
@@ -127,7 +134,18 @@ EOE
       body
     end
 
-    def summary(exception, environment)
+    def send_report
+        subject = "summaries of #{@summaries.size} mails"
+        mail = create_mail(:subject => subject,
+                           :body => report_body)
+        send(mail)
+    end
+
+    def report_body
+      @summaries.join("\n\n")
+    end
+
+    def summarize(exception, environment)
       request = Rack::Request.new(environment)
       <<-EOB
 URL: #{request.url}
@@ -136,21 +154,11 @@ URL: #{request.url}
 EOB
     end
 
-    def create_summary(exception, environment)
+    def summarize_for_report(exception, environment)
       <<-EOB
 #{Time.now.rfc2822}
-#{summary(exception, environment)}
+#{summarize(exception, environment)}
 EOB
-    end
-
-    def create_summary_mail(exception, environment)
-        subject = "summaries of #{@summaries.size} mails"
-        create_envelope(:subject => subject,
-                        :body => body_with_summaries)
-    end
-
-    def body_with_summaries
-      @summaries.join("\n\n")
     end
 
     def to
