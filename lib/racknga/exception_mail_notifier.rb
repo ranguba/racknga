@@ -36,7 +36,7 @@ module Racknga
       return if to.empty?
 
       if limitation_expired?
-        send_summaries
+        send_summaries unless @summaries.empty?
         reset_limitation
       end
 
@@ -132,8 +132,6 @@ EOE
     end
 
     def send_summaries
-        return if @summaries.empty?
-
         subject = "summaries of #{@summaries.size} notifications"
         mail = create_mail(:subject => subject,
                            :body => report_body)
