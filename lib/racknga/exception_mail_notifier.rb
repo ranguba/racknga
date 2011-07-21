@@ -139,7 +139,7 @@ EOE
     end
 
     def report_body
-      @summaries.join("\n\n")
+      @summaries[0..10].join("\n\n")
     end
 
     def summarize(exception, environment)
