@@ -19,6 +19,7 @@ require 'json'
 
 require 'racknga'
 require 'racknga/middleware/cache'
+require 'racknga/middleware/instance_name'
 
 Capybara.configure do |config|
   config.default_driver = nil
