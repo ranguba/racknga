@@ -21,6 +21,8 @@ require 'racknga'
 require 'racknga/middleware/cache'
 require 'racknga/middleware/instance_name'
 
+require 'racknga/nginx_access_log_parser'
+
 Capybara.configure do |config|
   config.default_driver = nil
   config.current_driver = nil
