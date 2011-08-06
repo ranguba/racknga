@@ -21,7 +21,13 @@ require 'fileutils'
 require 'groonga'
 
 module Racknga
+  # This is a log database based on groonga. It is used by
+  # Racknga::Middleware::Log.
+  #
+  # Normally, #purge_old_responses is only used for log
+  # maintenance.
   class LogDatabase
+    # @param [String] database_path the path for log database.
     def initialize(database_path)
       @database_path = database_path
       @context = Groonga::Context.new(:encoding => :none)
@@ -45,6 +51,16 @@ module Racknga
       @database.close
     end
 
+    # Purges old responses. To clear old logs, you should
+    # call this method. All records created before
+    # +base_time+ are removed.
+    #
+    # You can call this method by the different
+    # process from your Rack application
+    # process. (e.g. cron.) It's multi process safe.
+    #
+    # @param [Time] base_time the oldest record time to be
+    # removed. The default value is 1 day ago.
     def purge_old_entries(base_time=nil)
       base_time ||= Time.now - 60 * 60 * 24
       entries.select do |record|
