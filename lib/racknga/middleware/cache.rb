@@ -74,24 +74,27 @@ module Racknga
     # Racknga::Middleware::JSONP use it.
     #
     # This only caches the following responses:
-    #   * 200 status response.
-    #   * text/*, */json, */xml or */*+xml content type response.
+    # * 200 status response.
+    # * text/*, */json, */xml or */*+xml content type response.
     #
     # Usage:
     #   use Racnkga::Middleware::Cache, :database_path => "var/cache/db"
     #   run YourApplication
     #
-    # @see Racknga::Middleware::Cache
+    # @see Racknga::Middleware::PerUserAgentCache
+    # @see Racknga::Middleware::JSONP
+    # @see Racknga::Middleware::Deflater
+    # @see Racknga::CacheDatabase
     class Cache
       KEY = "racknga.cache.key"
       START_TIME = "racknga.cache.start_time"
 
       # @return [Racknga::CacheDatabase] the database used
-      # by this middleware.
+      #   by this middleware.
       attr_reader :database
 
-      # @option options [String] :database_path the
-      # database path to be stored caches.
+      # @option options [String] :database_path the database
+      #   path to be stored caches.
       def initialize(application, options={})
         @application = application
         @options = Utils.normalize_options(options || {})
