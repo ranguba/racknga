@@ -42,13 +42,13 @@ module Racknga
     #   function({"Hello": "World"})
     #
     # You can use this middleware with
-    # Racknga::Middleware::Cache. You *should* put this
-    # middleware on the cache middleware:
+    # Racknga::Middleware::Cache. You *should* use this
+    # middleware before the cache middleware:
     #   use Racknga::Middleawre::JSONP
     #   use Racknga::Middleawre::Cache, :database_path => "var/cache/db"
     #   run YourApplication
     #
-    # If you put this middleware under the cache middleware,
+    # If you use this middleware after the cache middleware,
     # the cache middleware will cache many responses that
     # just only differ callback parameter value. Here are
     # examples:
