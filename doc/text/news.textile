@@ -6,11 +6,11 @@ h3. Improvments
 
   * [munin] Supported Passenger 3 support.
   * [munin] Removed Passenger 2 support.
-  * [middleware][jsonp] Improved browser compatibility by useing
+  * [middleware][jsonp] Improved browser compatibility by using
     "text/javascript" for Content-Type.
   * [middleware][cache] Improved checksum robustness by using
     SHA1 instead of MD5.
-  * [middleware][cache] Supported 4096 >= length cache key.
+  * [middleware][cache] Supported 4096 >= length URL.
   * [exception-mail-notifier] Supported limited mailing.
   * [middleware][instance-name] Added.
   * Added NginixAccessLogParser.
