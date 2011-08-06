@@ -19,6 +19,7 @@
 require "groonga"
 
 module Groonga
+  # @deprecated since 0.9.2. Use Kaminari instead of will_paginate.
   module WillPaginateAPI
     def total_pages
       n_pages
