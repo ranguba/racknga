@@ -76,6 +76,8 @@ end
 
 reference_base_dir = Pathname.new("doc/reference")
 doc_en_dir = reference_base_dir + "en"
+html_base_dir = Pathname.new("doc/html")
+html_reference_dir = html_base_dir + spec.name
 YARD::Rake::YardocTask.new do |task|
   task.options += ["--title", spec.name]
   task.options += ["--readme", "README.textile"]
@@ -296,8 +298,8 @@ namespace :html do
   end
 end
 
-desc "Upload document and HTML to rubyforge."
-task :publish => ["html:publish", "reference:publish"]
+desc "Upload document to rubyforge."
+task :publish => ["reference:publish"]
 
 desc "Tag the current revision."
 task :tag do
