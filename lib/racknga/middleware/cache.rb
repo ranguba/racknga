@@ -22,11 +22,30 @@ require 'racknga/cache_database'
 
 module Racknga
   module Middleware
+    # This is a helper middleware for
+    # Racknga::Middleware::Cache.
+    #
+    # If your Rack application provides different views to
+    # mobile user agent and PC user agent in the same URL,
+    # this middleware is useful. Your Rack application can
+    # has different caches for mobile user agent and PC user
+    # agent.
+    #
+    # This middleware requires jpmobile.
+    #
+    # Usage:
+    #   use Racnkga::Middleware::PerUserAgentCache
+    #   use Racnkga::Middleware::Cache, :database_path => "var/cache/db"
+    #   run YourApplication
+    #
+    # @see http://jpmobile-rails.org/ jpmobile
+    # @see Racknga::Middleware::Cache
     class PerUserAgentCache
       def initialize(application)
         @application = application
       end
 
+      # @private
       def call(environment)
         mobile = environment["rack.jpmobile"]
         if mobile
@@ -41,11 +60,38 @@ module Racknga
       end
     end
 
+    # This is a middleware that provides page cache.
+    #
+    # This stores page contents into a groonga
+    # database. A groonga database can access by multi
+    # process. It means that your Rack application processes
+    # can share the same cache. For example, Passenger runs
+    # your Rack application with multi processes.
+    #
+    # Cache key is the request URL by default. It can be
+    # customized by env[Racknga::Cache::KEY]. For example,
+    # Racknga::Middleware::PerUserAgentCache and
+    # Racknga::Middleware::JSONP use it.
+    #
+    # This only caches the following responses:
+    #   * 200 status response.
+    #   * text/*, */json, */xml or */*+xml content type response.
+    #
+    # Usage:
+    #   use Racnkga::Middleware::Cache, :database_path => "var/cache/db"
+    #   run YourApplication
+    #
+    # @see Racknga::Middleware::Cache
     class Cache
       KEY = "racknga.cache.key"
       START_TIME = "racknga.cache.start_time"
 
+      # @return [Racknga::CacheDatabase] the database used
+      # by this middleware.
       attr_reader :database
+
+      # @options options [String] :database_path the
+      # database path to be stored caches.
       def initialize(application, options={})
         @application = application
         @options = Utils.normalize_options(options || {})
@@ -54,6 +100,7 @@ module Racknga
         @database = CacheDatabase.new(database_path)
       end
 
+      # @private
       def call(environment)
         request = Rack::Request.new(environment)
         return @application.call(environment) unless use_cache?(request)
@@ -69,10 +116,12 @@ module Racknga
         end
       end
 
+      # ensures creating cache database.
       def ensure_database
         @database.ensure_database
       end
 
+      # close the cache database.
       def close_database
         @database.close_database
       end
