@@ -45,7 +45,7 @@ module Racknga
         @application = application
       end
 
-      # @private
+      # For Rack.
       def call(environment)
         mobile = environment["rack.jpmobile"]
         if mobile
@@ -90,7 +90,7 @@ module Racknga
       # by this middleware.
       attr_reader :database
 
-      # @options options [String] :database_path the
+      # @option options [String] :database_path the
       # database path to be stored caches.
       def initialize(application, options={})
         @application = application
@@ -100,7 +100,7 @@ module Racknga
         @database = CacheDatabase.new(database_path)
       end
 
-      # @private
+      # For Rack.
       def call(environment)
         request = Rack::Request.new(environment)
         return @application.call(environment) unless use_cache?(request)

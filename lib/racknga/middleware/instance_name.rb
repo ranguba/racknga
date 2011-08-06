@@ -37,6 +37,7 @@ module Racknga
         @headers = construct_headers.freeze
       end
 
+      # For Rack.
       def call(environment)
         response = @application.call(environment).to_a
 

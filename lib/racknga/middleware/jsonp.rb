@@ -81,7 +81,7 @@ module Racknga
         @application = application
       end
 
-      # @private
+      # For Rack.
       def call(environment)
         request = Rack::Request.new(environment)
         callback = request["callback"]

@@ -43,6 +43,7 @@ module Racknga
         @notifiers = @options[:notifiers] || []
       end
 
+      # For Rack.
       def call(environment)
         @application.call(environment)
       rescue Exception => exception

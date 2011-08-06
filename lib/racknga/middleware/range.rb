@@ -33,6 +33,7 @@ module Racknga
         @application = application
       end
 
+      # For Rack.
       def call(environment)
         status, headers, body = @application.call(environment)
         return [status, headers, body] if status != 200

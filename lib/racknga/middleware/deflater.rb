@@ -61,7 +61,7 @@ module Racknga
         @options = Utils.normalize_options(options || {})
       end
 
-      # @private
+      # For Rack.
       def call(environment)
         if ie6?(environment)
           @application.call(environment)

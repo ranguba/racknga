@@ -32,7 +32,7 @@ module Racknga
     class Log
       LOGGER = "racknga.logger"
 
-      # @options options [String] :database_path the
+      # @option options [String] :database_path the
       # database path to be stored caches.
       def initialize(application, options={})
         @application = application
