@@ -190,6 +190,20 @@ module NginxAccessLogParserTests
     include Tests
 
     def runtime
+      nil
+    end
+
+    def request_time
+      nil
+    end
+  end
+
+  class CombinedWithTimeLogTest < Test::Unit::TestCase
+    include Environment
+    include Data
+    include Tests
+
+    def runtime
       0.000573
     end
 
