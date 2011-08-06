@@ -18,11 +18,70 @@
 
 module Racknga
   module Middleware
+    # This is a middleware that provides JSONP support.
+    #
+    # If you use this middleware, your Rack application just
+    # returns JSON response.
+    #
+    # Usage:
+    #   require "racknga"
+    #
+    #   use Rack::ContentLength
+    #   use Racknga::Middleware::JSONP
+    #   json_application = Proc.new do |env|
+    #     [200,
+    #      {"Content-Type" => "application/json"},
+    #      ['{"Hello": "World"}']]
+    #   end
+    #   run json_application
+    #
+    # Results:
+    #   % curl 'http://localhost:9292/'
+    #   {"Hello": "World"}
+    #   % curl 'http://localhost:9292/?callback=function'
+    #   function({"Hello": "World"})
+    #
+    # You can use this middleware with
+    # Racknga::Middleware::Cache. You *should* put this
+    # middleware on the cache middleware:
+    #   use Racknga::Middleawre::JSONP
+    #   use Racknga::Middleawre::Cache, :database_path => "var/cache/db"
+    #   run YourApplication
+    #
+    # If you put this middleware under the cache middleware,
+    # the cache middleware will cache many responses that
+    # just only differ callback parameter value. Here are
+    # examples:
+    #
+    # Recommended case:
+    #   use Racknga::Middleawre::JSONP
+    #   use Racknga::Middleawre::Cache, :database_path => "var/cache/db"
+    #   run YourApplication
+    #
+    # Requests:
+    #   http://localhost:9292/                    -> no cache. cached.
+    #   http://localhost:9292/?callback=function1 -> use cache.
+    #   http://localhost:9292/?callback=function2 -> use cache.
+    #   http://localhost:9292/?callback=function3 -> use cache.
+    #   http://localhost:9292/?callback=function1 -> use cache.
+    #
+    # Not recommended case:
+    #   use Racknga::Middleawre::Cache, :database_path => "var/cache/db"
+    #   use Racknga::Middleawre::JSONP
+    #   run YourApplication
+    #
+    # Requests:
+    #   http://localhost:9292/                    -> no cache. cached.
+    #   http://localhost:9292/?callback=function1 -> no cache. cached.
+    #   http://localhost:9292/?callback=function2 -> no cache. cached.
+    #   http://localhost:9292/?callback=function3 -> no cache. cached.
+    #   http://localhost:9292/?callback=function1 -> use cache.
     class JSONP
       def initialize(application)
         @application = application
       end
 
+      # @private
       def call(environment)
         request = Rack::Request.new(environment)
         callback = request["callback"]
@@ -72,6 +131,7 @@ module Racknga
         header_hash["Content-Type"] = updated_content_type
       end
 
+      # @private
       class Writer
         def initialize(callback, body)
           @callback = callback
