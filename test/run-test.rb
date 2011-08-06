@@ -29,7 +29,9 @@ rroonga_lib_dir = rroonga_dir + "lib"
 lib_dir = base_dir + "lib"
 test_dir = base_dir + "test"
 
-gem 'test-unit'
+require "rubygems"
+require "bundler/setup"
+
 require 'test/unit'
 require 'test/unit/notify'
 
