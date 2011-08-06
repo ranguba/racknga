@@ -1,0 +1,52 @@
+h1. README
+
+h2. Name
+
+racknga
+
+h2. Description
+
+Rack middlewares that use rroonga features and
+middlewares/utilities that don't use rroonga features.
+
+  * "rroonga":http://groonga.rubyforge.org/
+  * "Rack":http://rack.rubyforge.org/
+
+h2. Authors
+
+  * Kouhei Sutou <kou@clear-code.com>
+
+h2. License
+
+LGPL 2.1 or later. See license/lgpl-2.1.txt for details.
+
+(Kouhei Sutou has a right to change the license
+including contributed patches.)
+
+h2. Dependencies
+
+  * Ruby >= 1.9.1
+  * rroonga
+  * Rack
+
+h2. Suggested libraries
+
+  * jpmobile
+
+h2. Install
+
+<pre>
+% sudo gem install racknga
+</pre>
+
+h2. Documents
+
+http://groonga.rubyforge.org/racknga/en/
+
+h2. Mailing list
+
+http://rubyforge.org/mailman/listinfo/groonga-users-en
+
+h2. Thanks
+
+  * ...
