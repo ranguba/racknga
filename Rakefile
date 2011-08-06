@@ -1,6 +1,6 @@
 # -*- coding: utf-8; mode: ruby -*-
 #
-# Copyright (C) 2010  Kouhei Sutou <kou@clear-code.com>
+# Copyright (C) 2010-2011  Kouhei Sutou <kou@clear-code.com>
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -74,11 +74,11 @@ Rake::Task["release"].prerequisites.clear
 Jeweler::RubygemsDotOrgTasks.new do
 end
 
-reference_base_dir = Pathname.new("doc/html")
+reference_base_dir = Pathname.new("doc/reference")
 doc_en_dir = reference_base_dir + "en"
 YARD::Rake::YardocTask.new do |task|
-  task.options += ["--title", "#{spec.name} - #{version}"]
-  task.options += ["--readme", "README.rdoc"]
+  task.options += ["--title", spec.name]
+  task.options += ["--readme", "README.textile"]
   task.options += ["--files", "doc/text/**/*"]
   task.options += ["--output-dir", doc_en_dir.to_s]
   task.options += ["--charset", "utf-8"]
@@ -94,6 +94,36 @@ task :yard do
       html_file.print(html)
     end
   end
+end
+
+include ERB::Util
+
+def apply_template(content, paths, templates, language)
+  content = content.sub(/lang="en"/, "lang=\"#{language}\"")
+
+  title = nil
+  content = content.sub(/<title>(.+?)<\/title>/m) do
+    title = $1
+    templates[:head].result(binding)
+  end
+
+  content = content.sub(/<body(?:.*?)>/) do |body_start|
+    "#{body_start}\n#{templates[:header].result(binding)}\n"
+  end
+
+  content = content.sub(/<\/body/) do |body_end|
+    "\n#{templates[:footer].result(binding)}\n#{body_end}"
+  end
+
+  content
+end
+
+def erb_template(name)
+  file = File.join("doc/templates", "#{name}.html.erb")
+  template = File.read(file)
+  erb = ERB.new(template, nil, "-")
+  erb.filename = file
+  erb
 end
 
 def rsync_to_rubyforge(spec, source, destination, options={})
@@ -113,7 +143,7 @@ end
 namespace :reference do
   translate_languages = [:ja]
   supported_languages = [:en, *translate_languages]
-  html_files = FileList["doc/html/en/**/*.html"].to_a
+  html_files = FileList[doc_en_dir + "**/*.html"].to_a
 
   directory reference_base_dir.to_s
   CLOBBER.include(reference_base_dir.to_s)
@@ -135,15 +165,16 @@ namespace :reference do
       namespace language do
         po_file = "#{po_dir}/#{language}.po"
 
-        file po_file => html_files do |t|
-          if Pathname(po_file).exist?
+        if File.exist?(po_file)
+          file po_file => html_files do |t|
             sh("xml2po", "--keep-entities", "--update", t.name, *html_files)
-          else
-            rake("reference:pot:generate")
+          end
+        else
+          file po_file => pot_file do |t|
             sh("msginit",
-               "--input", pot_file,
-               "--output-file", po_file,
-               "--locale", language.to_s)
+               "--input=#{pot_file}",
+               "--output=#{t.name}",
+               "--locale=#{language}")
           end
         end
 
@@ -201,24 +232,51 @@ namespace :reference do
   namespace :publication do
     task :prepare do
       supported_languages.each do |language|
-        doc_dir = Pathname.new("#{reference_base_dir}/#{language}")
+        raw_reference_dir = reference_base_dir + language.to_s
+        prepared_reference_dir = html_reference_dir + language.to_s
+        rm_rf(prepared_reference_dir.to_s)
         head = erb_template("head.#{language}")
         header = erb_template("header.#{language}")
         footer = erb_template("footer.#{language}")
-        doc_dir.find do |file|
-          case file.basename.to_s
-          when "_index.html", /\A(?:class|method|file)_list.html\z/
-            next
-          when /\.html\z/
-            relative_dir_path = file.relative_path_from(doc_dir).dirname
-            current_page = relative_dir_path + file.basename
-            top_path = doc_dir.relative_path_from(file.dirname).to_s
-            apply_template(file, top_path, current_page,
-                           head, header, footer, language)
+        raw_reference_dir.find do |path|
+          relative_path = path.relative_path_from(raw_reference_dir)
+          prepared_path = prepared_reference_dir + relative_path
+          if path.directory?
+            mkdir_p(prepared_path.to_s)
+          else
+            case path.basename.to_s
+            when /(?:file|method|class)_list\.html\z/
+              cp(path.to_s, prepared_path.to_s)
+            when /\.html\z/
+              relative_dir_path = relative_path.dirname
+              current_path = relative_dir_path + path.basename
+              if current_path.basename.to_s == "index.html"
+                current_path = current_path.dirname
+              end
+              top_path = html_base_dir.relative_path_from(prepared_path.dirname)
+              paths = {
+                :top => top_path,
+                :current => current_path,
+              }
+              templates = {
+                :head => head,
+                :header => header,
+                :footer => footer
+              }
+              content = apply_template(File.read(path.to_s),
+                                       paths,
+                                       templates,
+                                       language)
+              File.open(prepared_path.to_s, "w") do |file|
+                file.print(content)
+              end
+            else
+              cp(path.to_s, prepared_path.to_s)
+            end
           end
         end
       end
-      File.open("#{reference_base_dir}/.htaccess", "w") do |file|
+      File.open("#{html_reference_dir}/.htaccess", "w") do |file|
         file.puts("RedirectMatch permanent ^/#{spec.name}/$ " +
                   "#{spec.homepage}#{spec.name}/en/")
       end
@@ -227,20 +285,19 @@ namespace :reference do
 
   desc "Upload document to rubyforge."
   task :publish => [:generate, "reference:publication:prepare"] do
-    rsync_to_rubyforge(spec, "#{reference_base_dir}/", spec.name,
-                       :delete => true)
+    rsync_to_rubyforge(spec, "#{html_reference_dir}/", spec.name)
   end
 end
 
 namespace :html do
   desc "Publish HTML to Web site."
   task :publish do
-    rsync_to_rubyforge(spec, "html/", "")
+    rsync_to_rubyforge(spec, "#{html_base_dir}/", "")
   end
 end
 
 desc "Upload document and HTML to rubyforge."
-task :publish => ["reference:publish", "html:publish"]
+task :publish => ["html:publish", "reference:publish"]
 
 desc "Tag the current revision."
 task :tag do

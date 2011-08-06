@@ -1,5 +1,6 @@
 /.yardoc/
 /doc/html/
+/doc/reference/
 /doc/po/racknga.pot
 /pkg/
 /test/.test-result/
