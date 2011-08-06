@@ -4,3 +4,4 @@
 /doc/po/racknga.pot
 /pkg/
 /test/.test-result/
+/*.gemspec
