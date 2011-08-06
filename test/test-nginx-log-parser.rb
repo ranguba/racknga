@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # Copyright (C) 2011  Ryo Onodera <onodera@clear-code.com>
+# Copyright (C) 2011  Kouhei Sutou <kou@clear-code.com>
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -141,12 +142,12 @@ class NginxAccessLogParserTest < Test::Unit::TestCase
 
   def usual_log_line
     "127.0.0.1 - - #{time_log_component}  " +
-    "\"GET / HTTP/1.1\" 200 613 \"-\" \"Ruby\""
+      "\"GET / HTTP/1.1\" 200 613 \"-\" \"Ruby\""
   end
 
   def not_found_log_line
     "127.0.0.1 - - #{time_log_component}  " +
-    "\"GET /the-truth.html HTTP/1.1\" 404 613 \"-\" \"Ruby\""
+      "\"GET /the-truth.html HTTP/1.1\" 404 613 \"-\" \"Ruby\""
   end
 
   def utf8_path
@@ -161,14 +162,14 @@ class NginxAccessLogParserTest < Test::Unit::TestCase
     path = utf8_path
 
     "127.0.0.1 - - #{time_log_component}  " +
-    "\"GET #{path} HTTP/1.1\" 200 613 \"-\" \"Ruby\""
+      "\"GET #{path} HTTP/1.1\" 200 613 \"-\" \"Ruby\""
   end
 
   def invalid_utf8_log_line
     path = garbled_path
 
     "127.0.0.1 - - #{time_log_component}  " +
-    "\"GET #{path} HTTP/1.1\" 200 613 \"-\" \"Ruby\""
+      "\"GET #{path} HTTP/1.1\" 200 613 \"-\" \"Ruby\""
   end
 
   def bad_log_line
