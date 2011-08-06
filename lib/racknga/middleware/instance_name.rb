@@ -18,6 +18,15 @@
 
 module Racknga
   module Middleware
+    # This is a middleware that adds "X-Responsed-By" header
+    # to responses. It's useful to determine responded
+    # server when your Rack applications are deployed behind
+    # load balancers.
+    #
+    # Usage:
+    #   require "racknga"
+    #   use Racknga::Middleware::InstanceName
+    #   run YourApplication
     class InstanceName
       attr_reader :header
       def initialize(application, options={})
