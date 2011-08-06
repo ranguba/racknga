@@ -1,4 +1,4 @@
-# Copyright (C) 2010  Kouhei Sutou <kou@clear-code.com>
+# Copyright (C) 2010-2011  Kouhei Sutou <kou@clear-code.com>
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -20,8 +20,6 @@ require 'json'
 require 'racknga'
 require 'racknga/middleware/cache'
 require 'racknga/middleware/instance_name'
-
-require 'racknga/nginx_access_log_parser'
 
 Capybara.configure do |config|
   config.default_driver = nil
