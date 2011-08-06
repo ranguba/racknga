@@ -27,6 +27,7 @@ module Racknga
   # Normally, #purge_old_responses is only used for cache
   # maintenance.
   class CacheDatabase
+    # @param [String] database_path the path for cache database.
     def initialize(database_path)
       @database_path = database_path
       @context = Groonga::Context.new(:encoding => :none)
