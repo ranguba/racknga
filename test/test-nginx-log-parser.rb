@@ -19,160 +19,182 @@
 
 require 'stringio'
 
-class NginxAccessLogParserTest < Test::Unit::TestCase
-  def test_usual_nginx_access_log
-    accesses = parse(join_lines(usual_log_line))
-    access = accesses.first
-    assert_equal(usual_log_entry, access)
-  end
+module NginxAccessLogParserTests
+  module Data
+    private
+    def time_log_component
+      times = ["03/Aug/2011:16:58:01 +0900", runtime, request_time].compact
+      "[#{times.join(', ')}]"
+    end
 
-  def test_no_access_log
-    accesses = parse(join_lines())
-    assert_equal([], accesses)
-  end
+    def usual_log_line
+      "127.0.0.1 - - #{time_log_component}  " +
+        "\"GET / HTTP/1.1\" 200 613 \"-\" \"Ruby\""
+    end
 
-  def test_multiple_nginx_access_log
-    accesses = parse(join_lines(usual_log_line,
-                                usual_log_line,
-                                not_found_log_line))
-    assert_equal([usual_log_entry,
-                  usual_log_entry,
-                  not_found_log_entry],
-                 accesses)
-  end
+    def usual_log_entry_options
+      {
+        :remote_address => "127.0.0.1",
+        :remote_user => "-",
+        :time_local => Time.local(2011, 8, 3, 16, 58, 1),
+        :runtime => runtime,
+        :request_time => request_time,
+        :request => "GET / HTTP/1.1",
+        :status => 200,
+        :body_bytes_sent => 613,
+        :http_referer => "-",
+        :http_user_agent => "Ruby",
+      }
+    end
 
-  def test_reversed_nginx_access_log
-    accesses = reversed_parse(join_lines(usual_log_line,
-                                         usual_log_line,
-                                         not_found_log_line))
-    assert_equal([usual_log_entry,
-                  usual_log_entry,
-                  not_found_log_entry].reverse,
-                 accesses)
-  end
+    def usual_log_entry
+      create_log_entry(usual_log_entry_options)
+    end
 
-  def test_bad_nginx_access_log
-    assert_raise(Racknga::NginxAccessLogParser::FormatError) do
-      parse(join_lines(bad_log_line))
+    def not_found_log_line
+      "127.0.0.1 - - #{time_log_component}  " +
+        "\"GET /the-truth.html HTTP/1.1\" 404 613 \"-\" \"Ruby\""
+    end
+
+    def not_found_log_entry
+      options = {
+        :status => 404,
+        :request => "GET /the-truth.html HTTP/1.1",
+      }
+      create_log_entry(usual_log_entry_options.merge(options))
+    end
+
+    def utf8_path
+      "/トップページ.html"
+    end
+
+    def valid_utf8_log_line
+      path = utf8_path
+
+      "127.0.0.1 - - #{time_log_component}  " +
+        "\"GET #{path} HTTP/1.1\" 200 613 \"-\" \"Ruby\""
+    end
+
+    def valid_utf8_log_entry
+      options = {
+        :request => "GET #{utf8_path} HTTP/1.1",
+      }
+      create_log_entry(usual_log_entry_options.merge(options))
+    end
+
+
+    def garbled_path
+      "/#{Random.new.bytes(10)}".force_encoding(Encoding::UTF_8)
+    end
+
+    def invalid_utf8_log_line
+      path = garbled_path
+
+      "127.0.0.1 - - #{time_log_component}  " +
+        "\"GET #{path} HTTP/1.1\" 200 613 \"-\" \"Ruby\""
+    end
+
+    def bad_log_line
+      "bad"
     end
   end
 
-  def test_invalid_utf8_log_line_ignored
-    accesses = parse(join_lines(valid_utf8_log_line,
-                                invalid_utf8_log_line,
-                                valid_utf8_log_line))
-    assert_equal([valid_utf8_log_entry,
-                  valid_utf8_log_entry],
-                 accesses)
+  module Environment
+    private
+    def create_log_entry(options)
+      Racknga::LogEntry.new(options)
+    end
+
+    def create_log_file(string)
+      StringIO.new(string)
+    end
+
+    def create_log_parser(file)
+      Racknga::NginxAccessLogParser.new(file)
+    end
+
+    def create_reversed_log_parser(file)
+      Racknga::ReversedNginxAccessLogParser.new(file)
+    end
+
+    def join_lines(*lines)
+      lines.collect do |line|
+        line + "\n"
+      end.join
+    end
+
+    def parse(string)
+      file = create_log_file(string)
+      parser = create_log_parser(file)
+      parser.collect.to_a
+    end
+
+    def reversed_parse(string)
+      file = create_log_file(string)
+      parser = create_reversed_log_parser(file)
+      parser.collect.to_a
+    end
   end
 
-  private
-  def create_log_entry(options)
-    Racknga::LogEntry.new(options)
+  module Tests
+    def test_usual_nginx_access_log
+      accesses = parse(join_lines(usual_log_line))
+      access = accesses.first
+      assert_equal(usual_log_entry, access)
+    end
+
+    def test_no_access_log
+      accesses = parse(join_lines())
+      assert_equal([], accesses)
+    end
+
+    def test_multiple_nginx_access_log
+      accesses = parse(join_lines(usual_log_line,
+                                  usual_log_line,
+                                  not_found_log_line))
+      assert_equal([usual_log_entry,
+                    usual_log_entry,
+                    not_found_log_entry],
+                   accesses)
+    end
+
+    def test_reversed_nginx_access_log
+      accesses = reversed_parse(join_lines(usual_log_line,
+                                           usual_log_line,
+                                           not_found_log_line))
+      assert_equal([usual_log_entry,
+                    usual_log_entry,
+                    not_found_log_entry].reverse,
+                   accesses)
+    end
+
+    def test_bad_nginx_access_log
+      assert_raise(Racknga::NginxAccessLogParser::FormatError) do
+        parse(join_lines(bad_log_line))
+      end
+    end
+
+    def test_invalid_utf8_log_line_ignored
+      accesses = parse(join_lines(valid_utf8_log_line,
+                                  invalid_utf8_log_line,
+                                  valid_utf8_log_line))
+      assert_equal([valid_utf8_log_entry,
+                    valid_utf8_log_entry],
+                   accesses)
+    end
   end
 
-  def create_log_file(string)
-    StringIO.new(string)
-  end
+  class CombinedLogTest < Test::Unit::TestCase
+    include Environment
+    include Data
+    include Tests
 
-  def create_log_parser(file)
-    Racknga::NginxAccessLogParser.new(file)
-  end
+    def runtime
+      0.000573
+    end
 
-  def create_reversed_log_parser(file)
-    Racknga::ReversedNginxAccessLogParser.new(file)
-  end
-
-  def join_lines(*lines)
-    lines.collect do |line|
-      line + "\n"
-    end.join
-  end
-
-  def parse(string)
-    file = create_log_file(string)
-    parser = create_log_parser(file)
-    parser.collect.to_a
-  end
-
-  def reversed_parse(string)
-    file = create_log_file(string)
-    parser = create_reversed_log_parser(file)
-    parser.collect.to_a
-  end
-
-  def usual_log_entry_options
-    {
-      :remote_address => "127.0.0.1",
-      :remote_user => "-",
-      :time_local => Time.local(2011, 8, 3, 16, 58, 1),
-      :runtime => 0.000573,
-      :request_time => 0.001,
-      :request => "GET / HTTP/1.1",
-      :status => 200,
-      :body_bytes_sent => 613,
-      :http_referer => "-",
-      :http_user_agent => "Ruby",
-    }
-  end
-
-  def usual_log_entry
-    create_log_entry(usual_log_entry_options)
-  end
-
-  def not_found_log_entry
-    options = {
-      :status => 404,
-      :request => "GET /the-truth.html HTTP/1.1",
-    }
-    create_log_entry(usual_log_entry_options.merge(options))
-  end
-
-  def valid_utf8_log_entry
-    options = {
-      :request => "GET #{utf8_path} HTTP/1.1",
-    }
-    create_log_entry(usual_log_entry_options.merge(options))
-  end
-
-
-  def time_log_component
-    "[03/Aug/2011:16:58:01 +0900, 0.000573, 0.001]"
-  end
-
-  def usual_log_line
-    "127.0.0.1 - - #{time_log_component}  " +
-      "\"GET / HTTP/1.1\" 200 613 \"-\" \"Ruby\""
-  end
-
-  def not_found_log_line
-    "127.0.0.1 - - #{time_log_component}  " +
-      "\"GET /the-truth.html HTTP/1.1\" 404 613 \"-\" \"Ruby\""
-  end
-
-  def utf8_path
-    "/トップページ.html"
-  end
-
-  def garbled_path
-    "/#{Random.new.bytes(10)}".force_encoding(Encoding::UTF_8)
-  end
-
-  def valid_utf8_log_line
-    path = utf8_path
-
-    "127.0.0.1 - - #{time_log_component}  " +
-      "\"GET #{path} HTTP/1.1\" 200 613 \"-\" \"Ruby\""
-  end
-
-  def invalid_utf8_log_line
-    path = garbled_path
-
-    "127.0.0.1 - - #{time_log_component}  " +
-      "\"GET #{path} HTTP/1.1\" 200 613 \"-\" \"Ruby\""
-  end
-
-  def bad_log_line
-    "bad"
+    def request_time
+      0.001
+    end
   end
 end
