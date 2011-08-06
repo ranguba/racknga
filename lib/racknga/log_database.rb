@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2010  Kouhei Sutou <kou@clear-code.com>
+# Copyright (C) 2010-2011  Kouhei Sutou <kou@clear-code.com>
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -63,10 +63,11 @@ module Racknga
     # removed. The default value is 1 day ago.
     def purge_old_entries(base_time=nil)
       base_time ||= Time.now - 60 * 60 * 24
-      entries.select do |record|
+      target_entries = entries.select do |record|
         record.time_stamp < base_time
-      end.each do |record|
-        record.key.delete
+      end
+      target_entries.each do |entry|
+        entry.key.delete
       end
     end
 
