@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2010  Kouhei Sutou <kou@clear-code.com>
+# Copyright (C) 2010-2011  Kouhei Sutou <kou@clear-code.com>
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -17,5 +17,5 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 module Racknga
-  VERSION = '0.9.1'
+  VERSION = '0.9.2'
 end
