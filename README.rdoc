@@ -6,7 +6,8 @@ racknga
 
 == Description
 
-Rack middlewares that uses rroonga features.
+Rack middlewares that use rroonga features and
+middlewares/utilities that don't use rroonga features.
 
 * rroonga: http://groonga.rubyforge.org/
 * Rack: http://rack.rubyforge.org/
@@ -20,7 +21,7 @@ Kouhei Sutou:: <tt><kou@clear-code.com></tt>
 LGPL 2.1 or later. See license/lgpl-2.1.txt for details.
 
 (Kouhei Sutou has a right to change the license
-inclidng contributed patches.)
+including contributed patches.)
 
 == Dependencies
 
@@ -30,7 +31,7 @@ inclidng contributed patches.)
 
 == Suggested libraries
 
-* will_paginate
+* jpmobile
 
 == Install
 
