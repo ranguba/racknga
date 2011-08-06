@@ -20,9 +20,20 @@ require 'racknga/log_database'
 
 module Racknga
   module Middleware
+    # This is a middleware that puts access logs to groonga
+    # database. It may useful for OLAP (OnLine Analytical
+    # Processing).
+    #
+    # Usage:
+    #   use Racnkga::Middleware::Log, :database_path => "var/log/db"
+    #   run YourApplication
+    #
+    # @see Racknga::LogDatabase
     class Log
       LOGGER = "racknga.logger"
 
+      # @options options [String] :database_path the
+      # database path to be stored caches.
       def initialize(application, options={})
         @application = application
         @options = Utils.normalize_options(options || {})
@@ -32,6 +43,7 @@ module Racknga
         @logger = Logger.new(@database)
       end
 
+      # For Rack.
       def call(environment)
         environment[LOGGER] = @logger
 
@@ -45,10 +57,12 @@ module Racknga
         [status, headers, body]
       end
 
+      # ensures creating cache database.
       def ensure_database
         @database.ensure_database
       end
 
+      # close the cache database.
       def close_database
         @database.close_database
       end
@@ -77,6 +91,7 @@ module Racknga
                     :runtime => request_time)
       end
 
+      # @private
       class Logger
         def initialize(database)
           @database = database
