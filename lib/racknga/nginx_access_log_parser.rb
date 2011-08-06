@@ -111,7 +111,7 @@ module Racknga
       :http_user_agent,
     ]
 
-    attr_reader *ATTRIBUTES
+    attr_reader(*ATTRIBUTES)
     def initialize(options=nil)
       options ||= {}
       @remote_address = options[:remote_address]
