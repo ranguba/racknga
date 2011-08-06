@@ -20,6 +20,14 @@ require 'time'
 
 module Racknga
   module Middleware
+    # This is a middleware that provides HTTP range request
+    # (partial request) support. For example, HTTP range
+    # request is used for playing a video on the way.
+    #
+    # Usage:
+    #   require "racknga"
+    #   use Racknga::Middleware::Range
+    #   run YourApplication
     class Range
       def initialize(application)
         @application = application
@@ -109,6 +117,7 @@ module Racknga
         nil
       end
 
+      # @private
       class RangeStream
         def initialize(body, first_byte, length)
           @body = body
