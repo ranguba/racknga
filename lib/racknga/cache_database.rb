@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2010  Kouhei Sutou <kou@clear-code.com>
+# Copyright (C) 2010-2011  Kouhei Sutou <kou@clear-code.com>
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -58,8 +58,11 @@ module Racknga
       previous_age = (age - 1).modulo(age_modulo)
       configuration.age = (age + 1).modulo(age_modulo)
 
-      responses.each do |response|
-        response.delete if response.age == previous_age
+      target_responses = responses.select do |record|
+        record.age == previous_age
+      end
+      target_responses.each do |response|
+        response.key.delete
       end
     end
 
