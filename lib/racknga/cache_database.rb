@@ -21,6 +21,11 @@ require 'fileutils'
 require 'groonga'
 
 module Racknga
+  # This is a cache database based on groonga. It is used by
+  # Racknga::Middleware::Cache.
+  #
+  # Normally, #purge_old_responses is only used for cache
+  # maintenance.
   class CacheDatabase
     def initialize(database_path)
       @database_path = database_path
@@ -40,6 +45,12 @@ module Racknga
       configurations["default"]
     end
 
+    # Purges old responses. To clear old caches, you should
+    # call this method periodically or after data update.
+    #
+    # You can call this method by the different
+    # process from your Rack application
+    # process. (e.g. cron.) It's multi process safe.
     def purge_old_responses
       age_modulo = 2 ** 32
       age = configuration.age
