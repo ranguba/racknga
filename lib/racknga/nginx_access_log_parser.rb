@@ -53,7 +53,7 @@ module Racknga
       end
     end
 
-    REMOTE_ADDRESS = '(?:\d{1,3}\.){3}\d{1,3}'
+    REMOTE_ADDRESS = '[^ ]+'
     REMOTE_USER = '[^ ]+'
     TIME_LOCAL = '[^ ]+ \+\d{4}'
     RUNTIME = '(?:[\d.]+|-)'
@@ -64,7 +64,7 @@ module Racknga
     HTTP_REFERER = '.*?'
     HTTP_USER_AGENT = '(?:\\"|[^\"])*?' # '
     LOG_FORMAT =
-      /\A(#{REMOTE_ADDRESS}) - (#{REMOTE_USER}) \[(#{TIME_LOCAL})(?:, (#{RUNTIME}), (#{REQUEST_TIME}))?\]  "(#{REQUEST})" (#{STATUS}) (#{BODY_BYTES_SENT}) "(#{HTTP_REFERER})" "(#{HTTP_USER_AGENT})"\n\z/
+      /\A(#{REMOTE_ADDRESS}) - (#{REMOTE_USER}) \[(#{TIME_LOCAL})(?:, (#{RUNTIME}), (#{REQUEST_TIME}))?\] +"(#{REQUEST})" (#{STATUS}) (#{BODY_BYTES_SENT}) "(#{HTTP_REFERER})" "(#{HTTP_USER_AGENT})"\n\z/
     def parse_line(line)
       if line =~ LOG_FORMAT
         last_match = Regexp.last_match
