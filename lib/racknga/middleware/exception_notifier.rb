@@ -20,6 +20,22 @@ require 'racknga/exception_mail_notifier'
 
 module Racknga
   module Middleware
+    # This is a middleware that mails exception details on
+    # error. It's useful for finding your Rack application
+    # troubles.
+    #
+    # Usage:
+    #   require "racknga"
+    #   require "racknga/middleware/exception_notifier"
+    #
+    #   notifier_options = {
+    #     :subject_label => "[YourApplication]",
+    #     :from => "reporter@example.com",
+    #     :to => "maintainers@example.com",
+    #   }
+    #   notifiers = [Racknga::ExceptionMailNotifier.new(notifier_options)]
+    #   use Racknga::Middleware::ExceptionNotifier, :notifiers => notifiers
+    #   run YourApplication
     class ExceptionNotifier
       def initialize(application, options={})
         @application = application
