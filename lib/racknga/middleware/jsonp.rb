@@ -39,7 +39,7 @@ module Racknga
       private
       def update_cache_key(request)
         return unless Middleware.const_defined?(:Cache)
-        cache_key_key = Cache::KEY_KEY
+        cache_key = Cache::KEY
 
         path = request.fullpath
         path, parameters = path.split(/\?/, 2)
@@ -51,8 +51,8 @@ module Racknga
           path << "?" << parameters unless parameters.empty?
         end
 
-        key = request.env[cache_key_key]
-        request.env[cache_key_key] = [key, path].compact.join(":")
+        key = request.env[cache_key]
+        request.env[cache_key] = [key, path].compact.join(":")
       end
 
       def json_response?(header_hash)

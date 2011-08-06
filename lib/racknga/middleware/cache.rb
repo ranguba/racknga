@@ -35,15 +35,15 @@ module Racknga
         else
           user_agent_key = "pc"
         end
-        key = environment[Cache::KEY_KEY]
-        environment[Cache::KEY_KEY] = [key, user_agent_key].join(":")
+        key = environment[Cache::KEY]
+        environment[Cache::KEY] = [key, user_agent_key].join(":")
         @application.call(environment)
       end
     end
 
     class Cache
-      KEY_KEY = "racknga.cache.key"
-      START_TIME_KEY = "racknga.cache.start_time"
+      KEY = "racknga.cache.key"
+      START_TIME = "racknga.cache.start_time"
 
       attr_reader :database
       def initialize(application, options={})
@@ -58,8 +58,8 @@ module Racknga
         request = Rack::Request.new(environment)
         return @application.call(environment) unless use_cache?(request)
         age = @database.configuration.age
-        key = normalize_key(environment[KEY_KEY] || request.fullpath)
-        environment[START_TIME_KEY] = Time.now
+        key = normalize_key(environment[KEY] || request.fullpath)
+        environment[START_TIME] = Time.now
         cache = @database.responses
         record = cache[key]
         if record and record.age == age
