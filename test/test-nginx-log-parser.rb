@@ -106,6 +106,15 @@ module NginxAccessLogParserTests
       create_log_entry(usual_log_entry_options.merge(options))
     end
 
+    def apache_combined_log_line
+      "127.0.0.1 - - #{time_log_component} " +
+        "\"GET / HTTP/1.1\" 200 613 \"-\" \"Ruby\""
+    end
+
+    def apache_combined_log_entry
+      usual_log_entry
+    end
+
     def bad_log_line
       "bad"
     end
@@ -158,6 +167,12 @@ module NginxAccessLogParserTests
     def test_ipv6_log
       accesses = parse(join_lines(ipv6_log_line))
       assert_equal([ipv6_log_entry],
+                   accesses)
+    end
+
+    def test_apache_combined_log
+      accesses = parse(join_lines(apache_combined_log_line))
+      assert_equal([apache_combined_log_entry],
                    accesses)
     end
 
