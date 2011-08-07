@@ -72,11 +72,11 @@ module Racknga
         options[:remote_address] = last_match[1]
         options[:remote_user] = last_match[2]
         parse_time_local(last_match[3], options)
-        options[:runtime] = last_match[4].to_f
-        options[:request_time] = last_match[5].to_f
+        options[:runtime] = last_match[4]
+        options[:request_time] = last_match[5]
         options[:request] = last_match[6]
         options[:status] = last_match[7].to_i
-        options[:body_bytes_sent] = last_match[8].to_i
+        options[:body_bytes_sent] = last_match[8]
         options[:http_referer] = last_match[9]
         options[:http_user_agent] = last_match[10]
         LogEntry.new(options)
@@ -115,15 +115,15 @@ module Racknga
     def initialize(options=nil)
       options ||= {}
       @remote_address = options[:remote_address]
-      @remote_user = options[:remote_user]
+      @remote_user = normalize_string_value(options[:remote_user])
       @time_local = options[:time_local] || Time.at(0)
-      @runtime = options[:runtime] || 0.0
-      @request_time = options[:request_time] || 0.0
+      @runtime = normalize_float_value(options[:runtime])
+      @request_time = normalize_float_value(options[:request_time])
       @request = options[:request]
       @status = options[:status]
-      @body_bytes_sent = options[:body_bytes_sent]
-      @http_referer = options[:http_referer]
-      @http_user_agent = options[:http_user_agent]
+      @body_bytes_sent = normalize_int_value(options[:body_bytes_sent])
+      @http_referer = normalize_string_value(options[:http_referer])
+      @http_user_agent = normalize_string_value(options[:http_user_agent])
     end
 
     def attributes
@@ -134,6 +134,31 @@ module Racknga
 
     def ==(other)
       other.is_a?(self.class) and attributes == other.attributes
+    end
+
+    private
+    def normalize_string_value(value)
+      if value.nil? or value == "-"
+        nil
+      else
+        value.to_s
+      end
+    end
+
+    def normalize_float_value(value)
+      if value.nil?
+        value
+      else
+        value.to_f
+      end
+    end
+
+    def normalize_int_value(value)
+      if value.nil? or value == "-"
+        nil
+      else
+        value.to_i
+      end
     end
   end
 end

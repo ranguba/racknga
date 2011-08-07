@@ -35,14 +35,14 @@ module NginxAccessLogParserTests
     def usual_log_entry_options
       {
         :remote_address => "127.0.0.1",
-        :remote_user => "-",
+        :remote_user => nil,
         :time_local => Time.local(2011, 8, 3, 16, 58, 1),
         :runtime => runtime,
         :request_time => request_time,
         :request => "GET / HTTP/1.1",
         :status => 200,
         :body_bytes_sent => 613,
-        :http_referer => "-",
+        :http_referer => nil,
         :http_user_agent => "Ruby",
       }
     end
@@ -122,7 +122,7 @@ module NginxAccessLogParserTests
 
     def no_body_bytes_sent_log_entry
       options = {
-        :body_bytes_sent => 0,
+        :body_bytes_sent => nil,
       }
       create_log_entry(usual_log_entry_options.merge(options))
     end
