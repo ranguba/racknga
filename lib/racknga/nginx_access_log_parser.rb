@@ -53,6 +53,7 @@ module Racknga
       end
     end
 
+    private
     REMOTE_ADDRESS = '[^ ]+'
     REMOTE_USER = '[^ ]+'
     TIME_LOCAL = '[^ ]+ \+\d{4}'
