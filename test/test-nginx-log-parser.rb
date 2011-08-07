@@ -94,6 +94,18 @@ module NginxAccessLogParserTests
         "\"GET #{path} HTTP/1.1\" 200 613 \"-\" \"Ruby\""
     end
 
+    def ipv6_log_line
+      "::1 - - #{time_log_component}  " +
+        "\"GET / HTTP/1.1\" 200 613 \"-\" \"Ruby\""
+    end
+
+    def ipv6_log_entry
+      options = {
+        :remote_address => "::1",
+      }
+      create_log_entry(usual_log_entry_options.merge(options))
+    end
+
     def bad_log_line
       "bad"
     end
@@ -141,6 +153,12 @@ module NginxAccessLogParserTests
       accesses = parse(join_lines(usual_log_line))
       access = accesses.first
       assert_equal(usual_log_entry, access)
+    end
+
+    def test_ipv6_log
+      accesses = parse(join_lines(ipv6_log_line))
+      assert_equal([ipv6_log_entry],
+                   accesses)
     end
 
     def test_no_access_log
