@@ -149,7 +149,7 @@ module NginxAccessLogParserTests
   end
 
   module Tests
-    def test_usual_nginx_access_log
+    def test_usual_log
       accesses = parse(join_lines(usual_log_line))
       access = accesses.first
       assert_equal(usual_log_entry, access)
@@ -161,12 +161,12 @@ module NginxAccessLogParserTests
                    accesses)
     end
 
-    def test_no_access_log
+    def test_no_log
       accesses = parse(join_lines())
       assert_equal([], accesses)
     end
 
-    def test_multiple_nginx_access_log
+    def test_multiple_logs
       accesses = parse(join_lines(usual_log_line,
                                   usual_log_line,
                                   not_found_log_line))
@@ -176,7 +176,7 @@ module NginxAccessLogParserTests
                    accesses)
     end
 
-    def test_reversed_nginx_access_log
+    def test_reversed_parse
       accesses = reversed_parse(join_lines(usual_log_line,
                                            usual_log_line,
                                            not_found_log_line))
@@ -186,7 +186,7 @@ module NginxAccessLogParserTests
                    accesses)
     end
 
-    def test_bad_nginx_access_log
+    def test_bad_log
       assert_raise(Racknga::NginxAccessLogParser::FormatError) do
         parse(join_lines(bad_log_line))
       end
