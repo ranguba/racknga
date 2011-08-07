@@ -172,8 +172,8 @@ module NginxAccessLogParserTests
   module Tests
     def test_usual_log
       accesses = parse(join_lines(usual_log_line))
-      access = accesses.first
-      assert_equal(usual_log_entry, access)
+      assert_equal([usual_log_entry],
+                   accesses)
     end
 
     def test_ipv6_log
