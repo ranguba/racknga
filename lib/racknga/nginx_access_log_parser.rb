@@ -133,7 +133,7 @@ module Racknga
     end
 
     def ==(other)
-      attributes == other.attributes
+      other.is_a?(self.class) and attributes == other.attributes
     end
   end
 end
