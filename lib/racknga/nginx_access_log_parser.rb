@@ -60,7 +60,7 @@ module Racknga
     REQUEST_TIME = '[\d.]+'
     REQUEST = '.*?'
     STATUS = '\d{3}'
-    BODY_BYTES_SENT = '\d+'
+    BODY_BYTES_SENT = '(?:\d+|-)'
     HTTP_REFERER = '.*?'
     HTTP_USER_AGENT = '(?:\\"|[^\"])*?' # '
     LOG_FORMAT =

@@ -115,6 +115,18 @@ module NginxAccessLogParserTests
       usual_log_entry
     end
 
+    def no_body_bytes_sent_log_line
+      "127.0.0.1 - - #{time_log_component}  " +
+        "\"GET / HTTP/1.1\" 200 - \"-\" \"Ruby\""
+    end
+
+    def no_body_bytes_sent_log_entry
+      options = {
+        :body_bytes_sent => 0,
+      }
+      create_log_entry(usual_log_entry_options.merge(options))
+    end
+
     def bad_log_line
       "bad"
     end
@@ -173,6 +185,12 @@ module NginxAccessLogParserTests
     def test_apache_combined_log
       accesses = parse(join_lines(apache_combined_log_line))
       assert_equal([apache_combined_log_entry],
+                   accesses)
+    end
+
+    def test_no_body_bytes_sent_log
+      accesses = parse(join_lines(no_body_bytes_sent_log_line))
+      assert_equal([no_body_bytes_sent_log_entry],
                    accesses)
     end
 
