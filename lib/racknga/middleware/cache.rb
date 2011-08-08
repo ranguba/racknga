@@ -223,7 +223,7 @@ module Racknga
         env = request.env
         logger = env[Middleware::Log::LOGGER]
         return if logger.nil?
-        start_time = env[START_TIME_KEY]
+        start_time = env[START_TIME]
         runtime = Time.now - start_time
         logger.log("cache-#{tag}", request.fullpath, :runtime => runtime)
       end
