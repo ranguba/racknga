@@ -221,7 +221,7 @@ module Racknga
       def log(tag, request)
         return unless Middleware.const_defined?(:Log)
         env = request.env
-        logger = env[Middleware::Log::LOGGER_KEY]
+        logger = env[Middleware::Log::LOGGER]
         return if logger.nil?
         start_time = env[START_TIME_KEY]
         runtime = Time.now - start_time
