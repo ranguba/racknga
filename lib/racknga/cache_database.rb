@@ -53,7 +53,7 @@ module Racknga
     # process from your Rack application
     # process. (e.g. cron.) It's multi process safe.
     def purge_old_responses
-      age_modulo = 2 ** 32
+      age_modulo = 2 ** 31 - 1
       age = configuration.age
       previous_age = (age - 1).modulo(age_modulo)
       configuration.age = (age + 1).modulo(age_modulo)
