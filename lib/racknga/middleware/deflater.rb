@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2010  Kouhei Sutou <kou@clear-code.com>
+# Copyright (C) 2010-2011  Kouhei Sutou <kou@clear-code.com>
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -63,7 +63,7 @@ module Racknga
 
       # For Rack.
       def call(environment)
-        if ie6?(environment)
+        if ie6?(environment) or not valid_accept_encoding?(environment)
           @application.call(environment)
         else
           @deflater.call(environment)
@@ -73,6 +73,16 @@ module Racknga
       private
       def ie6?(environment)
         /MSIE 6.0;/ =~ (environment["HTTP_USER_AGENT"] || '')
+      end
+
+      def valid_accept_encoding?(environment)
+        request = Rack::Request.new(environment)
+        begin
+          request.accept_encoding
+          true
+        rescue
+          false
+        end
       end
     end
   end
