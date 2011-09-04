@@ -72,6 +72,8 @@ module Racknga
       target_responses.each do |response|
         response.key.delete
       end
+
+      responses.defrag if responses.respond_to?(:defrag)
     end
 
     def ensure_database
