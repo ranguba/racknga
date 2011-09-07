@@ -26,3 +26,4 @@ require 'racknga/middleware/exception_notifier'
 require 'racknga/middleware/jsonp'
 require 'racknga/middleware/range'
 require "racknga/middleware/instance_name"
+require "racknga/middleware/nginx_raw_uri"
