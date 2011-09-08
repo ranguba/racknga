@@ -26,7 +26,6 @@ module Racknga
     #
     # Usage:
     #   require "racknga"
-    #   require "racknga/middleware/exception_notifier"
     #
     #   notifier_options = {
     #     :subject_label => "[YourApplication]",
