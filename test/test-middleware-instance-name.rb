@@ -18,10 +18,7 @@ class InstanceNameTest < Test::Unit::TestCase
   include RackngaTestUtils
 
   def test_no_option
-    server = default_instance_name.server
-    user = default_instance_name.user
-    revision = default_instance_name.revision
-    branch = default_instance_name.branch
+    server, user, revision, branch = extract_from_default_instance_name
 
     instance_name_options({}) do
       request
@@ -31,10 +28,7 @@ class InstanceNameTest < Test::Unit::TestCase
 
   def test_application_name
     application_name = "HelloWorld"
-    server = default_instance_name.server
-    user = default_instance_name.user
-    revision = default_instance_name.revision
-    branch = default_instance_name.branch
+    server, user, revision, branch = extract_from_default_instance_name
 
     instance_name_options(:application_name => application_name) do
       request
@@ -45,10 +39,7 @@ class InstanceNameTest < Test::Unit::TestCase
   def test_both_application_name_and_version
     application_name = "HelloWorld"
     version = 1
-    server = default_instance_name.server
-    user = default_instance_name.user
-    revision = default_instance_name.revision
-    branch = default_instance_name.branch
+    server, user, revision, branch = extract_from_default_instance_name
 
     instance_name_options(:application_name => application_name,
                           :version => version) do
@@ -76,6 +67,15 @@ class InstanceNameTest < Test::Unit::TestCase
 
   def default_instance_name
     @default_instance_name ||= create_instance_name(create_minimal_application).freeze
+  end
+
+  def extract_from_default_instance_name
+    server = default_instance_name.server
+    user = default_instance_name.user
+    revision = default_instance_name.revision
+    branch = default_instance_name.branch
+
+    [server, user, revision, branch]
   end
 
   def create_minimal_application
