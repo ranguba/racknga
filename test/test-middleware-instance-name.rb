@@ -32,7 +32,8 @@ class InstanceNameTest < Test::Unit::TestCase
 
     instance_name_options(:application_name => application_name) do
       request
-      assert_header("#{application_name} #{default_footer(*footer_variables)}")
+      assert_header("#{application_name} " +
+                    "#{default_footer(*footer_variables)}")
     end
   end
 
@@ -44,7 +45,8 @@ class InstanceNameTest < Test::Unit::TestCase
     instance_name_options(:application_name => application_name,
                           :version => version) do
       request
-      assert_header("#{application_name} v#{version} #{default_footer(*footer_variables)}")
+      assert_header("#{application_name} v#{version} " +
+                    "#{default_footer(*footer_variables)}")
     end
   end
 
@@ -66,7 +68,8 @@ class InstanceNameTest < Test::Unit::TestCase
   end
 
   def default_instance_name
-    @default_instance_name ||= create_instance_name(create_minimal_application).freeze
+    @default_instance_name ||=
+      create_instance_name(create_minimal_application).freeze
   end
 
   def extract_from_default_instance_name
@@ -101,6 +104,7 @@ class InstanceNameTest < Test::Unit::TestCase
   end
 
   def assert_header(expected_header)
-    assert_equal(expected_header, page.response_headers["X-Responsed-By"])
+    actual_header = page.response_headers["X-Responsed-By"]
+    assert_equal(expected_header, actual_header)
   end
 end
