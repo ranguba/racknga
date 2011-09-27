@@ -18,33 +18,33 @@ class InstanceNameTest < Test::Unit::TestCase
   include RackngaTestUtils
 
   def test_no_option
-    server, user, revision, branch, ruby = extract_from_default_instance_name
+    footer_variables = extract_from_default_instance_name
 
     instance_name_options({}) do
       request
-      assert_header("Proc (at #{revision} (#{branch})) on #{server} by #{user} with #{ruby}")
+      assert_header("Proc #{default_footer(*footer_variables)}")
     end
   end
 
   def test_application_name
     application_name = "HelloWorld"
-    server, user, revision, branch, ruby = extract_from_default_instance_name
+    footer_variables = extract_from_default_instance_name
 
     instance_name_options(:application_name => application_name) do
       request
-      assert_header("#{application_name} (at #{revision} (#{branch})) on #{server} by #{user} with #{ruby}")
+      assert_header("#{application_name} #{default_footer(*footer_variables)}")
     end
   end
 
   def test_both_application_name_and_version
     application_name = "HelloWorld"
     version = 1
-    server, user, revision, branch, ruby = extract_from_default_instance_name
+    footer_variables = extract_from_default_instance_name
 
     instance_name_options(:application_name => application_name,
                           :version => version) do
       request
-      assert_header("#{application_name} v#{version} (at #{revision} (#{branch})) on #{server} by #{user} with #{ruby}")
+      assert_header("#{application_name} v#{version} #{default_footer(*footer_variables)}")
     end
   end
 
@@ -77,6 +77,10 @@ class InstanceNameTest < Test::Unit::TestCase
     ruby = default_instance_name.ruby
 
     [server, user, revision, branch, ruby]
+  end
+
+  def default_footer(server, user, revision, branch, ruby)
+    "(at #{revision} (#{branch})) on #{server} by #{user} with #{ruby}"
   end
 
   def create_minimal_application
