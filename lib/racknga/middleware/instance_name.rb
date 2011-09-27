@@ -79,6 +79,10 @@ module Racknga
         current_branch.sub(CURRENT_BRANCH_MARKER, "").strip
       end
 
+      def ruby
+        RUBY_DESCRIPTION
+      end
+
       private
       DEFAULT_HEADER_NAME = "X-Responsed-By"
       def header_name
@@ -96,7 +100,8 @@ module Racknga
                       format_version(version),
                       format_revision(branch, revision),
                       format_server(server),
-                      format_user(user))
+                      format_user(user),
+                      format_ruby(ruby))
       end
 
       def format_header(*arguments)
@@ -136,6 +141,12 @@ module Racknga
       def format_user(user)
         format_if_possible(user) do
           "by #{user}"
+        end
+      end
+
+      def format_ruby(ruby)
+        format_if_possible(ruby) do
+          "with #{ruby}"
         end
       end
 
