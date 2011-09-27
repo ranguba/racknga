@@ -68,6 +68,17 @@ module Racknga
         `id --user --name`.strip
       end
 
+      CURRENT_BRANCH_MARKER = /\A\* /
+
+      def branch
+        branches = `git branch -a`.lines
+        current_branch = branches.select do |line|
+          line =~ CURRENT_BRANCH_MARKER
+        end.first
+
+        current_branch.sub(CURRENT_BRANCH_MARKER, "").strip
+      end
+
       private
       DEFAULT_HEADER_NAME = "X-Responsed-By"
       def header_name
@@ -83,7 +94,7 @@ module Racknga
       def construct_header
         format_header(format_application_name(application_name),
                       format_version(version),
-                      format_revision(revision),
+                      format_revision(branch, revision),
                       format_server(server),
                       format_user(user))
       end
@@ -104,9 +115,15 @@ module Racknga
         end
       end
 
-      def format_revision(revision)
+      def format_revision(branch, revision)
         format_if_possible(revision) do
-          "(at #{revision})"
+          "(at #{revision}#{format_branch(branch)})"
+        end
+      end
+
+      def format_branch(branch)
+        format_if_possible(branch) do
+          " (#{branch})"
         end
       end
 

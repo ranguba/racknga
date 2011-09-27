@@ -21,10 +21,11 @@ class InstanceNameTest < Test::Unit::TestCase
     server = default_instance_name.server
     user = default_instance_name.user
     revision = default_instance_name.revision
+    branch = default_instance_name.branch
 
     instance_name_options({}) do
       request
-      assert_header("Proc (at #{revision}) on #{server} by #{user}")
+      assert_header("Proc (at #{revision} (#{branch})) on #{server} by #{user}")
     end
   end
 
@@ -33,10 +34,11 @@ class InstanceNameTest < Test::Unit::TestCase
     server = default_instance_name.server
     user = default_instance_name.user
     revision = default_instance_name.revision
+    branch = default_instance_name.branch
 
     instance_name_options(:application_name => application_name) do
       request
-      assert_header("#{application_name} (at #{revision}) on #{server} by #{user}")
+      assert_header("#{application_name} (at #{revision} (#{branch})) on #{server} by #{user}")
     end
   end
 
@@ -46,11 +48,12 @@ class InstanceNameTest < Test::Unit::TestCase
     server = default_instance_name.server
     user = default_instance_name.user
     revision = default_instance_name.revision
+    branch = default_instance_name.branch
 
     instance_name_options(:application_name => application_name,
                           :version => version) do
       request
-      assert_header("#{application_name} v#{version} (at #{revision}) on #{server} by #{user}")
+      assert_header("#{application_name} v#{version} (at #{revision} (#{branch})) on #{server} by #{user}")
     end
   end
 
