@@ -149,7 +149,7 @@ Timestamp: #{Time.now.rfc2822}
 --
 URL: #{request.url}
 --
-#{exception.class}: #{exception}
+#{exception.class}: #{exception.message}
 EOB
     end
 
