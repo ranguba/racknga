@@ -19,17 +19,20 @@
 
 require 'stringio'
 
-module NginxAccessLogParserTests
+module AccessLogParserTests
   module Data
     private
-    def time_log_component
-      times = ["03/Aug/2011:16:58:01 +0900", runtime, request_time].compact
-      "[#{times.join(', ')}]"
+    def time_local
+      "03/Aug/2011:16:58:01 +0900"
+    end
+
+    def log_line(content)
+      content
     end
 
     def usual_log_line
-      "127.0.0.1 - - #{time_log_component}  " +
-        "\"GET / HTTP/1.1\" 200 613 \"-\" \"Ruby\""
+      log_line("127.0.0.1 - - #{time_log_component}  " +
+               "\"GET / HTTP/1.1\" 200 613 \"-\" \"Ruby\"")
     end
 
     def usual_log_entry_options
@@ -52,8 +55,8 @@ module NginxAccessLogParserTests
     end
 
     def not_found_log_line
-      "127.0.0.1 - - #{time_log_component}  " +
-        "\"GET /the-truth.html HTTP/1.1\" 404 613 \"-\" \"Ruby\""
+      log_line("127.0.0.1 - - #{time_log_component}  " +
+               "\"GET /the-truth.html HTTP/1.1\" 404 613 \"-\" \"Ruby\"")
     end
 
     def not_found_log_entry
@@ -71,8 +74,8 @@ module NginxAccessLogParserTests
     def valid_utf8_log_line
       path = utf8_path
 
-      "127.0.0.1 - - #{time_log_component}  " +
-        "\"GET #{path} HTTP/1.1\" 200 613 \"-\" \"Ruby\""
+      log_line("127.0.0.1 - - #{time_log_component}  " +
+               "\"GET #{path} HTTP/1.1\" 200 613 \"-\" \"Ruby\"")
     end
 
     def valid_utf8_log_entry
@@ -90,13 +93,13 @@ module NginxAccessLogParserTests
     def invalid_utf8_log_line
       path = garbled_path
 
-      "127.0.0.1 - - #{time_log_component}  " +
-        "\"GET #{path} HTTP/1.1\" 200 613 \"-\" \"Ruby\""
+      log_line("127.0.0.1 - - #{time_log_component}  " +
+               "\"GET #{path} HTTP/1.1\" 200 613 \"-\" \"Ruby\"")
     end
 
     def ipv6_log_line
-      "::1 - - #{time_log_component}  " +
-        "\"GET / HTTP/1.1\" 200 613 \"-\" \"Ruby\""
+      log_line("::1 - - #{time_log_component}  " +
+               "\"GET / HTTP/1.1\" 200 613 \"-\" \"Ruby\"")
     end
 
     def ipv6_log_entry
@@ -107,8 +110,8 @@ module NginxAccessLogParserTests
     end
 
     def apache_combined_log_line
-      "127.0.0.1 - - #{time_log_component} " +
-        "\"GET / HTTP/1.1\" 200 613 \"-\" \"Ruby\""
+      log_line("127.0.0.1 - - #{time_log_component} " +
+               "\"GET / HTTP/1.1\" 200 613 \"-\" \"Ruby\"")
     end
 
     def apache_combined_log_entry
@@ -116,8 +119,8 @@ module NginxAccessLogParserTests
     end
 
     def no_body_bytes_sent_log_line
-      "127.0.0.1 - - #{time_log_component}  " +
-        "\"GET / HTTP/1.1\" 200 - \"-\" \"Ruby\""
+      log_line("127.0.0.1 - - #{time_log_component}  " +
+               "\"GET / HTTP/1.1\" 200 - \"-\" \"Ruby\"")
     end
 
     def no_body_bytes_sent_log_entry
@@ -143,11 +146,11 @@ module NginxAccessLogParserTests
     end
 
     def create_log_parser(file)
-      Racknga::NginxAccessLogParser.new(file)
+      Racknga::AccessLogParser.new(file)
     end
 
     def create_reversed_log_parser(file)
-      Racknga::ReversedNginxAccessLogParser.new(file)
+      Racknga::ReversedAccessLogParser.new(file)
     end
 
     def join_lines(*lines)
@@ -220,7 +223,7 @@ module NginxAccessLogParserTests
     end
 
     def test_bad_log
-      assert_raise(Racknga::NginxAccessLogParser::FormatError) do
+      assert_raise(Racknga::AccessLogParser::FormatError) do
         parse(join_lines(bad_log_line))
       end
     end
@@ -240,6 +243,12 @@ module NginxAccessLogParserTests
     include Data
     include Tests
 
+    private
+    def time_log_component
+      times = [time_local, runtime, request_time].compact
+      "[#{times.join(', ')}]"
+    end
+
     def runtime
       nil
     end
@@ -249,10 +258,39 @@ module NginxAccessLogParserTests
     end
   end
 
-  class CombinedWithTimeLogTest < Test::Unit::TestCase
+  class CombinedWithTimeNginxLogTest < Test::Unit::TestCase
     include Environment
     include Data
     include Tests
+
+    private
+    def time_log_component
+      times = [time_local, runtime, request_time].compact
+      "[#{times.join(', ')}]"
+    end
+
+    def runtime
+      0.000573
+    end
+
+    def request_time
+      0.001
+    end
+  end
+
+  class CombinedWithTimeApacheLogTest < Test::Unit::TestCase
+    include Environment
+    include Data
+    include Tests
+
+    private
+    def time_log_component
+      "[#{time_local}]"
+    end
+
+    def log_line(content)
+      "#{content} #{runtime} #{(request_time * 1_000_000).to_i}"
+    end
 
     def runtime
       0.000573

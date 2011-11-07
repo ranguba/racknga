@@ -20,7 +20,7 @@ require 'rack'
 
 require 'racknga/version'
 require 'racknga/utils'
-require "racknga/nginx_access_log_parser"
+require "racknga/access_log_parser"
 require 'racknga/middleware/deflater'
 require 'racknga/middleware/exception_notifier'
 require 'racknga/middleware/jsonp'
