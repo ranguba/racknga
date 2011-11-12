@@ -72,9 +72,9 @@ module Racknga
 
       def branch
         branches = `git branch -a`.lines
-        current_branch = branches.select do |line|
+        current_branch = branches.find do |line|
           line =~ CURRENT_BRANCH_MARKER
-        end.first
+        end
 
         current_branch.sub(CURRENT_BRANCH_MARKER, "").strip
       end
