@@ -70,9 +70,12 @@ module Racknga
       private
       def log(start_time, end_time, request, status, headers, body)
         request_time = end_time - start_time
+        runtime = headers["X-Runtime"]
+        runtime_in_float = nil
+        runtime_in_float = runtime.to_f if runtime
         length = headers["Content-Length"] || "-"
         length = "-" if length == "0"
-        format = "%s - %s [%s] \"%s %s %s\" %s %s \"%s\" \"%s\" %0.8f"
+        format = "%s - %s [%s] \"%s %s %s\" %s %s \"%s\" \"%s\" %s %0.8f"
         message = format % [request.ip || "-",
                             request.env["REMOTE_USER"] || "-",
                             end_time.dup.utc.strftime("%d/%b/%Y:%H:%M:%S %z"),
@@ -83,12 +86,14 @@ module Racknga
                             length,
                             request.env["HTTP_REFERER"] || "-",
                             request.user_agent || "-",
+                            runtime || "-",
                             request_time]
         @logger.log("access",
                     request.fullpath,
                     :message => message,
                     :user_agent => request.user_agent,
-                    :runtime => request_time)
+                    :runtime => runtime_in_float,
+                    :request_time => request_time)
       end
 
       # @private

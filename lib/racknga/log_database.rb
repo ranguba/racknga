@@ -95,6 +95,7 @@ module Racknga
           table.reference("path", "Paths")
           table.reference("user_agent", "UserAgents")
           table.float("runtime")
+          table.float("request_time")
           table.short_text("message", :compress => :zlib)
         end
 
