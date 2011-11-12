@@ -134,6 +134,7 @@ module Racknga
 
     def parse_local_time(token)
       day, month, year, hour, minute, second, _time_zone = token.split(/[\/: ]/)
+      _ = _time_zone # FIXME: suppress a warning. :<
       Time.local(year, month, day, hour, minute, second)
     end
   end
