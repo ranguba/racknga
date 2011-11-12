@@ -1,5 +1,17 @@
 h1. NEWS
 
+h2. 0.9.3: 2011-11-12
+
+h3. Improvments
+
+  * [access-log-parser] Supported Apache log.
+  * [cache] Fixed unknown name errors.
+  * [cache] Fixed max age.
+  * [nginx] Added NginxRawURI middleware.
+  * [instance-name] Added branch name and Ruby version.
+  * [exception-mail-notifier] Used #message instead of #to_s.
+  * [logger] Logged also X-Runtime.
+
 h2. 0.9.2: 2011-08-07
 
 h3. Improvments
