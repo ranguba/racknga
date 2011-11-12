@@ -69,14 +69,16 @@ module Racknga
       end
 
       CURRENT_BRANCH_MARKER = /\A\* /
-
       def branch
-        branches = `git branch -a`.lines
-        current_branch = branches.find do |line|
-          line =~ CURRENT_BRANCH_MARKER
+        current_branch = nil
+        `git branch -a`.each_line do |line|
+          case line
+          when CURRENT_BRANCH_MARKER
+            current_branch = line.sub(CURRENT_BRANCH_MARKER, "").strip
+            break
+          end
         end
-
-        current_branch.sub(CURRENT_BRANCH_MARKER, "").strip
+        current_branch
       end
 
       def ruby
