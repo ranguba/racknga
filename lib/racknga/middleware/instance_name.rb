@@ -152,10 +152,10 @@ module Racknga
 
       def format_if_possible(data)
         if data and (data.respond_to?(:to_s) and not data.to_s.empty?)
-          result = yield
+          yield
+        else
+          nil
         end
-
-        result
       end
     end
   end
