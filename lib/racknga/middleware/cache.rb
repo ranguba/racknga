@@ -18,6 +18,7 @@
 
 require 'digest'
 require 'yaml'
+require 'zlib'
 require 'racknga/cache_database'
 
 module Racknga
@@ -168,13 +169,15 @@ module Racknga
         now = Time.now
         headers = Rack::Utils::HeaderHash.new(headers)
         headers["Last-Modified"] ||= now.httpdate
-        stringified_body = ''
+        encoded_body = ''.force_encoding("ASCII-8BIT")
+        deflater = ::Zlib::Deflate.new
         body.each do |data|
-          stringified_body << data
+          encoded_body << deflater.deflate(data)
         end
+        body.close if body.respond_to?(:close)
+        encoded_body << deflater.finish
         headers = headers.to_hash
         encoded_headers = headers.to_yaml
-        encoded_body = stringified_body.force_encoding("ASCII-8BIT")
         cache[key] = {
           :status => status,
           :headers => encoded_headers,
@@ -183,7 +186,7 @@ module Racknga
           :age => age,
           :created_at => now,
         }
-        body = [stringified_body]
+        body = Inflater.new(encoded_body)
         log("store", request)
         [status, headers, body]
       end
@@ -199,7 +202,7 @@ module Racknga
         end
 
         log("hit", request)
-        [status, YAML.load(headers), [body]]
+        [status, YAML.load(headers), Inflater.new(body)]
       end
 
       def compute_checksum(status, encoded_headers, encoded_body)
@@ -226,6 +229,17 @@ module Racknga
         start_time = env[START_TIME]
         runtime = Time.now - start_time
         logger.log("cache-#{tag}", request.fullpath, :runtime => runtime)
+      end
+
+      # @private
+      class Inflater
+        def initialize(deflated_string)
+          @deflated_string = deflated_string
+        end
+
+        def each
+          yield ::Zlib::Inflate.inflate(@deflated_string)
+        end
       end
     end
   end
