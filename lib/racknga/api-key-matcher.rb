@@ -27,10 +27,10 @@ module Racknga
       @valid_api_keys = valid_api_keys
     end
 
-    # Checks whether an API key in a request is authorized.
+    # Checks whether an API key in a request is matched.
     # @param [Hash] environment an environment for Rack.
-    # @return [Boolean] true if an API key is authorized, or false if not.
-    def authorized?(environment)
+    # @return [Boolean] true if an API key is matched, or false if not.
+    def matched?(environment)
       request = Rack::Request.new(environment)
       key = request[@query_parameter]
 

@@ -50,12 +50,12 @@ class APIKeyMatcherTest < Test::Unit::TestCase
 
   def assert_matched(parameter, key)
     environment = generate_environment(parameter, key)
-    assert_true(@api_key_matcher.authorized?(environment))
+    assert_true(@api_key_matcher.matched?(environment))
   end
 
   def assert_not_matched(parameter, key)
     environment = generate_environment(parameter, key)
-    assert_false(@api_key_matcher.authorized?(environment))
+    assert_false(@api_key_matcher.matched?(environment))
   end
 
   def generate_environment(parameter, key)
