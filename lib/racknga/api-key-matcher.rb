@@ -21,10 +21,10 @@ module Racknga
   # Racknga::Middleware::Auth::APIKeys.
   class APIKeyMatcher
     # @param [String] query_parameter query parameter to specify an API key.
-    # @param [Array] valid_api_keys authorized API keys.
-    def initialize(query_parameter, valid_api_keys)
+    # @param [Array] api_keys matched API keys.
+    def initialize(query_parameter, api_keys)
       @query_parameter = query_parameter
-      @valid_api_keys = valid_api_keys
+      @api_keys = api_keys
     end
 
     # Checks whether an API key in a request is matched.
@@ -34,7 +34,7 @@ module Racknga
       request = Rack::Request.new(environment)
       key = request[@query_parameter]
 
-      @valid_api_keys.include?(key)
+      @api_keys.include?(key)
     end
   end
 end
