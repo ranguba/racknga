@@ -17,7 +17,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 module Racknga
-  # This is a matcher for authorized API keys. It is used with
+  # This is a matcher for API keys. It is used with
   # Racknga::Middleware::Auth::APIKeys.
   class APIKeyMatcher
     # @param [String] query_parameter query parameter to specify an API key.
