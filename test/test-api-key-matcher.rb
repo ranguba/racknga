@@ -23,12 +23,12 @@ class APIKeyMatcherTest < Test::Unit::TestCase
     @api_key_matcher = api_key_matcher
   end
 
-  def test_valid_key
-    assert_matched(query_parameter, valid_key)
+  def test_matched_key
+    assert_matched(query_parameter, api_key)
   end
 
-  def test_invalid_key
-    assert_not_matched(query_parameter, "invalidkey")
+  def test_not_matched_key
+    assert_not_matched(query_parameter, "notapikey")
   end
 
   def test_empty_key
@@ -36,11 +36,11 @@ class APIKeyMatcherTest < Test::Unit::TestCase
   end
 
   def test_empty_query_parameter
-    assert_not_matched("", valid_key)
+    assert_not_matched("", api_key)
   end
 
   def test_mismatched_query_parameter
-    assert_not_matched("not-api-key", valid_key)
+    assert_not_matched("not-api-key", api_key)
   end
 
   private
@@ -75,10 +75,10 @@ class APIKeyMatcherTest < Test::Unit::TestCase
   end
 
   def api_keys
-    ["validkey", "validkey2"]
+    ["key", "key2"]
   end
 
-  def valid_key
+  def api_key
     api_keys.first
   end
 end
