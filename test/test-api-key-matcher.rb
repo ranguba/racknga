@@ -45,7 +45,7 @@ class APIKeyMatcherTest < Test::Unit::TestCase
 
   private
   def api_key_matcher
-    Racknga::APIKeyMatcher.new(query_parameter, valid_api_keys)
+    Racknga::APIKeyMatcher.new(query_parameter, api_keys)
   end
 
   def assert_matched(parameter, key)
@@ -74,11 +74,11 @@ class APIKeyMatcherTest < Test::Unit::TestCase
     "api-key"
   end
 
-  def valid_api_keys
+  def api_keys
     ["validkey", "validkey2"]
   end
 
   def valid_key
-    valid_api_keys.first
+    api_keys.first
   end
 end
