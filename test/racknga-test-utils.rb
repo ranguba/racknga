@@ -18,6 +18,7 @@ require "test/unit/capybara"
 require 'json'
 
 require 'racknga'
+require 'racknga/middleware/auth/api-key'
 require 'racknga/middleware/cache'
 require 'racknga/middleware/instance_name'
 
