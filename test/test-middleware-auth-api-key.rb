@@ -58,19 +58,19 @@ class MiddlewareAuthAPIKeyTest < Test::Unit::TestCase
   def test_unauthorized_key
     url = generate_url(url_prefix, query_parameter, "invalidkey")
     visit(url)
-    assert_failture_response
+    assert_failure_response
   end
 
   def test_unmatched_query_parameter
     url = generate_url(url_prefix, "not-api-key", valid_key)
     visit(url)
-    assert_failture_response
+    assert_failure_response
   end
 
   def test_unauthorized_key_and_unmatched_query_parameter
     url = generate_url(url_prefix, "not-api-key", "invalidkey")
     visit(url)
-    assert_failture_response
+    assert_failure_response
   end
 
   def test_not_api_url
@@ -112,7 +112,7 @@ class MiddlewareAuthAPIKeyTest < Test::Unit::TestCase
     assert_equal(@body, page.source)
   end
 
-  def assert_failture_response
+  def assert_failure_response
     assert_equal(401, page.status_code)
     assert_equal(@error_response.to_json, page.source)
   end
