@@ -46,12 +46,12 @@ class APIKeysTest < Test::Unit::TestCase
   private
   def assert_matched(parameter, key)
     environment = generate_environment(parameter, key)
-    assert_true(@api_keys.matched?(environment))
+    assert_true(@api_keys.include?(environment))
   end
 
   def assert_not_matched(parameter, key)
     environment = generate_environment(parameter, key)
-    assert_false(@api_keys.matched?(environment))
+    assert_false(@api_keys.include?(environment))
   end
 
   def generate_environment(parameter, key)

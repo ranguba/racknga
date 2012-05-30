@@ -30,7 +30,7 @@ module Racknga
     # Checks whether stored API keys includes an API key in a request.
     # @param [Hash] environment an environment for Rack.
     # @return [Boolean] true if an API key is included, or false if not.
-    def matched?(environment)
+    def include?(environment)
       request = Rack::Request.new(environment)
       key = request[@query_parameter]
 
