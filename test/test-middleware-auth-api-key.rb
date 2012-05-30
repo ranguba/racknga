@@ -52,7 +52,6 @@ class MiddlewareAuthAPIKeyTest < Test::Unit::TestCase
   def test_authorized_key
     url = generate_url(url_prefix, query_parameter, valid_key)
     visit(url)
-    p page.driver.request.url
     assert_success_response
   end
 
