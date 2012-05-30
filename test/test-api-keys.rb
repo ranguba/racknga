@@ -16,11 +16,11 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-class APIKeyMatcherTest < Test::Unit::TestCase
+class APIKeysTest < Test::Unit::TestCase
   include RackngaTestUtils
 
   def setup
-    @api_key_matcher = api_key_matcher
+    @api_keys = Racknga::APIKeys.new(query_parameter, api_keys)
   end
 
   def test_matched_key
@@ -44,18 +44,14 @@ class APIKeyMatcherTest < Test::Unit::TestCase
   end
 
   private
-  def api_key_matcher
-    Racknga::APIKeyMatcher.new(query_parameter, api_keys)
-  end
-
   def assert_matched(parameter, key)
     environment = generate_environment(parameter, key)
-    assert_true(@api_key_matcher.matched?(environment))
+    assert_true(@api_keys.matched?(environment))
   end
 
   def assert_not_matched(parameter, key)
     environment = generate_environment(parameter, key)
-    assert_false(@api_key_matcher.matched?(environment))
+    assert_false(@api_keys.matched?(environment))
   end
 
   def generate_environment(parameter, key)

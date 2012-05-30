@@ -17,19 +17,19 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 module Racknga
-  # This is a matcher for API keys. It is used with
+  # This is a store for API keys. It is used with
   # Racknga::Middleware::Auth::APIKeys.
-  class APIKeyMatcher
+  class APIKeys
     # @param [String] query_parameter query parameter to specify an API key.
-    # @param [Array] api_keys matched API keys.
+    # @param [Array] api_keys stored API keys.
     def initialize(query_parameter, api_keys)
       @query_parameter = query_parameter
       @api_keys = api_keys
     end
 
-    # Checks whether an API key in a request is matched.
+    # Checks whether stored API keys includes an API key in a request.
     # @param [Hash] environment an environment for Rack.
-    # @return [Boolean] true if an API key is matched, or false if not.
+    # @return [Boolean] true if an API key is included, or false if not.
     def matched?(environment)
       request = Rack::Request.new(environment)
       key = request[@query_parameter]

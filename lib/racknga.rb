@@ -21,7 +21,7 @@ require 'rack'
 require 'racknga/version'
 require 'racknga/utils'
 require "racknga/access_log_parser"
-require 'racknga/api-key-matcher'
+require 'racknga/api-keys'
 require 'racknga/middleware/deflater'
 require 'racknga/middleware/exception_notifier'
 require 'racknga/middleware/jsonp'
