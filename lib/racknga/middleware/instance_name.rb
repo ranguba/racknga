@@ -50,7 +50,7 @@ module Racknga
         [
           response[0],
           response[1].merge(@headers),
-          response[2],
+          response[2]
         ]
       end
 
@@ -104,7 +104,7 @@ module Racknga
 
       def construct_headers
         {
-          header_name => header,
+          header_name => header
         }
       end
 
