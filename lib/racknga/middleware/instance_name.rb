@@ -31,10 +31,10 @@ module Racknga
       attr_reader :header
       # @param [application] application rack application.
       # @param [Hash] options options to create header.
-      # @option option [String] :header_name ("Responsed-By") header name.
-      # @option option [String] :application_name (application.class.name)
+      # @option options [String] :header_name ("Responsed-By") header name.
+      # @option options [String] :application_name (application.class.name)
       #   application name.
-      # @option option [Integer] :version application version.
+      # @option options [Integer] :version application version.
       def initialize(application, options={})
         @application = application
         @options = options
