@@ -68,17 +68,15 @@ module Racknga
         `id --user --name`.strip
       end
 
-      CURRENT_BRANCH_MARKER = /\A\* /
       def branch
-        current_branch = nil
-        `git branch -a`.each_line do |line|
-          case line
-          when CURRENT_BRANCH_MARKER
-            current_branch = line.sub(CURRENT_BRANCH_MARKER, "").strip
-            break
-          end
+        case using_scm_name
+        when :git
+          git_branch_name
+        when :subversion
+          subversion_branch_name
+        when
+          nil
         end
-        current_branch
       end
 
       def ruby
@@ -157,6 +155,44 @@ module Racknga
           yield
         else
           nil
+        end
+      end
+
+      SVN_URL_KEY = /\AURL:.*/
+      SVN_REPOSITORY_ROOT_KEY = /\ARepository Root:.*/
+      SVN_KEY = /\A.*:/
+      SVN_BRANCHES_NAME = /\A\/branches\//
+      def subversion_branch_name
+        url = ""
+        repository_root = ""
+
+        `LANG=C svn info`.each_line do |line|
+          case line
+          when SVN_URL_KEY
+            url = line.sub(SVN_KEY, "").strip
+          when SVN_REPOSITORY_ROOT_KEY
+            repository_root = line.sub(SVN_KEY, "").strip
+          end
+        end
+        url.sub(/#{repository_root}/, "").sub(SVN_BRANCHES_NAME, "")
+      end
+
+      GIT_CURRENT_BRANCH_MARKER = /\A\* /
+      def git_branch_name
+        `git branch -a`.each_line do |line|
+          case line
+          when GIT_CURRENT_BRANCH_MARKER
+            return line.sub(GIT_CURRENT_BRANCH_MARKER, "").strip
+          end
+        end
+        nil
+      end
+
+      def using_scm_name
+        if File.exist?(".git")
+          :git
+        elsif File.exist?(".svn")
+          :subversion
         end
       end
     end
