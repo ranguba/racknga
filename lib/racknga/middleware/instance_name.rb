@@ -87,7 +87,7 @@ module Racknga
           git_branch_name
         when :subversion
           subversion_branch_name
-        when
+        else
           nil
         end
       end
