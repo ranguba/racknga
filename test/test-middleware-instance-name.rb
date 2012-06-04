@@ -17,12 +17,26 @@
 class InstanceNameTest < Test::Unit::TestCase
   include RackngaTestUtils
 
+  DEFAULT_HEADER_NAME = "X-Responsed-By"
+
   def test_no_option
     footer_variables = extract_from_default_instance_name
 
     instance_name_options({}) do
       request
-      assert_header("Proc #{default_footer(*footer_variables)}")
+      assert_equal("Proc #{default_footer(*footer_variables)}",
+                   response_header(DEFAULT_HEADER_NAME))
+    end
+  end
+
+  def test_header_name
+    header_name = "X-header-name"
+    footer_variables = extract_from_default_instance_name
+
+    instance_name_options(:header_name => header_name) do
+      request
+      assert_equal("Proc #{default_footer(*footer_variables)}",
+                   response_header(header_name))
     end
   end
 
@@ -32,8 +46,9 @@ class InstanceNameTest < Test::Unit::TestCase
 
     instance_name_options(:application_name => application_name) do
       request
-      assert_header("#{application_name} " +
-                    "#{default_footer(*footer_variables)}")
+      assert_equal("#{application_name} " +
+                   "#{default_footer(*footer_variables)}",
+                   response_header(DEFAULT_HEADER_NAME))
     end
   end
 
@@ -45,8 +60,9 @@ class InstanceNameTest < Test::Unit::TestCase
     instance_name_options(:application_name => application_name,
                           :version => version) do
       request
-      assert_header("#{application_name} v#{version} " +
-                    "#{default_footer(*footer_variables)}")
+      assert_equal("#{application_name} v#{version} " +
+                   "#{default_footer(*footer_variables)}",
+                   response_header(DEFAULT_HEADER_NAME))
     end
   end
 
@@ -103,8 +119,7 @@ class InstanceNameTest < Test::Unit::TestCase
     yield
   end
 
-  def assert_header(expected_header)
-    actual_header = page.response_headers["X-Responsed-By"]
-    assert_equal(expected_header, actual_header)
+  def response_header(name)
+    page.response_headers[name]
   end
 end
