@@ -23,7 +23,7 @@ module Racknga
     # server when your Rack applications are deployed behind
     # load balancers.
     #
-    # Usage:
+    # @example A simple usage
     #   require "racknga"
     #   use Racknga::Middleware::InstanceName
     #   run YourApplication
