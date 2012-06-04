@@ -33,7 +33,7 @@ module Racknga
       # @param [Hash] options options to create header.
       # @option option [String] :header_name ("Responsed-By") header name.
       # @option option [String] :application_name (application.class.name)
-      # application name.
+      #   application name.
       # @option option [Integer] :version application version.
       def initialize(application, options={})
         @application = application
