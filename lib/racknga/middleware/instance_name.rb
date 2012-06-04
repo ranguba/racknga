@@ -57,7 +57,14 @@ module Racknga
       end
 
       def revision
-        `git describe --abbrev=7 HEAD`.strip # XXX be SCM-agonostic
+        case using_scm_name
+        when :git
+          `git describe --abbrev=7 HEAD`.strip
+        when :subversion
+          `LANG=C svn info | grep Revision`.strip
+        else
+          nil
+        end
       end
 
       def server
