@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # Copyright (C) 2011  Ryo Onodera <onodera@clear-code.com>
+# Copyright (C) 2012  Kouhei Sutou <kou@clear-code.com>
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -187,7 +188,8 @@ module Racknga
             repository_root = line.sub(SVN_KEY, "").strip
           end
         end
-        url.sub(/#{Regexp.escape(repository_root)}/, "").sub(SVN_BRANCHES_NAME, "")
+        base_path = url.sub(/#{Regexp.escape(repository_root)}/, "")
+        base_path.sub(SVN_BRANCHES_NAME, "")
       end
 
       GIT_CURRENT_BRANCH_MARKER = /\A\* /
