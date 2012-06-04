@@ -187,7 +187,7 @@ module Racknga
             repository_root = line.sub(SVN_KEY, "").strip
           end
         end
-        url.sub(/#{repository_root}/, "").sub(SVN_BRANCHES_NAME, "")
+        url.sub(/#{Regexp.escape(repository_root)}/, "").sub(SVN_BRANCHES_NAME, "")
       end
 
       GIT_CURRENT_BRANCH_MARKER = /\A\* /
