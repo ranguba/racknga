@@ -208,6 +208,8 @@ module Racknga
           :git
         elsif File.exist?(".svn")
           :subversion
+        else
+          nil
         end
       end
     end
