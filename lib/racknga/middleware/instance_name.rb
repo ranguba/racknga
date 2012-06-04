@@ -29,6 +29,12 @@ module Racknga
     #   run YourApplication
     class InstanceName
       attr_reader :header
+      # @param [application] application rack application.
+      # @param [Hash] options options to create header.
+      # @option option [String] :header_name ("Responsed-By") header name.
+      # @option option [String] :application_name (application.class.name)
+      # application name.
+      # @option option [Integer] :version application version.
       def initialize(application, options={})
         @application = application
         @options = options
