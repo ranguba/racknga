@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2010  Kouhei Sutou <kou@clear-code.com>
+# Copyright (C) 2010-2012  Kouhei Sutou <kou@clear-code.com>
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -124,7 +124,7 @@ module Racknga
 
       def update_header_hash(header_hash, body)
         update_content_type(header_hash)
-        update_content_legnth(header_hash, body)
+        update_content_length(header_hash, body)
       end
 
       def update_content_type(header_hash)

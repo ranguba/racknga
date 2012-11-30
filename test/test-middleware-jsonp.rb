@@ -1,4 +1,4 @@
-# Copyright (C) 2010  Kouhei Sutou <kou@clear-code.com>
+# Copyright (C) 2010-2012  Kouhei Sutou <kou@clear-code.com>
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -74,6 +74,18 @@ class MiddlewareJSONPTest < Test::Unit::TestCase
     visit("/?callback=jsonp_callback")
     assert_equal("pc:/",
                  @environment[@cache_key_key])
+  end
+
+  def test_jsonp_content_length
+    @update_environment = Proc.new do |environment|
+      environment["Content-Length"] = @body.bytesize
+      environment
+    end
+    visit("/?callback=jsonp_callback")
+    expected_response = "jsonp_callback(#{@body});"
+    assert_jsonp_response(expected_response)
+    assert_equal(expected_response.bytesize.to_s,
+                 page.response_headers["Content-Length"])
   end
 
   private
