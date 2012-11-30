@@ -91,7 +91,7 @@ module Racknga
         header_hash = Rack::Utils::HeaderHash.new(headers)
         return [status, headers, body] unless json_response?(header_hash)
         body = Writer.new(callback, body)
-        update_content_type(header_hash)
+        update_header_hash(header_hash, body)
         [status, header_hash, body]
       end
 
@@ -122,6 +122,11 @@ module Racknga
           media_type == "text/javascript"
       end
 
+      def update_header_hash(header_hash, body)
+        update_content_type(header_hash)
+        update_content_legnth(header_hash, body)
+      end
+
       def update_content_type(header_hash)
         content_type = header_hash["Content-Type"]
         media_type, parameters = content_type.split(/\s*;\s*/, 2)
@@ -132,17 +137,31 @@ module Racknga
         header_hash["Content-Type"] = updated_content_type
       end
 
+      def update_content_length(header_hash, body)
+        return unless header_hash["Content-Length"]
+
+        content_length = header_hash["Content-Length"].to_i
+        updated_content_length = content_length + body.additional_content_length
+        header_hash["Content-Length"] = updated_content_length
+      end
+
       # @private
       class Writer
         def initialize(callback, body)
           @callback = callback
           @body = body
+          @header = "#{@callback}("
+          @footer = ");"
         end
 
         def each(&block)
-          block.call("#{@callback}(")
+          block.call(@header)
           @body.each(&block)
-          block.call(");")
+          block.call(@footer)
+        end
+
+        def additional_content_length
+          @header.bytesize + @footer.bytesize
         end
       end
     end
