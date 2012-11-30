@@ -142,7 +142,7 @@ module Racknga
 
         content_length = header_hash["Content-Length"].to_i
         updated_content_length = content_length + body.additional_content_length
-        header_hash["Content-Length"] = updated_content_length
+        header_hash["Content-Length"] = updated_content_length.to_s
       end
 
       # @private
