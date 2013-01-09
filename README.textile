@@ -9,7 +9,7 @@ h2. Description
 Rack middlewares that use rroonga features and
 middlewares/utilities that don't use rroonga features.
 
-  * "rroonga":http://groonga.rubyforge.org/
+  * "rroonga":http://ranguba.org/
   * "Rack":http://rack.rubyforge.org/
 
 h2. Authors
@@ -41,7 +41,7 @@ h2. Install
 
 h2. Documents
 
-http://groonga.rubyforge.org/racknga/en/
+http://ranguba.org/racknga/en/
 
 h2. Mailing list
 
