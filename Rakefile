@@ -21,57 +21,25 @@ require 'fileutils'
 require 'pathname'
 require 'erb'
 require 'rubygems'
-require 'jeweler'
-require "rake/clean"
+require 'rubygems/package_task'
+require 'bundler/gem_helper'
 require "yard"
 
 base_dir = Pathname.new(__FILE__).dirname
 racknga_lib_dir = base_dir + 'lib'
 $LOAD_PATH.unshift(racknga_lib_dir.to_s)
 
-def guess_version
-  require 'racknga/version'
-  Racknga::VERSION
+helper = Bundler::GemHelper.new(base_dir)
+def helper.version_tag
+  version
 end
-
-ENV["VERSION"] ||= guess_version
-version = ENV["VERSION"].dup
-project = nil
-spec = nil
-Jeweler::Tasks.new do |_spec|
-  spec = _spec
-  spec.name = 'racknga'
-  spec.version = version
-  spec.rubyforge_project = 'groonga'
-  spec.homepage = "http://groonga.rubyforge.org/"
-  authors_file = File.join(base_dir, "AUTHORS")
-  authors = []
-  emails = []
-  File.readlines(authors_file).each do |line|
-    if /\s*<([^<>]*)>$/ =~ line
-      authors << $PREMATCH
-      emails << $1
-    end
-  end
-  spec.authors = authors
-  spec.email = emails
-  spec.summary = "A Rack middleware collection for rroonga features."
-  spec.description = <<-EOD.gsub(/\n/, ' ').strip
-Racknga is a Rack middlewares that uses rroonga features.
-EOD
-  spec.license = "LGPLv2.1 or later"
-  spec.files = FileList["lib/**/*.rb",
-                        "{license,munin,doc/text/}/**/*",
-                        "example/*.rb",
-                        "AUTHORS",
-                        "Rakefile",
-                        "Gemfile",
-                        "README*"]
-  spec.test_files = FileList["test/**/*.rb"]
-end
+helper.install
+spec = helper.gemspec
 
 Rake::Task["release"].prerequisites.clear
-Jeweler::RubygemsDotOrgTasks.new do
+
+Gem::PackageTask.new(spec) do |pkg|
+  pkg.need_tar_gz = true
 end
 
 reference_base_dir = Pathname.new("doc/reference")
@@ -148,7 +116,6 @@ namespace :reference do
   html_files = FileList[(doc_en_dir + "**/*.html").to_s].to_a
 
   directory reference_base_dir.to_s
-  CLOBBER.include(reference_base_dir.to_s)
 
   po_dir = "doc/po"
   pot_file = "#{po_dir}/#{spec.name}.pot"

@@ -1,6 +1,7 @@
 # -*- mode: ruby; coding: utf-8 -*-
 #
 # Copyright (C) 2011  Kouhei Sutou <kou@clear-code.com>
+# Copyright (C) 2013  Haruka Yoshihara <yoshihara@clear-code.com>
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -17,14 +18,4 @@
 
 source "http://rubygems.org/"
 
-gem "rroonga"
-gem "rack"
-
-group :development, :test do
-  gem "test-unit"
-  gem "test-unit-notify"
-  gem "test-unit-capybara"
-  gem "rake"
-  gem "jeweler"
-  gem "yard"
-end
+gemspec
