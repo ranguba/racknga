@@ -45,6 +45,11 @@ def parse_result(result)
   sections = {}
   section = nil
   result.each_line do |line|
+    case line
+    when /-+\s+(.+)\s+-+/
+      section = $1
+      sections[section] = []
+    else
     case section
     when "General information"
       case line.chomp
@@ -59,11 +64,7 @@ def parse_result(result)
                               :label => label,
                               :value => value}
       end
-    else
-      if /-+\s+(.+)\s+-+/ =~ line
-        section = $1
-        sections[section] = []
-      end
+    end
     end
   end
   sections
