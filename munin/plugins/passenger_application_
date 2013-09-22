@@ -27,7 +27,7 @@ mode = ARGV[0]
 @pid_file = ENV["pid_file"]
 @ruby = ENV["ruby"] || Gem.ruby
 passenger_spec = Gem::Specification.find_by_name("passenger")
-@passenger_status = passenger_status.bin_file("passenger-status")
+@passenger_status = passenger_spec.bin_file("passenger-status")
 
 if @label
   parameter_prefix = /\Apassenger_(?:#{@label}_)?application_/
