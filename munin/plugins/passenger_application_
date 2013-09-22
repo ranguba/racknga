@@ -81,6 +81,11 @@ def parse_result(result)
   section = nil
   application_name = nil
   result.each_line do |line|
+    case line
+    when /-+\s+(.+)\s+-+/
+      section = $1
+      sections[section] = []
+    else
     case section
     when "Application groups"
       case line.chomp
@@ -105,11 +110,7 @@ def parse_result(result)
           :uptime => uptime
         }
       end
-    else
-      if /-+\s+(.+)\s+-+/ =~ line
-        section = $1
-        sections[section] = []
-      end
+    end
     end
   end
   sections
