@@ -68,12 +68,9 @@ def parse_uptime(uptime)
 end
 
 def extract_application_name(path)
-  components = path.split(/#/)
-  ignore_components = ["default"]
-  while ignore_components.include?(components.last)
-    components.pop
-  end
-  components.pop
+  components = path.split(/\//)
+  application_name, tag = components.last.split(/#/)
+  application_name
 end
 
 def parse_result(result)
