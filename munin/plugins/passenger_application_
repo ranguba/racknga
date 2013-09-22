@@ -86,7 +86,7 @@ def parse_result(result)
       case section
       when "Application groups"
         case line.chomp
-        when /\A(.+):\s*\z/
+        when /\A(\/.+):\s*\z/
           path = $1
           application_name = extract_application_name(path)
           sections[section] << [application_name, []]
