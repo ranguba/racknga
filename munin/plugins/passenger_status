@@ -41,6 +41,10 @@ def passenger_status
   [$?.success?, result]
 end
 
+def label_to_key(label)
+  label.downcase.gsub(/[ -]+/, "_")
+end
+
 def parse_result(result)
   sections = {}
   section = nil
@@ -53,16 +57,15 @@ def parse_result(result)
       case section
       when "General information"
         case line.chomp
-        when /\A(\S+)\s*=\s*(\d+)\z/
-          key = $1
+        when /\A(.+):\s*(\d+)\z/
+          label = $1.strip
           value = $2.to_i
-          sections[section] << {:key => key, :label => key, :value => value}
-        when /\A(Waiting on global queue):\s*(\d+)\z/
-          label = $1
-          value = $2.to_i
-          sections[section] << {:key => "global_queue",
-                                :label => label,
-                                :value => value}
+          key = label_to_key(label)
+          sections[section] << {
+            :key => key,
+            :label => label,
+            :value => value,
+          }
         end
       end
     end
@@ -96,7 +99,7 @@ EOC
     next if key == "count"
     puts("#{key}.label #{attributes[:label]}")
     case key
-    when "max", "global_queue"
+    when /max/, /queue/
       draw = "LINE2"
     else
       if have_stack_base
