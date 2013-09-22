@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 #
-# Copyright (C) 2010  Kouhei Sutou <kou@clear-code.com>
+# Copyright (C) 2010-2013  Kouhei Sutou <kou@clear-code.com>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -22,16 +22,11 @@ require 'rubygems'
 
 mode = ARGV[0]
 
-def passenger_status_path(gem_path)
-  File.join(gem_path, "bin", "passenger-status")
-end
-
 @label = ENV["label"]
 @pid_file = ENV["pid_file"]
 @ruby = ENV["ruby"] || Gem.ruby
-@gem_path = ((ENV["GEM_HOME"] || '').split(/:/) + Gem.path).find do |path|
-  File.exist?(passenger_status_path(path))
-end
+passenger_spec = Gem::Specification.find_by_name("passenger")
+@passenger_status = passenger_status.bin_file("passenger-status")
 
 def passenger_status
   if @pid_file
@@ -42,7 +37,7 @@ def passenger_status
   else
     pid = nil
   end
-  result = `#{@ruby} #{passenger_status_path(@gem_path)} #{pid}`
+  result = `#{@ruby} #{@passenger_status} #{pid}`
   [$?.success?, result]
 end
 
