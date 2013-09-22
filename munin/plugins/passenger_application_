@@ -86,31 +86,31 @@ def parse_result(result)
       section = $1
       sections[section] = []
     else
-    case section
-    when "Application groups"
-      case line.chomp
-      when /\A(.+):\s*\z/
-        path = $1
-        application_name = extract_application_name(path)
-        sections[section] << [application_name, []]
-      when /\A\s+\*\s+
-              PID:\s+(\d+)\s+
-              Sessions:\s+(\d+)\s+
-              Processed:\s+(\d+)\s+
-              Uptime:\s+(.+)\z/x
-        pid = $1.to_i
-        sessions = $2.to_i
-        processed = $3.to_i
-        uptime = parse_uptime($4)
-        _application_name, processes = sections[section].last
-        processes << {
-          :pid => pid,
-          :sessions => sessions,
-          :processed => processed,
-          :uptime => uptime
-        }
+      case section
+      when "Application groups"
+        case line.chomp
+        when /\A(.+):\s*\z/
+          path = $1
+          application_name = extract_application_name(path)
+          sections[section] << [application_name, []]
+        when /\A\s+\*\s+
+                PID:\s+(\d+)\s+
+                Sessions:\s+(\d+)\s+
+                Processed:\s+(\d+)\s+
+                Uptime:\s+(.+)\z/x
+          pid = $1.to_i
+          sessions = $2.to_i
+          processed = $3.to_i
+          uptime = parse_uptime($4)
+          _application_name, processes = sections[section].last
+          processes << {
+            :pid => pid,
+            :sessions => sessions,
+            :processed => processed,
+            :uptime => uptime
+          }
+        end
       end
-    end
     end
   end
   sections
