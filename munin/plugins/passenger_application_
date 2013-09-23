@@ -106,9 +106,9 @@ def parse_result(result)
             :processed => processed,
             :uptime => uptime
           }
-        when /\A\s+\*\s+
+        when /\A\s+
                 CPU:\s+(\d+)%\s+
-                Memory:\s+(\d+)M\s+
+                Memory\s*:\s+(\d+)M\s+
                 Last\sused:\s+(.+)(?:\s+ago)\z/x
           cpu = $1.to_i
           memory = $2.to_i * 1024
