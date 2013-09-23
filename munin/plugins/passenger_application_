@@ -111,7 +111,7 @@ def parse_result(result)
                 Memory\s*:\s+(\d+)M\s+
                 Last\sused:\s+(.+)(?:\s+ago)\z/x
           cpu = $1.to_i
-          memory = $2.to_i * 1024
+          memory = $2.to_i * 1024 * 1024
           last_used = parse_time($3)
           _application_name, processes = sections[section].last
           process = processes.last
