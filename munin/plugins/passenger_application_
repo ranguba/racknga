@@ -35,7 +35,7 @@ else
   parameter_prefix = /\Apassenger_application_/
 end
 parameter = File.basename($0).gsub(parameter_prefix, '')
-if /_(sessions|processed|uptime)\z/ =~ parameter
+if /_(\S+)\z/ =~ parameter
   @application = $PREMATCH
   @type = $1
   @application = nil if @application and @application.empty?
