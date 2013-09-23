@@ -45,6 +45,12 @@ def label_to_key(label)
   label.downcase.gsub(/[ -]+/, "_")
 end
 
+def extract_application_name(path)
+  components = path.split(/\//)
+  application_name, tag = components.last.split(/#/)
+  application_name
+end
+
 def parse_result(result)
   sections = {}
   section = nil
@@ -62,6 +68,24 @@ def parse_result(result)
           value = $2.to_i
           key = label_to_key(label)
           sections[section] << {
+            :key => key,
+            :label => label,
+            :value => value,
+          }
+        end
+      when "Application groups"
+        case line.chomp
+        when /\A(\/.+):\s*\z/
+          path = $1
+          application_name = extract_application_name(path)
+          sections[section] << [application_name, []]
+        when /\A\s+(.+):\s*(\d+)\z/
+          label = $1.strip
+          value = $2.to_i
+          _application_name, attributes = sections[section].last
+          key = "#{_application_name}_#{label_to_key(label)}"
+          label = "#{label}: #{_application_name}"
+          attributes << {
             :key => key,
             :label => label,
             :value => value,
@@ -94,10 +118,14 @@ graph_vlabel number of processes
 
 EOC
   have_stack_base = false
-  sections["General information"].each do |attributes|
-    key = attributes[:key]
+  attributes = sections["General information"]
+  sections["Application groups"].each do |_, application_attributes|
+    attributes += application_attributes
+  end
+  attributes.each do |attribute|
+    key = attribute[:key]
     next if key == "count"
-    puts("#{key}.label #{attributes[:label]}")
+    puts("#{key}.label #{attribute[:label]}")
     case key
     when /max/, /queue/
       draw = "LINE2"
@@ -109,7 +137,7 @@ EOC
         have_stack_base = true
       end
     end
-    puts("#{attributes[:key]}.draw #{draw}")
+    puts("#{attribute[:key]}.draw #{draw}")
   end
 end
 
@@ -118,8 +146,12 @@ def report
   exit(false) unless success
 
   sections = parse_result(result)
-  sections["General information"].each do |attributes|
-    puts("#{attributes[:key]}.value #{attributes[:value]}")
+  attributes = sections["General information"]
+  sections["Application groups"].each do |_, application_attributes|
+    attributes += application_attributes
+  end
+  attributes.each do |attribute|
+    puts("#{attribute[:key]}.value #{attribute[:value]}")
   end
 end
 
