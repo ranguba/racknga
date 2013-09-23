@@ -56,15 +56,15 @@ def passenger_status
   [$?.success?, result]
 end
 
-def parse_uptime(uptime)
-  uptime_in_minutes = 0
-  if /\A(?:(?:(\d+)h\s+)?(\d+)m\s+)?(\d+)s\z/ =~ uptime
+def parse_time(time)
+  time_in_minutes = 0
+  if /\A(?:(?:(\d+)h\s+)?(\d+)m\s+)?(\d+)s\z/ =~ time
     hours = $1.to_i
     minutes = $2.to_i
     seconds = $3.to_i
-    uptime_in_minutes = minutes + hours * 60
+    time_in_minutes = minutes + hours * 60
   end
-  uptime_in_minutes
+  time_in_minutes
 end
 
 def extract_application_name(path)
@@ -98,7 +98,7 @@ def parse_result(result)
           pid = $1.to_i
           sessions = $2.to_i
           processed = $3.to_i
-          uptime = parse_uptime($4)
+          uptime = parse_time($4)
           _application_name, processes = sections[section].last
           processes << {
             :pid => pid,
@@ -106,6 +106,18 @@ def parse_result(result)
             :processed => processed,
             :uptime => uptime
           }
+        when /\A\s+\*\s+
+                CPU:\s+(\d+)%\s+
+                Memory:\s+(\d+)M\s+
+                Last\sused:\s+(.+)(?:\s+ago)\z/x
+          cpu = $1.to_i
+          memory = $2.to_i * 1024
+          last_used = parse_time($3)
+          _application_name, processes = sections[section].last
+          process = processes.last
+          process[:cpu] = cpu
+          process[:memory] = memory
+          process[:last_used] = last_used
         end
       end
     end
@@ -131,6 +143,12 @@ def vlabel
     "number of processed sessions"
   when "uptime"
     "uptime by minutes"
+  when "cpu"
+    "CPU usage in percent"
+  when "memory"
+    "memory usage"
+  when "last_used"
+    "last used by minutes"
   else
     "unknown"
   end
@@ -212,6 +230,9 @@ when "suggest"
         puts "#{application}_sessions"
         puts "#{application}_processed"
         puts "#{application}_uptime"
+        puts "#{application}_cpu"
+        puts "#{application}_memory"
+        puts "#{application}_last_used"
       end
       exit(true)
     end
