@@ -6,10 +6,10 @@ racknga
 
 h2. Description
 
-Rack middlewares that use rroonga features and
-middlewares/utilities that don't use rroonga features.
+Rack middlewares that use Rroonga features and
+middlewares/utilities that don't use Rroonga features.
 
-  * "rroonga":http://ranguba.org/
+  * "Rroonga":http://ranguba.org/
   * "Rack":http://rack.github.io/
 
 h2. Authors
@@ -26,7 +26,7 @@ including contributed patches.)
 h2. Dependencies
 
   * Ruby >= 1.9.1
-  * rroonga
+  * Rroonga
   * Rack
 
 h2. Suggested libraries
