@@ -10,7 +10,7 @@ Rack middlewares that use rroonga features and
 middlewares/utilities that don't use rroonga features.
 
   * "rroonga":http://ranguba.org/
-  * "Rack":http://rack.rubyforge.org/
+  * "Rack":http://rack.github.io/
 
 h2. Authors
 
