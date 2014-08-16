@@ -45,7 +45,7 @@ http://ranguba.org/racknga/en/
 
 h2. Mailing list
 
-http://rubyforge.org/mailman/listinfo/groonga-users-en
+  * English: "groonga-talk":http://lists.sourceforge.net/mailman/listinfo/groonga-talk
 
 h2. Thanks
 
