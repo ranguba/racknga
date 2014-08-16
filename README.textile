@@ -46,6 +46,7 @@ http://ranguba.org/racknga/en/
 h2. Mailing list
 
   * English: "groonga-talk":http://lists.sourceforge.net/mailman/listinfo/groonga-talk
+  * Japanese: "groonga-dev":http://lists.sourceforge.jp/mailman/listinfo/groonga-dev
 
 h2. Thanks
 
