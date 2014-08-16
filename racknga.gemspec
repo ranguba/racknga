@@ -32,8 +32,8 @@ File.readlines(authors_path).each do |line|
   end
 end
 
-summary = "A Rack middleware collection for rroonga features."
-description = "Racknga is a Rack middlewares that uses rroonga features."
+summary = "A Rack middleware collection for Rroonga features."
+description = "Racknga is a Rack middlewares that uses Rroonga features."
 
 Gem::Specification.new do |spec|
   spec.name = "racknga"
