@@ -49,3 +49,10 @@ end
 
 Packnga::ReleaseTask.new(spec) do
 end
+
+desc "Run test"
+task :test do
+  ruby("-rubygems", "test/run-test.rb")
+end
+
+task :default => :test
