@@ -127,10 +127,6 @@ class InstanceNameTest < Test::Unit::TestCase
   end
 
   def using_scm?
-    if File.exist?(".git") or File.exist?(".svn")
-      true
-    else
-      false
-    end
+    File.exist?(".git") or File.exist?(".svn")
   end
 end
