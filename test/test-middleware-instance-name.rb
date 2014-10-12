@@ -99,7 +99,10 @@ class InstanceNameTest < Test::Unit::TestCase
   end
 
   def default_footer(server, user, revision, branch, ruby)
-    "(at #{revision} (#{branch})) on #{server} by #{user} with #{ruby}"
+    footer = ""
+    footer << "(at #{revision} (#{branch})) " if using_scm?
+    footer << "on #{server} by #{user} with #{ruby}"
+    footer
   end
 
   def create_minimal_application
@@ -121,5 +124,13 @@ class InstanceNameTest < Test::Unit::TestCase
 
   def response_header(name)
     page.response_headers[name]
+  end
+
+  def using_scm?
+    if File.exist?(".git") or File.exist?(".svn")
+      true
+    else
+      false
+    end
   end
 end
