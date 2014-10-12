@@ -100,7 +100,7 @@ class InstanceNameTest < Test::Unit::TestCase
 
   def default_footer(server, user, revision, branch, ruby)
     footer = ""
-    footer << "(at #{revision} (#{branch})) " if revision
+    footer << "(at #{revision} (#{branch})) " if format_is_possible?(revision)
     footer << "on #{server} by #{user} with #{ruby}"
     footer
   end
@@ -124,5 +124,9 @@ class InstanceNameTest < Test::Unit::TestCase
 
   def response_header(name)
     page.response_headers[name]
+  end
+
+  def format_is_possible?(data)
+    data and (data.respond_to?(:to_s) and not data.to_s.empty?)
   end
 end
