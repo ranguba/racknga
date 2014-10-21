@@ -2,6 +2,7 @@
 /doc/html/
 /doc/reference/
 /doc/po/racknga.pot
+/doc/po/*/
 /pkg/
 /test/.test-result/
 /Gemfile.lock
