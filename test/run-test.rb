@@ -18,8 +18,6 @@
 
 $VERBOSE = true
 
-$KCODE = "u" if RUBY_VERSION < "1.9"
-
 require 'pathname'
 
 base_dir = Pathname(__FILE__).dirname.parent.expand_path
