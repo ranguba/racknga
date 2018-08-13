@@ -132,10 +132,10 @@ EOE
     end
 
     def send_summaries
-        subject = "summaries of #{@summaries.size} notifications"
-        mail = create_mail(:subject => subject,
-                           :body => report_body)
-        send(mail)
+      subject = "summaries of #{@summaries.size} notifications"
+      mail = create_mail(:subject => subject,
+                         :body => report_body)
+      send(mail)
     end
 
     def report_body
