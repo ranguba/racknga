@@ -1,5 +1,13 @@
 h1. NEWS
 
+h2. 0.9.4: 2023-09-03
+
+h3. Improvments
+
+  * [cache] Made Rroonga dependency optional. Users must add Rroonga
+    dependency explicitly.
+  * And more improvements...
+
 h2. 0.9.3: 2011-11-12
 
 h3. Improvments
