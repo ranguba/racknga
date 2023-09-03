@@ -1,5 +1,6 @@
-# -*- coding: utf-8; mode: ruby -*-
+# -*- ruby -*-
 #
+# Copyright (C) 2023  Sutou Kouhei <kou@clear-code.com>
 # Copyright (C) 2013  Haruka Yoshihara <yoshihara@clear-code.com>
 #
 # This library is free software; you can redistribute it and/or
@@ -54,15 +55,15 @@ Gem::Specification.new do |spec|
   spec.files += Dir.glob("example/*.rb")
   spec.test_files = Dir.glob("test/**/*.rb")
 
-  spec.add_runtime_dependency("rroonga")
   spec.add_runtime_dependency("rack")
 
-  spec.add_development_dependency("test-unit")
-  spec.add_development_dependency("test-unit-notify")
-  spec.add_development_dependency("test-unit-capybara")
-  spec.add_development_dependency("rake")
+  spec.add_development_dependency("RedCloth")
   spec.add_development_dependency("bundler")
   spec.add_development_dependency("packnga")
-  spec.add_development_dependency("RedCloth")
+  spec.add_development_dependency("rake")
+  spec.add_development_dependency("rroonga")
+  spec.add_development_dependency("test-unit")
+  spec.add_development_dependency("test-unit-capybara")
+  spec.add_development_dependency("test-unit-notify")
 end
 
