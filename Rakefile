@@ -36,8 +36,6 @@ end
 helper.install
 spec = helper.gemspec
 
-Rake::Task["release"].prerequisites.clear
-
 Gem::PackageTask.new(spec) do |pkg|
   pkg.need_tar_gz = true
 end
