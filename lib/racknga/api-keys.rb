@@ -1,6 +1,5 @@
-# -*- coding: utf-8 -*-
-#
 # Copyright (C) 2012  Haruka Yoshihara <yoshihara@clear-code.com>
+# Copyright (C) 2024  Sutou Kouhei <kou@clear-code.com>
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -32,7 +31,7 @@ module Racknga
     # @return [Boolean] true if an API key is included, or false if not.
     def include?(environment)
       request = Rack::Request.new(environment)
-      key = request[@query_parameter]
+      key = request.params[@query_parameter]
 
       @api_keys.include?(key)
     end

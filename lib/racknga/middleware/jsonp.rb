@@ -82,7 +82,7 @@ module Racknga
       # For Rack.
       def call(environment)
         request = Rack::Request.new(environment)
-        callback = request["callback"]
+        callback = request.params["callback"]
         update_cache_key(request) if callback
         status, headers, body = @application.call(environment)
         return [status, headers, body] unless callback
