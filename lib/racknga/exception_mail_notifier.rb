@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
-#
-# Copyright (C) 2010-2011  Kouhei Sutou <kou@clear-code.com>
+# Copyright (C) 2010-2024  Sutou Kouhei <kou@clear-code.com>
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -16,13 +14,13 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
-require 'time'
-require 'net/smtp'
-require 'etc'
-require 'socket'
-require 'nkf'
+require "base64"
+require "etc"
+require "net/smtp"
+require "socket"
+require "time"
 
-require 'racknga/utils'
+require "racknga/utils"
 
 module Racknga
   # Ruby 1.9 only. 1.8 isn't supported.
@@ -198,10 +196,13 @@ EOB
     def encode_subject(subject)
       case charset
       when /\Aiso-2022-jp\z/i
-        NKF.nkf('-Wj -M', subject)
-      else
-        NKF.nkf('-Ww -M', subject)
+        subject = subject.encode("ISO-2022-JP")
       end
+      base64_subject = Base64.encode64(subject)
+      lines = base64_subject.lines.collect do |line|
+        "=?#{charset}?B?#{line.chomp}?="
+      end
+      lines.join("\r\n")
     end
   end
 end

@@ -55,6 +55,8 @@ Gem::Specification.new do |spec|
   spec.files += Dir.glob("example/*.rb")
   spec.test_files = Dir.glob("test/**/*.rb")
 
+  spec.add_runtime_dependency("base64")
+  spec.add_runtime_dependency("csv")
   spec.add_runtime_dependency("net-smtp")
   spec.add_runtime_dependency("rack")
 
