@@ -1,16 +1,16 @@
-h1. NEWS
+# NEWS
 
-h2. 0.9.4: 2023-09-03
+## 0.9.4: 2023-09-03
 
-h3. Improvments
+### Improvments
 
   * [cache] Made Rroonga dependency optional. Users must add Rroonga
     dependency explicitly.
   * And more improvements...
 
-h2. 0.9.3: 2011-11-12
+## 0.9.3: 2011-11-12
 
-h3. Improvments
+### Improvments
 
   * [access-log-parser] Supported Apache log.
   * [cache] Fixed unknown name errors.
@@ -20,9 +20,9 @@ h3. Improvments
   * [exception-mail-notifier] Used #message instead of #to_s.
   * [logger] Logged also X-Runtime.
 
-h2. 0.9.2: 2011-08-07
+## 0.9.2: 2011-08-07
 
-h3. Improvments
+### Improvments
 
   * [munin] Supported Passenger 3 support.
   * [munin] Removed Passenger 2 support.
@@ -36,7 +36,7 @@ h3. Improvments
   * Added NginixAccessLogParser.
   * Documented middlewares.
 
-h2. 0.9.1: 2010-11-11
+## 0.9.1: 2010-11-11
 
   * Improved cache validation.
   * Supported caches per User-Agent.
@@ -47,6 +47,6 @@ h2. 0.9.1: 2010-11-11
   * Changed license to LGPLv2.1 or later from LGPLv2.1.
   * Supported will_paginate.
 
-h2. 0.9.0: 2010-07-04
+## 0.9.0: 2010-07-04
 
   * Initial release!
