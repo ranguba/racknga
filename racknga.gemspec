@@ -48,8 +48,8 @@ Gem::Specification.new do |spec|
   spec.licenses = ["LGPLv2.1 or later"]
   spec.require_paths = ["lib"]
 
-  spec.extra_rdoc_files = ["README.textile"]
-  spec.files = ["AUTHORS", "README.textile", "Rakefile", "Gemfile"]
+  spec.extra_rdoc_files = ["README.md"]
+  spec.files = ["AUTHORS", "README.md", "Rakefile", "Gemfile"]
   spec.files += Dir.glob("lib/**/*.rb")
   spec.files += Dir.glob("{license,munin,doc/text/}/**/*")
   spec.files += Dir.glob("example/*.rb")
@@ -60,8 +60,8 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency("net-smtp")
   spec.add_runtime_dependency("rack")
 
-  spec.add_development_dependency("RedCloth")
   spec.add_development_dependency("bundler")
+  spec.add_development_dependency("kramdown")
   spec.add_development_dependency("packnga")
   spec.add_development_dependency("rake")
   spec.add_development_dependency("rroonga")
