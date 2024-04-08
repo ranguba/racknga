@@ -1,6 +1,6 @@
 # -*- ruby -*-
 #
-# Copyright (C) 2023  Sutou Kouhei <kou@clear-code.com>
+# Copyright (C) 2023-2024  Sutou Kouhei <kou@clear-code.com>
 # Copyright (C) 2013  Haruka Yoshihara <yoshihara@clear-code.com>
 #
 # This library is free software; you can redistribute it and/or
@@ -67,6 +67,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency("rroonga")
   spec.add_development_dependency("test-unit")
   spec.add_development_dependency("test-unit-capybara")
-  spec.add_development_dependency("test-unit-notify")
 end
 

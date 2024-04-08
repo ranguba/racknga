@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 #
-# Copyright (C) 2010-2011  Kouhei Sutou <kou@clear-code.com>
+# Copyright (C) 2010-2024  Sutou Kouhei <kou@clear-code.com>
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -31,7 +31,6 @@ require "rubygems"
 require "bundler/setup"
 
 require 'test/unit'
-require 'test/unit/notify'
 
 Test::Unit::Priority.enable
 
