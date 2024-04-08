@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
-#
-# Copyright (C) 2010  Kouhei Sutou <kou@clear-code.com>
+# Copyright (C) 2010-2024  Sutou Kouhei <kou@clear-code.com>
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -60,7 +58,7 @@ module Racknga
 
         if first_byte.empty? and last_byte.empty?
           headers["Content-Length"] = "0"
-          return [Rack::Utils.status_code(:requested_range_not_satisfiable),
+          return [Rack::Utils.status_code(:range_not_satisfiable),
                   headers,
                   []]
         end
