@@ -22,11 +22,6 @@ require 'racknga/middleware/auth/api-key'
 require 'racknga/middleware/cache'
 require 'racknga/middleware/instance_name'
 
-Capybara.configure do |config|
-  config.default_driver = nil
-  config.current_driver = nil
-end
-
 module RackngaTestUtils
   include Capybara::DSL
 
