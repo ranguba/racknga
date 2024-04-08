@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
-#
-# Copyright (C) 2010-2012  Kouhei Sutou <kou@clear-code.com>
+# Copyright (C) 2010-2024  Sutou Kouhei <kou@clear-code.com>
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -88,7 +86,7 @@ module Racknga
         update_cache_key(request) if callback
         status, headers, body = @application.call(environment)
         return [status, headers, body] unless callback
-        header_hash = Rack::Utils::HeaderHash.new(headers)
+        header_hash = Rack::Headers[headers]
         return [status, headers, body] unless json_response?(header_hash)
         body = Writer.new(callback, body)
         update_header_hash(header_hash, body)

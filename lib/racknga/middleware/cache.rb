@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
-#
-# Copyright (C) 2010  Kouhei Sutou <kou@clear-code.com>
+# Copyright (C) 2010-2024  Sutou Kouhei <kou@clear-code.com>
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -138,7 +136,7 @@ module Racknga
       def skip_caching_response?(status, headers, body)
         return true if status != 200
 
-        headers = Rack::Utils::HeaderHash.new(headers)
+        headers = Rack::Headers[headers]
         content_type = headers["Content-Type"]
         if /\A(\w+)\/([\w.+\-]+)\b/ =~ content_type
           media_type = $1
@@ -167,7 +165,7 @@ module Racknga
         end
 
         now = Time.now
-        headers = Rack::Utils::HeaderHash.new(headers)
+        headers = Rack::Headers[headers]
         headers["Last-Modified"] ||= now.httpdate
         encoded_body = ''.force_encoding("ASCII-8BIT")
         deflater = ::Zlib::Deflate.new

@@ -36,7 +36,7 @@ module Racknga
         status, headers, body = @application.call(environment)
         return [status, headers, body] if status != 200
 
-        headers = Rack::Utils::HeaderHash.new(headers)
+        headers = Rack::Headers[headers]
         headers["Accept-Ranges"] = "bytes"
         request = Rack::Request.new(environment)
         range = request.env["HTTP_RANGE"]
