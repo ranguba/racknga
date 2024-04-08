@@ -1,5 +1,14 @@
 # NEWS
 
+## 0.9.5: 2024-04-08
+
+### Improvments
+
+  * Added `base64` dependency.
+  * Added `net-smtp` dependency.
+  * Removed `nkf` dependency.
+  * Stopped using deprecated APIs of Rack.
+
 ## 0.9.4: 2023-09-03
 
 ### Improvments
